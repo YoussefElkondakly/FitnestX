@@ -1,6 +1,21 @@
 import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+List <Color>gradientcolorO=[
+  Color.fromRGBO(146, 163, 253, .2),
+  Color.fromRGBO(157, 206, 255, .2)
+];
+List <Color> waterintake= [Color(0xFFC58BF2), Color(0xFFB3BFFD)];
+
+List <Color>gradientcolorBlue=[
+  Color.fromRGBO(146, 163, 253, 1),
+  Color.fromRGBO(157, 206, 255, 1),
+];
+List <Color>gradientcolorPink=[Color(0xFFC58BF2), Color(0xFFEEA4CE)];
+List <Color>gradientcolorPurbleO=[Color(0x33C58BF2), Color(0x33EEA4CE)];
+Color blueObacity=Color.fromRGBO(157, 206, 255, 0.30196078431372547);
+ Color pinkObacity= Color.fromRGBO(238, 164, 206, 0.30196078431372547);
 
 Container conta=Container(
   margin: EdgeInsets.only(top: 10),
@@ -454,12 +469,14 @@ Container conta=Container(
     ],
   ),
 );
+AssetImage foot=AssetImage('assets/others/foots.png');
+AssetImage water=AssetImage('assets/others/water.png');
 AssetImage abs=AssetImage('assets/others/img_4.png');
 AssetImage lower=AssetImage('assets/others/img_3.png');
 AssetImage jumbrobe=AssetImage('assets/images/img_9.png');
 AssetImage pancake=AssetImage('assets/others/pancake.png');
 AssetImage pie=AssetImage('assets/others/pie.png');
-Widget indicator(double baseHeight,double height,double baseWidth){
+Widget indicator(double baseHeight,double height,double baseWidth,List<Color> gradient){
   return Column(
     children: [
       Container(
@@ -482,12 +499,12 @@ Widget indicator(double baseHeight,double height,double baseWidth){
           gradient: LinearGradient(
             begin: Alignment(-0.00, -1.00),
             end: Alignment(0, 1),
-            colors: [Color(0xFFC58BF2), Color(0xFFB3BFFD)],
+
+            colors: gradient,
           ),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(30),
-              bottomRight: Radius.circular(30),
+            borderRadius: BorderRadius.all(
+            Radius.circular(30),
             ),
           ),
         ),
@@ -495,7 +512,7 @@ Widget indicator(double baseHeight,double height,double baseWidth){
     ],
   );
 }
-Widget latest(String main,String details,AssetImage img,Color cl,double x,double y,double z){
+Widget latestWorkout(String main,String details,AssetImage img,Color cl,double x,double y,double z){
   return Container(
     width: 315.w,
     height: 83.h,
@@ -556,7 +573,7 @@ Widget latest(String main,String details,AssetImage img,Color cl,double x,double
             SizedBox(
               height: 9.h,
             ),
-            indicatorH(x, y,z),
+            indicatorH(x, y,z,gradientcolorPink),
           ],
           crossAxisAlignment: CrossAxisAlignment.start,
         ),
@@ -606,7 +623,7 @@ Widget latest(String main,String details,AssetImage img,Color cl,double x,double
     ),
   );
 }
-Widget indicatorH(double baseWidth,double width,double height){
+Widget indicatorH(double baseWidth,double width,double height,List<Color> gradient){
   return Row(
     children: [
       Container(
@@ -616,7 +633,8 @@ Widget indicatorH(double baseWidth,double width,double height){
           gradient: LinearGradient(
             begin: Alignment(-1.00, 0.05),
             end: Alignment(1, -0.05),
-            colors: [Color(0xFFC58BF2), Color(0xFF92A3FD)],
+
+            colors: gradient,
           ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
@@ -742,6 +760,112 @@ Widget rightTitleWidgets(double sale, TitleMeta meta) {
     child: Text(
       percent,
       style: style,
+    ),
+  );
+}
+Widget latestActivity(String main,String details,AssetImage img,Color cl,){
+  return Container(
+    width: 315.w,
+    height: 83.h,
+    padding: EdgeInsets.fromLTRB(15, 15, 15, 15),
+    margin: EdgeInsets.fromLTRB(30, 0, 30, 15),
+    decoration: ShapeDecoration(
+      color: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+      ),
+      shadows: [
+        BoxShadow(
+          color: Color(0x0C1D242A),
+          blurRadius: 40,
+          offset: Offset(0, 10),
+          spreadRadius: 0,
+        )
+      ],
+    ),
+    child: Row(
+      children: <Widget>[
+        Container(
+          width: 50.w,
+          height: 50.h,
+          padding: EdgeInsets.fromLTRB(6, 7, 6.17, 0),
+          decoration: ShapeDecoration(
+            color: cl,
+            shape: OvalBorder(),
+          ),
+          //
+          child: Image(image:img,),
+        ),
+        SizedBox(
+          width: 10.w,
+        ),
+        Container(margin: EdgeInsets.only(right: 82),
+          width: 131.w,height: 36.h,
+          child: Column(
+            children: [
+              Text(
+                main,
+                style: TextStyle(
+                  color: Color(0xFF1D1517),
+                  fontSize: 12,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w500,
+                  height: 1.50,
+                ),
+              ),
+              Text(
+                details,
+                style: TextStyle(
+                  color: Color(0xFFA3A8AC),
+                  fontSize: 10,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w400,
+                  height: 1.50,
+                ),
+              ),
+
+
+            ],
+            crossAxisAlignment: CrossAxisAlignment.start,
+          ),
+        ),
+         Icon(
+            IconData(
+              0xf8da, fontFamily: CupertinoIcons.iconFont, fontPackage: CupertinoIcons.iconFontPackage,),color: Colors.grey,
+
+          ),
+      ],
+    ),
+  );
+}
+
+Widget button(String text,EdgeInsets padd){
+  return GestureDetector(
+    onTap: (){},
+    child: Container(
+      width: 68.w,
+      height: 28.h,
+      padding: padd,
+      decoration: ShapeDecoration(
+        gradient: LinearGradient(
+          begin: Alignment(-1.00, 0.08),
+          end: Alignment(1, -0.08),
+
+          colors: gradientcolorBlue,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(50),
+        ),
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 12.sp,
+          fontFamily: 'Poppins',
+          fontWeight: FontWeight.w400,
+        ),
+      ),
     ),
   );
 }

@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gym/PresentationLayer/App/Notification.dart';
 import 'package:gym/PresentationLayer/App/TodayTarget.dart';
 import 'package:gym/PresentationLayer/Welcome/Welcome.dart';
-import 'Containers.dart';
+import 'Constants.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -90,7 +90,7 @@ class _DashboardState extends State<Dashboard> {
               gradient: LinearGradient(
                 begin: Alignment(-1.00, 0.08),
                 end: Alignment(1, -0.08),
-                colors: [Color(0xFF92A3FD), Color(0xFF9DCEFF)],
+                colors: gradientcolorBlue,
               ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(22),
@@ -150,7 +150,7 @@ class _DashboardState extends State<Dashboard> {
                             gradient: LinearGradient(
                               begin: Alignment(-1.00, 0.08),
                               end: Alignment(1, -0.08),
-                              colors: [Color(0xFFC58BF2), Color(0xFFEEA4CE)],
+                              colors: gradientcolorPink,
                             ),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(50),
@@ -221,10 +221,7 @@ class _DashboardState extends State<Dashboard> {
               gradient: LinearGradient(
                 begin: Alignment(-1.00, 0.08),
                 end: Alignment(1, -0.08),
-                colors: [
-                  Color.fromRGBO(146, 163, 253, .2),
-                  Color.fromRGBO(157, 206, 255, .2)
-                ],
+                colors: gradientcolorO,
               ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
@@ -257,7 +254,8 @@ class _DashboardState extends State<Dashboard> {
                       gradient: LinearGradient(
                         begin: Alignment(-1.00, 0.08),
                         end: Alignment(1, -0.08),
-                        colors: [Color(0xFF92A3FD), Color(0xFF9DCEFF)],
+
+                        colors: gradientcolorBlue,
                       ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
@@ -301,10 +299,8 @@ class _DashboardState extends State<Dashboard> {
               gradient: LinearGradient(
                 begin: Alignment(-1.00, 0.08),
                 end: Alignment(1, -0.08),
-                colors: [
-                  Color(0x9DCEFF).withOpacity(.2),
-                  Color(0x92A3FD).withOpacity(.2)
-                ],
+
+                colors:[gradientcolorO[1],gradientcolorO[0],],
               ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
@@ -462,7 +458,7 @@ class _DashboardState extends State<Dashboard> {
                   ),
                   child: Row(
                     children: [
-                      indicator(275.h, 151.h,20.w,),
+                      indicator(275.h, 151.h,20.w,waterintake,),
                       SizedBox(
                         width: 10.w,
                       ),
@@ -774,66 +770,6 @@ class _DashboardState extends State<Dashboard> {
               ],
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(left: 20.w, top: 10, right: 30.w),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Workout Progress',
-                  style: TextStyle(
-                    color: Color(0xFF1D1517),
-                    fontSize: 16.sp,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w600,
-                    height: 1.50,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute<void>(
-                            builder: (context) => Welcome1()));
-                  },
-                  child: Container(
-                    width: 76.w,
-                    height: 30.h,
-                    padding: EdgeInsets.fromLTRB(10, 8, 10, 7),
-                    decoration: ShapeDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment(-1.00, 0.08),
-                        end: Alignment(1, -0.08),
-                        colors: [Color(0xFF92A3FD), Color(0xFF9DCEFF)],
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                    ),
-                    child: Row(
-                      children: [
-                        Text(
-                          'Weekly   ',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 10.sp,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w400,
-                            height: 1.50,
-                          ),
-                        ),
-                        Image.asset(
-                          'assets/others/img_2.png',
-                          width: 8.75.w,
-                          height: 4.38.h,
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
           Container(
             width: 315.w,
             height: 182.h,
@@ -965,9 +901,9 @@ class _DashboardState extends State<Dashboard> {
               ],
             ),
           ),
-          latest('Fullbody Workout', '180 Calories Burn | 20minutes', jumbrobe,Color.fromRGBO(157, 206, 255, 0.30196078431372547), 191.w, 140.w, 10.h),
-          latest('Lowerbody Workout', '200 Calories Burn | 30minutes', lower,Color.fromRGBO(238, 164, 206, 0.30196078431372547), 191.w, 86.w, 10.h),
-          latest('Ab Workout', '180 Calories Burn | 20minutes', abs,Color.fromRGBO(157, 206, 255, 0.30196078431372547), 191.w, 166.w, 10.h),
+          latestWorkout('Fullbody Workout', '180 Calories Burn | 20minutes', jumbrobe,blueObacity, 191.w, 140.w, 10.h),
+          latestWorkout('Lowerbody Workout', '200 Calories Burn | 30minutes', lower,pinkObacity, 191.w, 86.w, 10.h),
+          latestWorkout('Ab Workout', '180 Calories Burn | 20minutes', abs,blueObacity, 191.w, 166.w, 10.h),
         ],
       ),
     );

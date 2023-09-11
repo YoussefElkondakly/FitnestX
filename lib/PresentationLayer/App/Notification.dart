@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'Containers.dart';
+import 'Constants.dart';
 import 'Dashboard.dart';
 class Notifications extends StatefulWidget {
   const Notifications({super.key});
@@ -12,11 +11,8 @@ class Notifications extends StatefulWidget {
 
 
 }
-List<Color>a=[
-  Color.fromRGBO(157, 206, 255, 0.30196078431372547),  Color.fromRGBO(238, 164, 206, 0.30196078431372547),
-];
 
-Widget notif(String x,String y,AssetImage b,a ,EdgeInsets c){
+Widget notif(String x,String y,AssetImage b,Color a ,EdgeInsets c){
   return Container(width: 350.w,
     height: 60.h,
     margin: EdgeInsets.fromLTRB(20, 0, 20, 15),
@@ -64,7 +60,9 @@ Widget notif(String x,String y,AssetImage b,a ,EdgeInsets c){
                   ),
                 ],),
             ),
-            Align(alignment: Alignment.centerRight,child: Icon(IconData(0xf8da, fontFamily: CupertinoIcons.iconFont, fontPackage: CupertinoIcons.iconFontPackage,),color: Colors.grey,))
+            Align(alignment: Alignment.centerRight,child: Icon(
+              IconData(
+              0xf8da, fontFamily: CupertinoIcons.iconFont, fontPackage: CupertinoIcons.iconFontPackage,),color: Colors.grey,))
           ],
         ),
         SizedBox(),
@@ -134,17 +132,17 @@ class _NotificationsState extends State<Notifications> {
       ),
       body: Column(
         children: [
-          notif('Hey, it’s time for lunch', 'About 1 minutes ago',pie, a[0], EdgeInsets.fromLTRB(7, 12, 7, 11.75)),
+          notif('Hey, it’s time for lunch', 'About 1 minutes ago',pie, blueObacity, EdgeInsets.fromLTRB(7, 12, 7, 11.75)),
 
-          notif('Don’t miss your lowerbody workout'," About 3 hours ago", lower,a[1],EdgeInsets.fromLTRB(5, 5, 5, 5)),
-         // SizedBox(width: 315.w,child: Divider()),
-          notif('Hey, let’s add some meals for your b', 'About 3 hours ago',pancake, a[0], EdgeInsets.fromLTRB(5, 5, 5, 5)),
-          //SizedBox(width: 315.w,child: Divider()),
-          notif('Congratulations, You have finished A', 'About 3 hours ago',abs, a[0], EdgeInsets.fromLTRB(5, 5, 5, 5)),
-         // SizedBox(width: 315.w,child: Divider()),
-          notif('Hey, it’s time for lunch', '8 April',pie, a[0], EdgeInsets.fromLTRB(7, 12, 7, 11.75)),
-         // SizedBox(width: 315.w,child: Divider()),
-          notif('Ups, You have missed your Lowerbo', '3 April',lower, a[1], EdgeInsets.fromLTRB(5, 5, 5, 5)),
+          notif('Don’t miss your lowerbody workout'," About 3 hours ago", lower,pinkObacity,EdgeInsets.fromLTRB(5, 5, 5, 5)),
+
+          notif('Hey, let’s add some meals for your b', 'About 3 hours ago',pancake, blueObacity, EdgeInsets.fromLTRB(5, 5, 5, 5)),
+
+          notif('Congratulations, You have finished A', 'About 3 hours ago',abs, blueObacity, EdgeInsets.fromLTRB(5, 5, 5, 5)),
+
+          notif('Hey, it’s time for lunch', '8 April',pie,blueObacity, EdgeInsets.fromLTRB(7, 12, 7, 11.75)),
+
+          notif('Ups, You have missed your Lowerbo', '3 April',lower,pinkObacity , EdgeInsets.fromLTRB(5, 5, 5, 5)),
         ],
       ),
     );
