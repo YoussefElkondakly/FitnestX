@@ -1,3 +1,4 @@
+
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +8,6 @@ List <Color>gradientcolorO=[
   Color.fromRGBO(157, 206, 255, .2)
 ];
 List <Color> waterintake= [Color(0xFFC58BF2), Color(0xFFB3BFFD)];
-
 List <Color>gradientcolorBlue=[
   Color.fromRGBO(146, 163, 253, 1),
   Color.fromRGBO(157, 206, 255, 1),
@@ -15,7 +15,7 @@ List <Color>gradientcolorBlue=[
 List <Color>gradientcolorPink=[Color(0xFFC58BF2), Color(0xFFEEA4CE)];
 List <Color>gradientcolorPurbleO=[Color(0x33C58BF2), Color(0x33EEA4CE)];
 Color blueObacity=Color.fromRGBO(157, 206, 255, 0.30196078431372547);
- Color pinkObacity= Color.fromRGBO(238, 164, 206, 0.30196078431372547);
+Color pinkObacity= Color.fromRGBO(238, 164, 206, 0.30196078431372547);
 
 Container conta=Container(
   margin: EdgeInsets.only(top: 10),
@@ -838,34 +838,93 @@ Widget latestActivity(String main,String details,AssetImage img,Color cl,){
     ),
   );
 }
-
-Widget button(String text,EdgeInsets padd){
+Widget button(MaterialPageRoute whereTo,ctx,String buttonName,double width,double height,EdgeInsets paddin,List<Color> gradient,double size){
   return GestureDetector(
-    onTap: (){},
+    onTap: (){
+      Navigator.pushReplacement(
+          ctx as BuildContext,whereTo);
+    },
     child: Container(
-      width: 68.w,
-      height: 28.h,
-      padding: padd,
+      width: width,
+      height:height,
+      padding: paddin,
       decoration: ShapeDecoration(
         gradient: LinearGradient(
           begin: Alignment(-1.00, 0.08),
           end: Alignment(1, -0.08),
-
-          colors: gradientcolorBlue,
+          colors: gradient,
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(50),
         ),
       ),
       child: Text(
-        text,
+        buttonName,
         style: TextStyle(
           color: Colors.white,
-          fontSize: 12.sp,
+          fontSize: size,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.w400,
         ),
       ),
+    ),
+  );
+}
+AppBar appBar(MaterialPageRoute backTo,ctx,String titleName,){
+  return AppBar(
+    title: Text(titleName,
+    ),
+    titleTextStyle: TextStyle(
+      color: Color(0xFF1D1517),
+      fontSize: 16.sp,
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w700,
+      height: 1.50,
+    ),
+    centerTitle: true,
+    actions: [
+      //view head line
+      //format_align_justify_sharp
+      //menu_outlined
+      Container(
+        width: 32.w,
+        height: 32.h,
+        margin: EdgeInsets.only(right: 30,),
+        decoration: ShapeDecoration(
+          color: Color(0xFFF7F8F8),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        ),
+        child: Icon(
+          IconData(
+              0xf46a, fontFamily: CupertinoIcons.iconFont, fontPackage: CupertinoIcons.iconFontPackage),),),
+
+    ],
+    // padding: EdgeInsets.all(010),
+
+
+    leading:Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          width: 32.w,
+          height: 32.h,
+          // padding: EdgeInsets.all(8),
+          margin: EdgeInsets.only(left: 20,),
+          decoration: ShapeDecoration(
+            color: Color(0xFFF7F8F8),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          ),
+          child: GestureDetector(onTap:(){
+            Navigator.pushReplacement(
+              ctx ,
+              backTo);
+          },
+            child:Icon(IconData(
+                0xf3cf, fontFamily: CupertinoIcons.iconFont, fontPackage: CupertinoIcons.iconFontPackage),),
+
+          ),),
+      ],
     ),
   );
 }

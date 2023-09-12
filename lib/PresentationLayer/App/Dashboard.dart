@@ -5,7 +5,7 @@ import 'package:gym/PresentationLayer/App/Notification.dart';
 import 'package:gym/PresentationLayer/App/TodayTarget.dart';
 import 'package:gym/PresentationLayer/Welcome/Welcome.dart';
 import 'Constants.dart';
-
+import 'package:badges/badges.dart'as badges;
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
 
@@ -67,15 +67,28 @@ class _DashboardState extends State<Dashboard> {
                       )
                     ],
                   ),
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute<void>(
-                              builder: (context) => Notifications()));
-                    },
-                    icon: Icon(Icons.notifications_outlined),
-                  ),
+
+                  child: badges.Badge(
+                    badgeStyle: badges.BadgeStyle(
+                      borderSide: BorderSide(color: Colors.white, width: 2),
+                    ),
+
+                    position: badges.BadgePosition.topEnd(top: -3, end: 10),
+                    showBadge: true,
+                    ignorePointer: false,
+                    onTap: () {},
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute<void>(
+                                builder: (context) => Notifications()));
+                      },
+                      icon: Icon(Icons.notifications_outlined),
+                    ),
+                    badgeContent: Text(''),
+                ),
+
                 ),
               ],
             ),
