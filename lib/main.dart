@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gym/PresentationLayer/App/Dashboard.dart';
+import 'package:gym/PresentationLayer/App/WorkoutTracker.dart';
 
 import 'PresentationLayer/Welcome/Welcome.dart';
 
 void main() {
-  runApp(const MyApp());
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    systemNavigationBarColor: Colors.transparent, // navigation bar color
+    statusBarColor: Colors.transparent, // status bar color
+  ));
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]).then((value)=>runApp(const MyApp()));
+
 }
 
 class MyApp extends StatelessWidget {
@@ -25,7 +36,7 @@ class MyApp extends StatelessWidget {
             primaryColor: Colors.blueGrey,
             useMaterial3: true,
           ),
-          home: Dashboard(),
+          home: WorkoutTracker(),
         );
       },
     );

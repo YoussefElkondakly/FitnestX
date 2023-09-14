@@ -76,7 +76,7 @@ class _NotificationsState extends State<Notifications> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(MaterialPageRoute<void>(builder:(context)=>Dashboard(),), context, 'Notifications'),
+      appBar: appBar(MaterialPageRoute<void>(builder:(context)=>Dashboard(),), context, 'Notifications',Color.fromRGBO(1, 1, 1, 1),),
       body: Column(
         children: [
           notif('Hey, it’s time for lunch', 'About 1 minutes ago',pie, blueObacity, EdgeInsets.fromLTRB(7, 12, 7, 11.75)),

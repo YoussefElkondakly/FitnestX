@@ -16,7 +16,7 @@ class _TargetState extends State<Target> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(MaterialPageRoute<void>(builder:(context)=>Dashboard(),), context, 'Today Target'),
+      appBar: appBar(MaterialPageRoute<void>(builder:(context)=>Dashboard(),), context, 'Today Target',Color.fromRGBO(1, 1, 1, 1)),
       body: Column(
         children: [
           Container(
@@ -256,42 +256,7 @@ Container(
 
             ),
           ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(30, 0, 30, 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Latest Activity',
-                  style: TextStyle(
-                    color: Color(0xFF1D1517),
-                    fontSize: 16.sp,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w600,
-                    height: 1.50,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute<void>(
-                            builder: (context) => Profile(),),);
-                  },
-                  child: Text(
-                    'See more',
-                    style: TextStyle(
-                      color: Color(0xFFACA3A5),
-                      fontSize: 12,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w500,
-                      height: 1.50,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+          seemore('Latest Activity', 'see more', EdgeInsets.fromLTRB(30, 0, 30, 0), context, MaterialPageRoute(builder: (context)=>Profile())),
 latestActivity('Drinking 300ml Water', 'About 3 minutes ago', water, blueObacity,),
           latestActivity('Eat Snack (Fitbar)', 'About 10 minutes ago', pie, pinkObacity,),
 

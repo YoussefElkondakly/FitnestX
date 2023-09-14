@@ -3,6 +3,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 List <Color>gradientcolorO=[
   Color.fromRGBO(146, 163, 253, .2),
   Color.fromRGBO(157, 206, 255, .2)
@@ -16,7 +17,22 @@ List <Color>gradientcolorPink=[Color(0xFFC58BF2), Color(0xFFEEA4CE)];
 List <Color>gradientcolorPurbleO=[Color(0x33C58BF2), Color(0x33EEA4CE)];
 Color blueObacity=Color.fromRGBO(157, 206, 255, 0.30196078431372547);
 Color pinkObacity= Color.fromRGBO(238, 164, 206, 0.30196078431372547);
-
+List <TextStyle>styles=[
+  TextStyle(
+    color: Colors.white,
+    fontSize: 12.sp,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w500,
+    height: 0.12,
+  ),
+  TextStyle(
+    color: Colors.white,
+    fontSize: 16.sp,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w700,
+    height: 0.09,
+  ),
+];
 Container conta=Container(
   margin: EdgeInsets.only(top: 10),
   width: 10.w,
@@ -476,7 +492,7 @@ AssetImage lower=AssetImage('assets/others/img_3.png');
 AssetImage jumbrobe=AssetImage('assets/images/img_9.png');
 AssetImage pancake=AssetImage('assets/others/pancake.png');
 AssetImage pie=AssetImage('assets/others/pie.png');
-Widget indicator(double baseHeight,double height,double baseWidth,List<Color> gradient){
+ indicator(double baseHeight,double height,double baseWidth,List<Color> gradient){
   return Column(
     children: [
       Container(
@@ -512,7 +528,7 @@ Widget indicator(double baseHeight,double height,double baseWidth,List<Color> gr
     ],
   );
 }
-Widget latestWorkout(String main,String details,AssetImage img,Color cl,double x,double y,double z){
+ latestWorkout(String main,String details,AssetImage img,Color cl,double x,double y,double z){
   return Container(
     width: 315.w,
     height: 83.h,
@@ -623,7 +639,7 @@ Widget latestWorkout(String main,String details,AssetImage img,Color cl,double x
     ),
   );
 }
-Widget indicatorH(double baseWidth,double width,double height,List<Color> gradient){
+ indicatorH(double baseWidth,double width,double height,List<Color> gradient){
   return Row(
     children: [
       Container(
@@ -662,7 +678,9 @@ Widget indicatorH(double baseWidth,double width,double height,List<Color> gradie
 }
 Widget bottomTitleWidgets(double value, TitleMeta meta) {
   var style = TextStyle(
-    color: Color(0xFF7B6F72),
+    color:
+   Color(0xFF7B6F72)
+    ,
     fontSize: 12.sp,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w400,
@@ -717,7 +735,9 @@ Widget bottomTitleWidgets(double value, TitleMeta meta) {
 }
 Widget rightTitleWidgets(double sale, TitleMeta meta) {
   var style = TextStyle(
-    color: Color(0xFF7B6F72),
+    color:
+    Color(0xFF7B6F72)
+    ,
     fontSize: 10.sp,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w400,
@@ -725,32 +745,32 @@ Widget rightTitleWidgets(double sale, TitleMeta meta) {
   String percent;
   switch (sale.toInt()) {
     case 0:
-      percent = '0%';
+      percent = '';
       break;
     case 1:
-      percent = '20%';
+      percent = '0%';
       break;
     case 2:
-      percent = '40%';
+      percent = '20%';
       break;
 
     case 3:
-      percent = '60%';
+      percent = '40%';
       break;
     case 4:
-      percent = '80%';
+      percent = '60%';
       break;
     case 5:
-      percent = '100%';
+      percent = '80%';
       break;
     case 6:
-      percent = '120%';
+      percent = '100%';
       break;
     case 7:
-      percent = '140%';
+      percent = '';
       break;
     case 8:
-      percent = '160%';
+      percent = '';
       break;
     default:
       return Container();
@@ -763,7 +783,7 @@ Widget rightTitleWidgets(double sale, TitleMeta meta) {
     ),
   );
 }
-Widget latestActivity(String main,String details,AssetImage img,Color cl,){
+latestActivity(String main,String details,AssetImage img,Color cl,){
   return Container(
     width: 315.w,
     height: 83.h,
@@ -838,7 +858,7 @@ Widget latestActivity(String main,String details,AssetImage img,Color cl,){
     ),
   );
 }
-Widget button(MaterialPageRoute whereTo,ctx,String buttonName,double width,double height,EdgeInsets paddin,List<Color> gradient,double size){
+ button(MaterialPageRoute whereTo,ctx,String buttonName,TextStyle styleT,double width,double height,List<Color> gradient,){
   return GestureDetector(
     onTap: (){
       Navigator.pushReplacement(
@@ -847,7 +867,7 @@ Widget button(MaterialPageRoute whereTo,ctx,String buttonName,double width,doubl
     child: Container(
       width: width,
       height:height,
-      padding: paddin,
+
       decoration: ShapeDecoration(
         gradient: LinearGradient(
           begin: Alignment(-1.00, 0.08),
@@ -858,24 +878,21 @@ Widget button(MaterialPageRoute whereTo,ctx,String buttonName,double width,doubl
           borderRadius: BorderRadius.circular(50),
         ),
       ),
-      child: Text(
-        buttonName,
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: size,
-          fontFamily: 'Poppins',
-          fontWeight: FontWeight.w400,
+      child: Center(
+        child: Text(
+          buttonName,
+          style: styleT,
         ),
       ),
     ),
   );
 }
-AppBar appBar(MaterialPageRoute backTo,ctx,String titleName,){
+ appBar(MaterialPageRoute backTo,ctx,String titleName,Color color){
   return AppBar(
     title: Text(titleName,
     ),
     titleTextStyle: TextStyle(
-      color: Color(0xFF1D1517),
+      color: color,
       fontSize: 16.sp,
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w700,
@@ -924,6 +941,142 @@ AppBar appBar(MaterialPageRoute backTo,ctx,String titleName,){
                 0xf3cf, fontFamily: CupertinoIcons.iconFont, fontPackage: CupertinoIcons.iconFontPackage),),
 
           ),),
+      ],
+    ),
+  );
+}
+seemore (String textL,String textS,EdgeInsets padding,ctx,MaterialPageRoute whereTo){return Padding(
+  padding: padding,
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Text(
+        textL,
+        style: TextStyle(
+          color: Color(0xFF1D1517),
+          fontSize: 16.sp,
+          fontFamily: 'Poppins',
+          fontWeight: FontWeight.w600,
+          height: 1.50,
+        ),
+      ),
+      GestureDetector(
+        onTap: () {
+          Navigator.pushReplacement(
+              ctx,whereTo
+          );
+        },
+        child: Text(
+          textS,
+          style: TextStyle(
+            color: Color(0xFFACA3A5),
+            fontSize: 12,
+            fontFamily: 'Poppins',
+            fontWeight: FontWeight.w500,
+            height: 1.50,
+          ),
+        ),
+      ),
+    ],
+  ),
+);}
+containere(String textL,String textS,ctx, MaterialPageRoute w,AssetImage img,){
+  return Container(
+    width: 315.w,
+    height: 132.h,
+    padding: EdgeInsets.fromLTRB(20, 14, 20, 12),
+    margin: EdgeInsets.only(top: 15),
+    decoration: ShapeDecoration(
+      gradient: LinearGradient(
+        begin: Alignment(-1.00, 0.08),
+        end: Alignment(1, -0.08),
+        colors:gradientcolorO,
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+    ),
+    child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children:[ Container(width:123.w,
+        height: 94.h,
+        margin:EdgeInsets.only(top: 6),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              textL,
+              style: TextStyle(
+                color: Color(0xFF1D1517),
+                fontSize: 14.sp,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            SizedBox(height: 5.h,),
+            Text(
+              textS,
+              style: TextStyle(
+                color: Color(0xFF7B6F72),
+                fontSize: 12.sp,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            SizedBox(height: 10.h,),
+
+            GestureDetector(
+              onTap: (){
+                Navigator.pushReplacement(
+                    ctx,w);
+              },
+              child: Container(
+                width: 94.w,
+                height:35.h,
+                decoration: ShapeDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment(-1.00, 0.08),
+                    end: Alignment(1, -0.08),
+                    colors: [Colors.white,Colors.white],
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                ),
+                child: Center(
+                  child:ShaderMask(
+                    shaderCallback: (Rect bounds) {
+                      return LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: gradientcolorBlue,
+                      ).createShader(bounds);
+                    },
+                    child:Text(
+                      'View More',
+                      style:TextStyle(
+                        color: Colors.white,
+                        fontSize: 12.sp,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w500,
+
+                      ),
+                    ) ,
+                  ) ,
+                ),
+              ),
+            ),
+          ],),
+      ),
+        Container(
+          width: 92.w,
+          height: 92.h,
+          decoration: ShapeDecoration(
+            color: Colors.white.withOpacity(.5),
+            shape: OvalBorder(),
+          ),
+
+          child: Image(image:img,),
+        ),
+
       ],
     ),
   );

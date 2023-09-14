@@ -878,42 +878,9 @@ class _DashboardState extends State<Dashboard> {
               ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(30, 0, 30, 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Latest Workout',
-                  style: TextStyle(
-                    color: Color(0xFF1D1517),
-                    fontSize: 16.sp,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w600,
-                    height: 1.50,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute<void>(
-                            builder: (context) => Welcome1()));
-                  },
-                  child: Text(
-                    'See more',
-                    style: TextStyle(
-                      color: Color(0xFFACA3A5),
-                      fontSize: 12,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w500,
-                      height: 1.50,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+
+          seemore('Latest Workout','see more',EdgeInsets.fromLTRB(30, 0, 30, 15),context,MaterialPageRoute<void>(
+              builder: (context) => Welcome1()),),
           latestWorkout('Fullbody Workout', '180 Calories Burn | 20minutes', jumbrobe,blueObacity, 191.w, 140.w, 10.h),
           latestWorkout('Lowerbody Workout', '200 Calories Burn | 30minutes', lower,pinkObacity, 191.w, 86.w, 10.h),
           latestWorkout('Ab Workout', '180 Calories Burn | 20minutes', abs,blueObacity, 191.w, 166.w, 10.h),
@@ -922,6 +889,5 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 }
-
 
 

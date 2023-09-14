@@ -4,13 +4,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gym/PresentationLayer/App/Congrats.dart';
 import 'package:gym/PresentationLayer/App/Constants.dart';
 import 'TodayTarget.dart';
+
 class Profile extends StatefulWidget {
   const Profile({super.key});
 
   @override
   State<Profile> createState() => _ProfileState();
 }
-SizedBox box=SizedBox(width: 10.w,);
+
+SizedBox box = SizedBox(
+  width: 10.w,
+);
 
 class _ProfileState extends State<Profile> {
   @override
@@ -21,7 +25,7 @@ class _ProfileState extends State<Profile> {
             builder: (context) => Target(),
           ),
           context,
-          'Profile'),
+          'Profile',Color.fromRGBO(1, 1, 1, 1)),
       body: ListView(
         children: [
           Container(
@@ -44,7 +48,9 @@ class _ProfileState extends State<Profile> {
                     height: 50.h,
                   ),
                 ),
-                SizedBox(width: 15.w,),
+                SizedBox(
+                  width: 15.w,
+                ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,16 +79,22 @@ class _ProfileState extends State<Profile> {
                 ),
                 Spacer(),
                 button(
-                    MaterialPageRoute<void>(
-                      builder: (context) => UserCongrats(),
-                    ),
-                    context,
-                    "Edit",
-                    83.w,
-                    30.h,
-                    EdgeInsets.fromLTRB(30, 6, 30, 6),
-                    gradientcolorBlue,
-                    12.sp)
+                  MaterialPageRoute<void>(
+                    builder: (context) => UserCongrats(),
+                  ),
+                  context,
+                  "Edit",
+                  TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w500,
+                    height: 0.12,
+                  ),
+                  83.w,
+                  30.h,
+                  gradientcolorBlue,
+                ),
               ],
             ),
           ),
@@ -123,7 +135,8 @@ class _ProfileState extends State<Profile> {
                 )
               ],
             ),
-            child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
@@ -149,7 +162,10 @@ class _ProfileState extends State<Profile> {
                           colors: gradientcolorBlue,
                         ).createShader(bounds);
                       },
-                      child: Icon(Icons.person_3_outlined,color: Colors.white,),
+                      child: Icon(
+                        Icons.person_3_outlined,
+                        color: Colors.white,
+                      ),
                     ),
                     box,
                     Text(
@@ -173,7 +189,10 @@ class _ProfileState extends State<Profile> {
                           colors: gradientcolorBlue,
                         ).createShader(bounds);
                       },
-                      child: Icon(Icons.view_headline_sharp,color: Colors.white,),
+                      child: Icon(
+                        Icons.view_headline_sharp,
+                        color: Colors.white,
+                      ),
                     ),
                     box,
                     Text(
@@ -197,8 +216,12 @@ class _ProfileState extends State<Profile> {
                           colors: gradientcolorBlue,
                         ).createShader(bounds);
                       },
-                      child: Icon(Icons.pie_chart_outline_outlined,color: Colors.white,),
-                    ),box,
+                      child: Icon(
+                        Icons.pie_chart_outline_outlined,
+                        color: Colors.white,
+                      ),
+                    ),
+                    box,
                     Text(
                       'Activity History',
                       style: stylee,
@@ -221,8 +244,12 @@ class _ProfileState extends State<Profile> {
                           colors: gradientcolorBlue,
                         ).createShader(bounds);
                       },
-                      child: Icon(Icons.bar_chart_outlined,color: Colors.white,),
-                    ),box,
+                      child: Icon(
+                        Icons.bar_chart_outlined,
+                        color: Colors.white,
+                      ),
+                    ),
+                    box,
                     Text(
                       'Workout Progress',
                       style: stylee,
@@ -237,7 +264,6 @@ class _ProfileState extends State<Profile> {
               ],
             ),
           ),
-
           Container(
             width: 315.w,
             height: 99.h,
@@ -256,20 +282,20 @@ class _ProfileState extends State<Profile> {
                 )
               ],
             ),
-            child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
-                   Text(
-                    'Notification',
-                    style: TextStyle(
-                      color: Color(0xFF1D1517),
-                      fontSize: 16,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w600,
-                      height: 0.09,
-                    ),
+                Text(
+                  'Notification',
+                  style: TextStyle(
+                    color: Color(0xFF1D1517),
+                    fontSize: 16,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w600,
+                    height: 0.09,
                   ),
+                ),
                 Row(
                   children: [
                     ShaderMask(
@@ -280,7 +306,10 @@ class _ProfileState extends State<Profile> {
                           colors: gradientcolorBlue,
                         ).createShader(bounds);
                       },
-                      child: Icon(Icons.notifications_outlined,color: Colors.white,),
+                      child: Icon(
+                        Icons.notifications_outlined,
+                        color: Colors.white,
+                      ),
                     ),
                     box,
                     Text(
@@ -295,14 +324,14 @@ class _ProfileState extends State<Profile> {
                         gradient: LinearGradient(
                           begin: Alignment(-1.00, 0.08),
                           end: Alignment(1, -0.08),
-                          colors:gradientcolorPink,
+                          colors: gradientcolorPink,
                         ),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(99),
                         ),
                       ),
                       child: Container(
-                        margin: EdgeInsets.fromLTRB( 21, 3,3,3),
+                        margin: EdgeInsets.fromLTRB(21, 3, 3, 3),
                         width: 12.w,
                         height: 12.h,
                         decoration: ShapeDecoration(
@@ -315,9 +344,8 @@ class _ProfileState extends State<Profile> {
                 ),
               ],
             ),
-            margin: EdgeInsets.only(left: 30,right: 30),
+            margin: EdgeInsets.only(left: 30, right: 30),
           ),
-
           Container(
             width: 315.w,
             height: 160.h,
@@ -337,7 +365,8 @@ class _ProfileState extends State<Profile> {
                 )
               ],
             ),
-            child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
@@ -363,7 +392,10 @@ class _ProfileState extends State<Profile> {
                           colors: gradientcolorBlue,
                         ).createShader(bounds);
                       },
-                      child: Icon(Icons.mail_outline,color: Colors.white,),
+                      child: Icon(
+                        Icons.mail_outline,
+                        color: Colors.white,
+                      ),
                     ),
                     box,
                     Text(
@@ -387,8 +419,12 @@ class _ProfileState extends State<Profile> {
                           colors: gradientcolorBlue,
                         ).createShader(bounds);
                       },
-                      child: Icon(Icons.security_outlined,color: Colors.white,),
-                    ),box,
+                      child: Icon(
+                        Icons.security_outlined,
+                        color: Colors.white,
+                      ),
+                    ),
+                    box,
                     Text(
                       'Privacy Policy',
                       style: stylee,
@@ -410,8 +446,12 @@ class _ProfileState extends State<Profile> {
                           colors: gradientcolorBlue,
                         ).createShader(bounds);
                       },
-                      child: Icon(Icons.settings_outlined,color: Colors.white,),
-                    ),box,
+                      child: Icon(
+                        Icons.settings_outlined,
+                        color: Colors.white,
+                      ),
+                    ),
+                    box,
                     Text(
                       'Settings',
                       style: stylee,
@@ -423,11 +463,9 @@ class _ProfileState extends State<Profile> {
                     ),
                   ],
                 ),
-
               ],
             ),
           ),
-
         ],
       ),
     );
