@@ -96,7 +96,7 @@ class _Onboard2State extends State<Onboard2> {
                         Container(
                           width: 205.88.w,
                           height: 294.23.h,
-                          child: Image.asset('assets/images/img_9.png'),
+                          child: Image.asset('assets/images/jumbrobe.png'),
                         ),
                         SizedBox(height: 24.h,),
                         Text(

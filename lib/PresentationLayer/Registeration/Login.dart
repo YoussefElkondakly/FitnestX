@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gym/PresentationLayer/App/Dashboard.dart';
 import 'package:gym/PresentationLayer/App/WelcomeUser.dart';
 import 'package:gym/PresentationLayer/Registeration/RegisterStep1.dart';
+import 'package:iconly/iconly.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -74,7 +75,7 @@ class _LoginState extends State<Login> {
                       fontSize: 12.sp,
                     ),
                     prefixIcon: Icon(
-                      Icons.email_outlined,
+                      IconlyLight.message,
                       color: Color.fromRGBO(123, 111, 114, 1.0),
                     ),
                     hintStyle: TextStyle(
@@ -151,9 +152,9 @@ class _LoginState extends State<Login> {
                         },
                         icon: Icon(
                           ispass
-                              ? Icons.visibility_off_outlined
-                              : Icons.visibility_outlined,
-                          color: Color.fromRGBO(123, 111, 114, 1.0),
+                              ? IconlyLight.hide
+                              : IconlyLight.show,
+                          color: Color.fromRGBO(173, 164, 165, 1.0),
                         )),
                     hintStyle: TextStyle(
                       fontSize: 16.sp,
@@ -263,7 +264,7 @@ class _LoginState extends State<Login> {
                   Container(
                     width: 50.w,
                     height: 50.h,
-                    child: Image.asset('assets/images/img_4.png'),
+                    child: Image.asset('assets/icon/google.png'),
                   ),
                   SizedBox(
                     width: 50,
@@ -271,7 +272,7 @@ class _LoginState extends State<Login> {
                   Container(
                     width: 50.w,
                     height: 50.h,
-                    child: Image.asset('assets/images/pie.png'),
+                    child: Image.asset('assets/icon/facebook.png'),
                   ),
                 ],
               ),

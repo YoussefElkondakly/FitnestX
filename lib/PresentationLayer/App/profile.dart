@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gym/PresentationLayer/App/Congrats.dart';
 import 'package:gym/PresentationLayer/App/Constants.dart';
+import 'SharedWidgets.dart';
 import 'TodayTarget.dart';
 
 class Profile extends StatefulWidget {
@@ -39,7 +40,7 @@ class _ProfileState extends State<Profile> {
                   height: 55.h,
                   //padding: EdgeInsets.fromLTRB(6, 7, 6.17, 0),
                   decoration: ShapeDecoration(
-                    color: blueObacity,
+                    color: Colours().blueObacity,
                     shape: OvalBorder(),
                   ),
                   child: Image(
@@ -93,7 +94,7 @@ class _ProfileState extends State<Profile> {
                   ),
                   83.w,
                   30.h,
-                  gradientcolorBlue,
+                  Colours().gradientcolorBlue,
                 ),
               ],
             ),
@@ -159,7 +160,7 @@ class _ProfileState extends State<Profile> {
                         return LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
-                          colors: gradientcolorBlue,
+                          colors: Colours().gradientcolorBlue,
                         ).createShader(bounds);
                       },
                       child: Icon(
@@ -186,7 +187,7 @@ class _ProfileState extends State<Profile> {
                         return LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
-                          colors: gradientcolorBlue,
+                          colors: Colours().gradientcolorBlue,
                         ).createShader(bounds);
                       },
                       child: Icon(
@@ -213,7 +214,7 @@ class _ProfileState extends State<Profile> {
                         return LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
-                          colors: gradientcolorBlue,
+                          colors: Colours().gradientcolorBlue,
                         ).createShader(bounds);
                       },
                       child: Icon(
@@ -241,7 +242,7 @@ class _ProfileState extends State<Profile> {
                         return LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
-                          colors: gradientcolorBlue,
+                          colors: Colours().gradientcolorBlue,
                         ).createShader(bounds);
                       },
                       child: Icon(
@@ -303,7 +304,7 @@ class _ProfileState extends State<Profile> {
                         return LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
-                          colors: gradientcolorBlue,
+                          colors: Colours().gradientcolorBlue,
                         ).createShader(bounds);
                       },
                       child: Icon(
@@ -324,7 +325,7 @@ class _ProfileState extends State<Profile> {
                         gradient: LinearGradient(
                           begin: Alignment(-1.00, 0.08),
                           end: Alignment(1, -0.08),
-                          colors: gradientcolorPink,
+                          colors: Colours().gradientcolorPink,
                         ),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(99),
@@ -389,7 +390,7 @@ class _ProfileState extends State<Profile> {
                         return LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
-                          colors: gradientcolorBlue,
+                          colors: Colours().gradientcolorBlue,
                         ).createShader(bounds);
                       },
                       child: Icon(
@@ -416,7 +417,7 @@ class _ProfileState extends State<Profile> {
                         return LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
-                          colors: gradientcolorBlue,
+                          colors: Colours().gradientcolorBlue,
                         ).createShader(bounds);
                       },
                       child: Icon(
@@ -443,7 +444,7 @@ class _ProfileState extends State<Profile> {
                         return LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
-                          colors: gradientcolorBlue,
+                          colors:Colours(). gradientcolorBlue,
                         ).createShader(bounds);
                       },
                       child: Icon(
@@ -507,7 +508,7 @@ Container container(String up, String down) {
             return LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: gradientcolorBlue,
+              colors: Colours().gradientcolorBlue,
             ).createShader(bounds);
           },
           child: Text(

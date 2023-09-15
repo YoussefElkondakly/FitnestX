@@ -6,6 +6,7 @@ import 'package:gym/PresentationLayer/App/Congrats.dart';
 import 'package:gym/PresentationLayer/App/Constants.dart';
 import 'package:gym/PresentationLayer/App/profile.dart';
 
+import 'SharedWidgets.dart';
 import 'Workouts/FullbodyWorkout.dart';
 class WorkoutTracker extends StatefulWidget {
   const WorkoutTracker({super.key});
@@ -28,7 +29,7 @@ class _WorkoutTrackerState extends State<WorkoutTracker> {
     gradient: LinearGradient(
       begin: Alignment(-1.00, 0.08),
       end: Alignment(1, -0.08),
-      colors: gradientcolorBlue,
+      colors: Colours().gradientcolorBlue,
     ),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.only(
@@ -234,7 +235,7 @@ class _WorkoutTrackerState extends State<WorkoutTracker> {
                             gradient: LinearGradient(
                               begin: Alignment(-1.00, 0.08),
                               end: Alignment(1, -0.08),
-                              colors: gradientcolorO,
+                              colors: Colours().gradientcolorO,
                             ),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(16),
@@ -252,7 +253,7 @@ class _WorkoutTrackerState extends State<WorkoutTracker> {
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
-                              button(MaterialPageRoute(builder: (context)=>Profile()), context, 'Check', styles[0], 68.w, 28.h, gradientcolorBlue)
+                                button(MaterialPageRoute(builder: (context)=>Profile()), context, 'Check', TextStyles().w50012White, 68.w, 28.h, Colours().gradientcolorBlue)
                             ],
                           ),
                         ),
@@ -284,11 +285,11 @@ class _WorkoutTrackerState extends State<WorkoutTracker> {
                                 margin: EdgeInsets.only(right :10),
                                 padding: EdgeInsets.fromLTRB(6, 7, 6.17, 0),
                                 decoration: ShapeDecoration(
-                                  color: blueObacity,
+                                  color: Colours().blueObacity,
                                   shape: OvalBorder(),
                                 ),
                                 //
-                                child: Image(image:jumbrobe,),
+                                child: Image(image:Images().jumbrobe,),
                               ),
                               Column(
                                 children: [
@@ -323,7 +324,7 @@ class _WorkoutTrackerState extends State<WorkoutTracker> {
                                   gradient: LinearGradient(
                                     begin: Alignment(-1.00, 0.08),
                                     end: Alignment(1, -0.08),
-                                    colors: gradientcolorPink,
+                                    colors: Colours().gradientcolorPink,
                                   ),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(99),
@@ -369,11 +370,11 @@ class _WorkoutTrackerState extends State<WorkoutTracker> {
                                 margin: EdgeInsets.only(right :10),
                                 padding: EdgeInsets.fromLTRB(6, 7, 6.17, 0),
                                 decoration: ShapeDecoration(
-                                  color: pinkObacity,
+                                  color: Colours().pinkObacity,
                                   shape: OvalBorder(),
                                 ),
                                 //
-                                child: Image.asset('assets/images/img_8.png'),
+                                child: Image.asset('assets/images/deadleft.png'),
                               ),
                               Column(
                                 children: [
@@ -440,9 +441,9 @@ class _WorkoutTrackerState extends State<WorkoutTracker> {
                             ),
                           ),Spacer(),
                         ],),
-                        containere('Fullbody Workout', '11 Exercises | 32mins', context, MaterialPageRoute(builder:(context)=>FullbodyWorkout()), jumbrobe),
-                        containere('Lowebody Workout', '12 Exercises | 40mins', context, MaterialPageRoute(builder:(context)=>WorkoutTracker()), lower),
-                        containere('AB Workout', '14 Exercises | 20mins', context, MaterialPageRoute(builder:(context)=>WorkoutTracker()), abs),
+                        containere('Fullbody Workout', '11 Exercises | 32mins', context, MaterialPageRoute(builder:(context)=>FullbodyWorkout()), Images().jumbrobe),
+                        containere('Lowebody Workout', '12 Exercises | 40mins', context, MaterialPageRoute(builder:(context)=>WorkoutTracker()), Images().lower),
+                        containere('AB Workout', '14 Exercises | 20mins', context, MaterialPageRoute(builder:(context)=>WorkoutTracker()), Images().abs),
                       ]),
                     )],
 

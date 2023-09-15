@@ -18,7 +18,7 @@ class FullbodyWorkout extends StatelessWidget {
               gradient: LinearGradient(
                 begin: Alignment(-1.00, 0.08),
                 end: Alignment(1, -0.08),
-                colors: gradientcolorBlue,
+                colors: Colours().gradientcolorBlue,
               ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(

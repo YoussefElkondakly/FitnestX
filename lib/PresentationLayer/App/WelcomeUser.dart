@@ -21,7 +21,7 @@ class _WelcomeUserState extends State<WelcomeUser> {
               SizedBox(height: 102.h,),
               Container(
                 height: 304.h,
-                child: Image.asset('assets/images/img_7.png'),
+                child: Image.asset('assets/images/good.png'),
               ),
               SizedBox(height: 44.h),
               Container(

@@ -39,17 +39,18 @@ dependencies:
   flutter_screenutil: ^5.8.4
   fl_chart: ^0.63.0
   badges: ^3.1.2
+  iconly: ^1.0.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/icon/img.png"
+  image_path: "assets/icon/ِAppIcon.png"
 
 
 flutter_native_splash:
-  image: assets/icon/img_1.png
+  image: assets/icon/Logo.png
   color: "#ffffff"
   android: true
   ios: true
@@ -80,6 +81,7 @@ flutter:
 
     - assets/images/
     - assets/others/
+    - assets/icon/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

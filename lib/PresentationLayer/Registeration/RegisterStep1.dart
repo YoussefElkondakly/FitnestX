@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gym/PresentationLayer/Registeration/RegisterStep2.dart';
+import 'package:iconly/iconly.dart';
 
 import 'Login.dart';
 
@@ -74,7 +75,7 @@ class _RegisterState extends State<Register> {
                       fontSize: 12.sp,
                     ),
                     prefixIcon: Icon(
-                      Icons.person_3_outlined,
+                      IconlyLight.profile,
                       color: Color.fromRGBO(123, 111, 114, 1.0),
                     ),
                     hintStyle: TextStyle(
@@ -133,7 +134,7 @@ class _RegisterState extends State<Register> {
                       fontSize: 12.sp,
                     ),
                     prefixIcon: Icon(
-                      Icons.person_3_outlined,
+                      IconlyLight.profile,
                       color: Color.fromRGBO(123, 111, 114, 1.0),
                     ),
                     hintStyle: TextStyle(
@@ -192,7 +193,7 @@ class _RegisterState extends State<Register> {
                       fontSize: 12.sp,
                     ),
                     prefixIcon: Icon(
-                      Icons.email_outlined,
+                        IconlyLight.message,
                       color: Color.fromRGBO(123, 111, 114, 1.0),
                     ),
                     hintStyle: TextStyle(
@@ -258,7 +259,7 @@ class _RegisterState extends State<Register> {
                       fontSize: 12.sp,
                     ),
                     prefixIcon: Icon(
-                      Icons.lock_outline_rounded,
+                      IconlyLight.lock,
                       color: Color.fromRGBO(123, 111, 114, 1.0),
                     ),
                     suffixIcon: IconButton(
@@ -269,9 +270,9 @@ class _RegisterState extends State<Register> {
                         },
                         icon: Icon(
                           ispass
-                              ? Icons.visibility_off_outlined
-                              : Icons.visibility_outlined,
-                          color: Color.fromRGBO(123, 111, 114, 1.0),
+                              ? IconlyLight.hide
+                              : IconlyLight.show,
+                          color: Color.fromRGBO(173, 164, 165, 1.0),
                         )),
                     hintStyle: TextStyle(
                       fontSize: 16.sp,
@@ -425,7 +426,7 @@ class _RegisterState extends State<Register> {
                   Container(
                     width: 50.w,
                     height: 50.h,
-                    child: Image.asset('assets/images/img_4.png'),
+                    child: Image.asset('assets/icon/google.png'),
                   ),
                   SizedBox(
                     width: 50,
@@ -433,7 +434,7 @@ class _RegisterState extends State<Register> {
                   Container(
                     width: 50.w,
                     height: 50.h,
-                    child: Image.asset('assets/images/pie.png'),
+                    child: Image.asset('assets/icon/facebook.png'),
                   ),
                 ],
               ),

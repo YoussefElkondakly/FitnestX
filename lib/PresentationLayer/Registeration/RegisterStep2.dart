@@ -21,7 +21,7 @@ class _Register2State extends State<Register2> {
           child: Column(
             children: <Widget>[
               Container(height: 350.h,width: 375.w,
-              child: Image.asset('assets/images/img_6.png'),
+              child: Image.asset('assets/images/biecibs.png'),
               ),
               SizedBox(
                 height: 30.h,

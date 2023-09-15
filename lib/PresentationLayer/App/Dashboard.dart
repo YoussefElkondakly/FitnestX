@@ -4,8 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gym/PresentationLayer/App/Notification.dart';
 import 'package:gym/PresentationLayer/App/TodayTarget.dart';
 import 'package:gym/PresentationLayer/Welcome/Welcome.dart';
+import 'package:iconly/iconly.dart';
 import 'Constants.dart';
 import 'package:badges/badges.dart'as badges;
+
+import 'SharedWidgets.dart';
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
 
@@ -32,23 +35,11 @@ class _DashboardState extends State<Dashboard> {
                   children: [
                     Text(
                       'Welcome Back,',
-                      style: TextStyle(
-                        color: Color(0xFFACA3A5),
-                        fontSize: 12.sp,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w400,
-                        height: 1.50,
-                      ),
+                      style: TextStyles().w40012Grey,
                     ),
                     Text(
                       'Youssef Elkondakly',
-                      style: TextStyle(
-                        color: Color(0xFF1D1517),
-                        fontSize: 20.sp,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w700,
-                        height: 1.50,
-                      ),
+                      style: TextStyles().blodBlack20,
                     ),
                   ],
                 ),
@@ -84,7 +75,7 @@ class _DashboardState extends State<Dashboard> {
                             MaterialPageRoute<void>(
                                 builder: (context) => Notifications()));
                       },
-                      icon: Icon(Icons.notifications_outlined),
+                      icon: Icon(IconlyLight.notification),
                     ),
                     badgeContent: Text(''),
                 ),
@@ -103,7 +94,7 @@ class _DashboardState extends State<Dashboard> {
               gradient: LinearGradient(
                 begin: Alignment(-1.00, 0.08),
                 end: Alignment(1, -0.08),
-                colors: gradientcolorBlue,
+                colors: Colours().gradientcolorBlue,
               ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(22),
@@ -139,13 +130,7 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       Text(
                         'You have on over weight',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12.sp,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w400,
-                          height: 1.50,
-                        ),
+                        style: TextStyles().w50012White,
                       ),
                       GestureDetector(
                         onTap: () {
@@ -163,7 +148,7 @@ class _DashboardState extends State<Dashboard> {
                             gradient: LinearGradient(
                               begin: Alignment(-1.00, 0.08),
                               end: Alignment(1, -0.08),
-                              colors: gradientcolorPink,
+                              colors: Colours().gradientcolorPink,
                             ),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(50),
@@ -234,7 +219,7 @@ class _DashboardState extends State<Dashboard> {
               gradient: LinearGradient(
                 begin: Alignment(-1.00, 0.08),
                 end: Alignment(1, -0.08),
-                colors: gradientcolorO,
+                colors: Colours().gradientcolorO,
               ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
@@ -268,7 +253,7 @@ class _DashboardState extends State<Dashboard> {
                         begin: Alignment(-1.00, 0.08),
                         end: Alignment(1, -0.08),
 
-                        colors: gradientcolorBlue,
+                        colors: Colours().gradientcolorBlue,
                       ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
@@ -313,7 +298,7 @@ class _DashboardState extends State<Dashboard> {
                 begin: Alignment(-1.00, 0.08),
                 end: Alignment(1, -0.08),
 
-                colors:[gradientcolorO[1],gradientcolorO[0],],
+                colors:[Colours().gradientcolorO[1],Colours().gradientcolorO[0],],
               ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
@@ -471,7 +456,7 @@ class _DashboardState extends State<Dashboard> {
                   ),
                   child: Row(
                     children: [
-                      indicator(275.h, 151.h,20.w,waterintake,),
+                      indicator(275.h, 151.h,20.w,Colours().waterintake,),
                       SizedBox(
                         width: 10.w,
                       ),
@@ -720,8 +705,9 @@ class _DashboardState extends State<Dashboard> {
                             Container(
                                 width: 110.w,
                                 height: 78.h,
-                                child: Image.asset('assets/others/img.png')),
-                          ]),
+                                child: Image.asset('assets/others/img.png',),),
+                          ]
+                            ),
                     ),
                     Container(
                       width: 150.w,
@@ -773,8 +759,7 @@ class _DashboardState extends State<Dashboard> {
                                     left: 20,
                                     right: 30,
                                   ),
-                                  child:
-                                      Image.asset('assets/others/img_1.png')),
+                                  child:Text('Missed Design'),),
                             ),
                           ]),
                     ),
@@ -881,9 +866,9 @@ class _DashboardState extends State<Dashboard> {
 
           seemore('Latest Workout','see more',EdgeInsets.fromLTRB(30, 0, 30, 15),context,MaterialPageRoute<void>(
               builder: (context) => Welcome1()),),
-          latestWorkout('Fullbody Workout', '180 Calories Burn | 20minutes', jumbrobe,blueObacity, 191.w, 140.w, 10.h),
-          latestWorkout('Lowerbody Workout', '200 Calories Burn | 30minutes', lower,pinkObacity, 191.w, 86.w, 10.h),
-          latestWorkout('Ab Workout', '180 Calories Burn | 20minutes', abs,blueObacity, 191.w, 166.w, 10.h),
+          latestWorkout('Fullbody Workout', '180 Calories Burn | 20minutes', Images().jumbrobe,Colours().blueObacity, 191.w, 140.w, 10.h),
+          latestWorkout('Lowerbody Workout', '200 Calories Burn | 30minutes', Images().lower,Colours().pinkObacity, 191.w, 86.w, 10.h),
+          latestWorkout('Ab Workout', '180 Calories Burn | 20minutes', Images().abs,Colours().blueObacity, 191.w, 166.w, 10.h),
         ],
       ),
     );

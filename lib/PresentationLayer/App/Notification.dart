@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Constants.dart';
 import 'Dashboard.dart';
+import 'SharedWidgets.dart';
 class Notifications extends StatefulWidget {
   const Notifications({super.key});
 
@@ -79,17 +80,17 @@ class _NotificationsState extends State<Notifications> {
       appBar: appBar(MaterialPageRoute<void>(builder:(context)=>Dashboard(),), context, 'Notifications',Color.fromRGBO(1, 1, 1, 1),),
       body: Column(
         children: [
-          notif('Hey, it’s time for lunch', 'About 1 minutes ago',pie, blueObacity, EdgeInsets.fromLTRB(7, 12, 7, 11.75)),
+          notif('Hey, it’s time for lunch', 'About 1 minutes ago',Images().pie,Colours(). blueObacity, EdgeInsets.fromLTRB(7, 12, 7, 11.75)),
 
-          notif('Don’t miss your lowerbody workout'," About 3 hours ago", lower,pinkObacity,EdgeInsets.fromLTRB(5, 5, 5, 5)),
+          notif('Don’t miss your lowerbody workout'," About 3 hours ago", Images().lower,Colours().pinkObacity,EdgeInsets.fromLTRB(5, 5, 5, 5)),
 
-          notif('Hey, let’s add some meals for your b', 'About 3 hours ago',pancake, blueObacity, EdgeInsets.fromLTRB(5, 5, 5, 5)),
+          notif('Hey, let’s add some meals for your b', 'About 3 hours ago',Images().pancake, Colours().blueObacity, EdgeInsets.fromLTRB(5, 5, 5, 5)),
 
-          notif('Congratulations, You have finished A', 'About 3 hours ago',abs, blueObacity, EdgeInsets.fromLTRB(5, 5, 5, 5)),
+          notif('Congratulations, You have finished A', 'About 3 hours ago',Images().abs,Colours(). blueObacity, EdgeInsets.fromLTRB(5, 5, 5, 5)),
 
-          notif('Hey, it’s time for lunch', '8 April',pie,blueObacity, EdgeInsets.fromLTRB(7, 12, 7, 11.75)),
+          notif('Hey, it’s time for lunch', '8 April',Images().pie,Colours().blueObacity, EdgeInsets.fromLTRB(7, 12, 7, 11.75)),
 
-          notif('Ups, You have missed your Lowerbo', '3 April',lower,pinkObacity , EdgeInsets.fromLTRB(5, 5, 5, 5)),
+          notif('Ups, You have missed your Lowerbo', '3 April',Images().lower,Colours().pinkObacity , EdgeInsets.fromLTRB(5, 5, 5, 5)),
         ],
       ),
     );

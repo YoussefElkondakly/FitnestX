@@ -44,7 +44,7 @@ class _Welcome5State extends State<Welcome5> {
         children: [
           Container(
             height: 422.h,
-            child: Image.asset('assets/images/img_3.png'),
+            child: Image.asset('assets/images/pose3.png'),
           ),
           SizedBox(height: 47.97.h),
           Container(

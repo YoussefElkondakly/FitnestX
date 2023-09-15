@@ -4,6 +4,7 @@ import 'package:gym/PresentationLayer/App/Constants.dart';
 import 'package:gym/PresentationLayer/App/WorkoutTracker.dart';
 
 import 'Dashboard.dart';
+import 'SharedWidgets.dart';
 class UserCongrats extends StatefulWidget {
   const UserCongrats({super.key});
 
@@ -23,7 +24,7 @@ class _UserCongratsState extends State<UserCongrats> {
               Container(
                 height: 327.h,
                 margin: EdgeInsets.only(top: 20),
-                child: Image.asset('assets/images/img_11.png'),
+                child: Image.asset('assets/images/congrats.png'),
               ),
               SizedBox(height: 44.h),
               Container(
@@ -36,28 +37,23 @@ class _UserCongratsState extends State<UserCongrats> {
                     Text(
                       "Congratulations, You Have\nFinished Your Workout",
                       style:
-                      TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
+                      TextStyles().blodBlack20,
                       textAlign:TextAlign.center,
                     ),
                     SizedBox(height: 7.h,),
                     Text("Exercises is king and nutrition is queen. Combine the\ntwo and you will have a kingdom",
-                      style: TextStyle(
-                        color: Color(0xFF7B6F72),
-                        fontSize: 12.sp,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w400,
-                        //height: 0.12,
-                      ),
+                      style: TextStyles(
+
+                      ).w40012Grey,
                     textAlign:TextAlign.center,
                     ),
                     Text("-Jack Lalanne",style:
-                    TextStyle(fontSize: 12.sp,color: Color.fromRGBO(
-                        123, 111, 114, 1.0)),),
+                    TextStyles().w40012Grey,),
                   ],
                 ),
               ),
               SizedBox(height: 150.h,),
-              button(MaterialPageRoute<void>(builder:(context) =>WorkoutTracker(),), context, 'Back To Home', styles[1], 315.w, 60.h, gradientcolorBlue,)
+              button(MaterialPageRoute<void>(builder:(context) =>WorkoutTracker(),), context, 'Back To Home', TextStyles().w50012White, 315.w, 60.h, Colours().gradientcolorBlue,)
 
             ],
 
