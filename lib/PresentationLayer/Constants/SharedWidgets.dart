@@ -569,3 +569,71 @@ containere(String textL,String textS,ctx, MaterialPageRoute w,AssetImage img,){
     ),
   );
 }
+FloatingActionButton welcomebutton(context,to){
+  return FloatingActionButton(
+    onPressed: () {
+      Navigator.pushReplacement(context,
+          MaterialPageRoute<void>(builder: (context) => to));
+    },
+    shape: CircleBorder(),
+
+    child: Container(
+      width: 60.w,
+      height: 60.h,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.bottomRight,
+          end: Alignment.topLeft,
+          colors: [
+            Color.fromRGBO(146, 163, 253, 1.0),
+            Color.fromRGBO(157, 206, 255, 1.0),
+          ],
+        ),
+        shape: BoxShape.circle,
+      ),
+      child: Icon(
+        Icons.navigate_next,
+        color: Colors.white,
+        size: 30,
+      ),
+    ),
+  );
+}
+Stack welcomeStack(String asset,double picHeight,String main,String submain,){
+  return Stack(
+    children: [
+      Positioned(child:  Image.asset(asset),top: 0,left: 0,right: 0,),
+      Column(
+        children: [
+          Column(
+            children: [
+              Container(
+                height: picHeight,
+              ),
+              SizedBox(height: 64.h),
+              Container(
+                margin: EdgeInsets.fromLTRB(30, 0, 30,0),
+                width: 315.w,
+                height: 114.h,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      main,
+                      style:
+                      TextStyle(fontSize: 24.sp, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 17.h,),
+                    Text(submain
+                      ,style:
+                      TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w400,color: Colors.grey),),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ],
+      ),
+    ],
+  );
+}

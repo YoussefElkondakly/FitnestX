@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gym/PresentationLayer/Constants/Constants.dart';
+import 'package:gym/PresentationLayer/Constants/SharedWidgets.dart';
 
 import 'Welcome2.dart';
 
@@ -51,35 +53,8 @@ class _Welcome1State extends State<Welcome1> {
               fontWeight: FontWeight.w400,
               fontSize: 18.sp,
             ),),
-            SizedBox(
-              height: 241.h,
-            ),
-            GestureDetector(
-              onTap:  (){
-      Navigator.pushReplacement(context, MaterialPageRoute<void>(
-      builder: (context) =>  Welcome2()));
-      },
-              child: Container(
-                margin: EdgeInsets.all(30),
-                padding: EdgeInsets.fromLTRB(110.5.w, 18.h, 110.5.w, 18.h),
-                width: 315.w,
-                height: 60.h,
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.bottomRight,
-                      end: Alignment.topLeft,
-                      colors: [
-                        Color.fromRGBO(146, 163, 253, 1.0),
-                        Color.fromRGBO(157, 206, 255, 1.0),
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(99)),
-                child:Text(
-                  "Get Started",
-                  style: TextStyle(color: Colors.white, fontSize: 16.sp,fontWeight: FontWeight.bold),
-                ) ,
-              ),
-            ),
+            Spacer(),
+            button(MaterialPageRoute(builder: (context)=>Welcome2()), context, 'Get Started', TextStyles().bold16White, 315.w, 60.h, Colours().gradientcolorBlue),
 
           ],
         ),

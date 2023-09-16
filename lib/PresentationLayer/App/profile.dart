@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gym/PresentationLayer/App/Congrats.dart';
-import 'package:gym/PresentationLayer/App/Constants.dart';
-import 'SharedWidgets.dart';
+import 'package:gym/PresentationLayer/Constants/Constants.dart';
+import '../Constants/SharedWidgets.dart';
 import 'TodayTarget.dart';
 
 class Profile extends StatefulWidget {

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gym/PresentationLayer/Constants/Constants.dart';
 import 'package:gym/PresentationLayer/App/Dashboard.dart';
+import 'package:gym/PresentationLayer/Constants/SharedWidgets.dart';
 import 'package:gym/PresentationLayer/App/WelcomeUser.dart';
 import 'package:gym/PresentationLayer/Registeration/RegisterStep1.dart';
 import 'package:iconly/iconly.dart';
@@ -49,141 +51,20 @@ class _LoginState extends State<Login> {
               SizedBox(
                 height: 30.h,
               ),
-
-//E-mail
-              Container(
-                width: 315.w,
-                height: 48.h,
-                margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                // padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(14),
-                    color: Color.fromRGBO(247, 248, 248, 1.0)),
-
-                child: TextFormField(
-                  style: TextStyle(
-                    color: Color.fromRGBO(123, 111, 114, 1.0),
-                  ),
-                  keyboardType: TextInputType.visiblePassword,
-                  cursorColor: Color.fromRGBO(146, 163, 253, 1.0),
-                  decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.symmetric(
-                        vertical: 5.0, horizontal: 10.0),
-                    labelText: "Email",
-                    labelStyle: TextStyle(
-                      color: Color.fromRGBO(123, 111, 114, 1.0),
-                      fontSize: 12.sp,
-                    ),
-                    prefixIcon: Icon(
-                      IconlyLight.message,
-                      color: Color.fromRGBO(123, 111, 114, 1.0),
-                    ),
-                    hintStyle: TextStyle(
-                      fontSize: 16.sp,
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(12),
-                      ),
-                      borderSide: BorderSide(
-                          style: BorderStyle.solid, color: Colors.transparent),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(14),
-                      ),
-                      borderSide: BorderSide(
-                          style: BorderStyle.none, color: Colors.transparent),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(color: Colors.red),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(color: Colors.red),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 15.h,
-              ),
-//Password
-              Container(
-                width: 315.w,
-                height: 48.h,
-                margin: EdgeInsets.fromLTRB(30.w, 0, 30.w, 0),
-                // padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(14),
-                    color: Color.fromRGBO(247, 248, 248, 1.0)),
-
-                child: TextFormField(
-                  style: TextStyle(
-                    color: Color.fromRGBO(123, 111, 114, 1.0),
-                  ),
-                  validator: (String? val) {
-                    if (val!.isEmpty || val.length < 6) {
-                      return "Invalid password";
-                    }
-                    return null;
+textfield[2],
+              passwordfield(ispass, IconButton(
+                  onPressed: () {
+                    setState(() {
+                      ispass = !ispass;
+                    });
                   },
-                  obscureText: ispass,
-                  keyboardType: TextInputType.visiblePassword,
-                  cursorColor: Color.fromRGBO(123, 111, 114, 1.0),
-                  decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.symmetric(
-                        vertical: 15.0, horizontal: 10.0),
-                    labelText: "Password",
-                    labelStyle: TextStyle(
-                      color: Color.fromRGBO(123, 111, 114, 1.0),
-                      fontSize: 12.sp,
-                    ),
-                    prefixIcon: Icon(
-                      Icons.lock_outline_rounded,
-                      color: Color.fromRGBO(123, 111, 114, 1.0),
-                    ),
-                    suffixIcon: IconButton(
-                        onPressed: () {
-                          setState(() {
-                            ispass = !ispass;
-                          });
-                        },
-                        icon: Icon(
-                          ispass
-                              ? IconlyLight.hide
-                              : IconlyLight.show,
-                          color: Color.fromRGBO(173, 164, 165, 1.0),
-                        )),
-                    hintStyle: TextStyle(
-                      fontSize: 16.sp,
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(12),
-                      ),
-                      borderSide: BorderSide(
-                          style: BorderStyle.solid, color: Colors.transparent),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(14),
-                      ),
-                      borderSide: BorderSide(
-                          style: BorderStyle.none, color: Colors.transparent),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(color: Colors.red),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(color: Colors.red),
-                    ),
-                  ),
-                ),
-              ),
+                  icon: Icon(
+                    ispass
+                        ? IconlyLight.hide
+                        : IconlyLight.show,
+                    color: Color.fromRGBO(173, 164, 165, 1.0),
+                  )),),
+
               SizedBox(
                 height: 15.h,
               ),
@@ -198,87 +79,14 @@ class _LoginState extends State<Login> {
               SizedBox(
                 height: 285.h,
               ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute<void>(
-                          builder: (context) => WelcomeUser()));
-                },
-                child: Container(
-                  margin: EdgeInsets.all(30),
-                  padding: EdgeInsets.fromLTRB(124.w, 18.h, 123.w, 18.h),
-                  width: 315.w,
-                  height: 60.h,
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.bottomRight,
-                        end: Alignment.topLeft,
-                        colors: [
-                          Color.fromRGBO(146, 163, 253, 1.0),
-                          Color.fromRGBO(157, 206, 255, 1.0),
-                        ],
-                      ),
-                      borderRadius: BorderRadius.circular(99)),
-                  child: Row(
-                    children: [
-                      Icon(Icons.login_rounded,color: Colors.white,),
-                      Text(
-                        " Login",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 141.w,
-                    child: Divider(
-                      color: Colors.grey,
-                    ),
-                  ),
-                  Text(
-                    "  Or ",
-                    style: TextStyle(fontSize: 12.sp),
-                  ),
-                  Container(
-                    width: 141.w,
-                    child: Divider(
-                      color: Colors.grey,
-                    ),
-                  ),
-                ],
-              ),
+
+             button(MaterialPageRoute<void>(
+                 builder: (context) => WelcomeUser()), context, "Login", TextStyles().bold16White, 315.w, 60.h, Colours().gradientcolorBlue)
+              ,
               SizedBox(
                 height: 20.h,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 50.w,
-                    height: 50.h,
-                    child: Image.asset('assets/icon/google.png'),
-                  ),
-                  SizedBox(
-                    width: 50,
-                  ),
-                  Container(
-                    width: 50.w,
-                    height: 50.h,
-                    child: Image.asset('assets/icon/facebook.png'),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 30.h,
-              ),
+              or(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -310,9 +118,6 @@ class _LoginState extends State<Login> {
                 ],
               ),
 
-              SizedBox(
-                height: 40.h,
-              ),
             ],
           ),
         ),

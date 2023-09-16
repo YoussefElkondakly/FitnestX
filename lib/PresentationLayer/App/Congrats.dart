@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gym/PresentationLayer/App/Constants.dart';
+import 'package:gym/PresentationLayer/Constants/Constants.dart';
 import 'package:gym/PresentationLayer/App/WorkoutTracker.dart';
 
 import 'Dashboard.dart';
-import 'SharedWidgets.dart';
+import '../Constants/SharedWidgets.dart';
 class UserCongrats extends StatefulWidget {
   const UserCongrats({super.key});
 

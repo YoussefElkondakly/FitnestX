@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gym/PresentationLayer/Constants/Constants.dart';
+import 'package:gym/PresentationLayer/Constants/SharedWidgets.dart';
 
 import 'Onboard2.dart';
 
@@ -15,170 +17,124 @@ class _Onboard1State extends State<Onboard1> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Stack(
+        child: stackBoard(context, Onboard2(), 'assets/images/deadleft.png', "Improve Shape",  "I have a low amount of body fat\nand need / want to build more\nmuscle"),
+      ),
+    );
+  }
+}
+stackBoard(context,nextTo,String image,String main ,String subMain){
+  return Stack(
+    children: <Widget>[
+      Positioned(
+        right: -200,
+        top: 251,
+        child: Container(
+          width: 205.w,
+          height: 358.h,
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.bottomRight,
+                end: Alignment.topLeft,
+                colors: [
+                  Color.fromRGBO(146, 163, 253, .3),
+                  Color.fromRGBO(157, 206, 255, .3),
+                ],
+              ),
+              borderRadius: BorderRadius.circular(22)),
+        ),
+      ),
+      Positioned(
+        top: 0,
+        right: 0,
+        left: 0,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Positioned(
-              right: -200,
-              top: 251,
-              child: Container(
-                width: 205.w,
-                height: 358.h,
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.bottomRight,
-                      end: Alignment.topLeft,
-                      colors: [
-                        Color.fromRGBO(146, 163, 253, .3),
-                        Color.fromRGBO(157, 206, 255, .3),
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(22)),
+            SizedBox(
+              height: 40.h,
+            ),
+            Text(
+              "What is your goal ?",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20.sp,
               ),
             ),
-            Positioned(
-              top: 0,
-              right: 0,
-              left: 0,
+            SizedBox(
+              height: 5.h,
+            ),
+            Text(
+              "It will help us to choose a best\nprogram for you",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Color.fromRGBO(123, 111, 114, 1.0),
+                fontSize: 12.sp,
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(30, 35, 30, 30),
+              margin: EdgeInsets.only(top: 50.h,bottom: 73.h),
+              width: 275.w,
+              height: 478.h,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomRight,
+                    end: Alignment.topLeft,
+                    colors:Colours().gradientcolorBlue,
+                  ),
+                  borderRadius: BorderRadius.circular(22)),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  SizedBox(
-                    height: 40.h,
-                  ),
-                  Text(
-                    "What is your goal ?",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20.sp,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 5.h,
-                  ),
-                  Text(
-                    "It will help us to choose a best",
-                    style: TextStyle(
-                      color: Color.fromRGBO(123, 111, 114, 1.0),
-                      fontSize: 12.sp,
-                    ),
-                  ),
-                  Text(
-                    "program for you",
-                    style: TextStyle(
-                      color: Color.fromRGBO(123, 111, 114, 1.0),
-                      fontSize: 12.sp,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 50.h,
-                  ),
+                children: [
                   Container(
-                    padding: EdgeInsets.fromLTRB(30, 35, 30, 30),
-                    width: 275.w,
-                    height: 478.h,
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.bottomRight,
-                          end: Alignment.topLeft,
-                          colors: [
-                            Color.fromRGBO(146, 163, 253, 1.0),
-                            Color.fromRGBO(157, 206, 255, 1.0),
-                          ],
-                        ),
-                        borderRadius: BorderRadius.circular(22)),
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 183.35.w,
-                          height: 290.19.h,
-                          child: Image.asset('assets/images/deadleft.png'),
-                        ),
-                        SizedBox(
-                          height: 24.h,
-                        ),
-                        Text(
-                          "Improve Shape",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        SizedBox(
-                          width: 50.w,
-                          child: Divider(
-                            color: Colors.white,
-                          ),
-                        ),
-                        Text(
-                          "I have a low amount of body fat and need / want to build more muscle",
-                          style: TextStyle(
-                            fontSize: 12.sp,
-                            color: Colors.white,
-                          ),
-
-                        ),
-                      ],
-                    ),
+                    width: 183.35.w,
+                    height: 290.19.h,
+                    child: Image.asset(image),
                   ),
                   SizedBox(
-                    height: 73.h,
+                    height: 24.h,
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute<void>(
-                              builder: (context) => Onboard2()));
-                    },
-                    child: Container(
-                      margin: EdgeInsets.all(30),
-                      padding:
-                          EdgeInsets.fromLTRB(123.5.w, 18.h, 123.5.w, 18.h),
-                      width: 315.w,
-                      height: 60.h,
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            begin: Alignment.bottomRight,
-                            end: Alignment.topLeft,
-                            colors: [
-                              Color.fromRGBO(146, 163, 253, 1.0),
-                              Color.fromRGBO(157, 206, 255, 1.0),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.circular(99)),
-                      child: Text(
-                        "Confirm",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.bold),
-                      ),
+                  Text(
+                    main,
+                    style: TextStyles(
+                        ).w60014White,
+                  ),
+                  SizedBox(
+                    width: 50.w,
+                    child: Divider(
+                      color: Colors.white,
                     ),
+                  ),
+                  Text(textAlign:TextAlign.center,
+                    subMain,
+                    style: TextStyles().w40012White,
+
                   ),
                 ],
               ),
             ),
-            Positioned(
-              left: -200,
-              top: 251,
-              child: Container(
-                width: 205.w,
-                height: 358.h,
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.bottomRight,
-                      end: Alignment.topLeft,
-                      colors: [
-                        Color.fromRGBO(146, 163, 253, .3),
-                        Color.fromRGBO(157, 206, 255, .3),
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(22)),
-              ),
-            ),
+            button( MaterialPageRoute<void>(
+                builder: (context) => nextTo), context, "Confirm", TextStyles().bold16White, 315.w, 60.h, Colours().gradientcolorBlue)
           ],
         ),
       ),
-    );
-  }
+      Positioned(
+        left: -200,
+        top: 251,
+        child: Container(
+          width: 205.w,
+          height: 358.h,
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.bottomRight,
+                end: Alignment.topLeft,
+                colors: [
+                  Color.fromRGBO(146, 163, 253, .3),
+                  Color.fromRGBO(157, 206, 255, .3),
+                ],
+              ),
+              borderRadius: BorderRadius.circular(22)),
+        ),
+      ),
+    ],
+  );
 }

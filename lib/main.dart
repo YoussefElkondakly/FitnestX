@@ -5,6 +5,7 @@ import 'package:gym/PresentationLayer/App/Dashboard.dart';
 import 'package:gym/PresentationLayer/App/WorkoutTracker.dart';
 
 import 'PresentationLayer/Welcome/Welcome.dart';
+import 'PresentationLayer/Constants/make.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
             primaryColor: Colors.blueGrey,
             useMaterial3: true,
           ),
-          home: Welcome1(),
+          home: Dashboard(),
         );
       },
     );

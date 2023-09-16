@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../Constants.dart';
+import '../../Constants/Constants.dart';
 class FullbodyWorkout extends StatelessWidget {
   const FullbodyWorkout({super.key});
 

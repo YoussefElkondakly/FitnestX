@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'Constants.dart';
+import '../Constants/Constants.dart';
 import 'Dashboard.dart';
-import 'SharedWidgets.dart';
+import '../Constants/SharedWidgets.dart';
 class Notifications extends StatefulWidget {
   const Notifications({super.key});
 
@@ -13,7 +13,33 @@ class Notifications extends StatefulWidget {
 
 }
 
-Widget notif(String x,String y,AssetImage b,Color a ,EdgeInsets c){
+class _NotificationsState extends State<Notifications> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: appBar(MaterialPageRoute<void>(builder:(context)=>Dashboard(),), context, 'Notifications',Color.fromRGBO(1, 1, 1, 1),),
+      body: _home(),
+    );
+  }
+}
+_home(){
+  return Column(
+    children: [
+      notif('Hey, it’s time for lunch', 'About 1 minutes ago',Images().pie,Colours(). blueObacity, EdgeInsets.fromLTRB(7, 12, 7, 11.75)),
+
+      notif('Don’t miss your lowerbody workout'," About 3 hours ago", Images().lower,Colours().pinkObacity,EdgeInsets.fromLTRB(5, 5, 5, 5)),
+
+      notif('Hey, let’s add some meals for your b', 'About 3 hours ago',Images().pancake, Colours().blueObacity, EdgeInsets.fromLTRB(5, 5, 5, 5)),
+
+      notif('Congratulations, You have finished A', 'About 3 hours ago',Images().abs,Colours(). blueObacity, EdgeInsets.fromLTRB(5, 5, 5, 5)),
+
+      notif('Hey, it’s time for lunch', '8 April',Images().pie,Colours().blueObacity, EdgeInsets.fromLTRB(7, 12, 7, 11.75)),
+
+      notif('Ups, You have missed your Lowerbo', '3 April',Images().lower,Colours().pinkObacity , EdgeInsets.fromLTRB(5, 5, 5, 5)),
+    ],
+  );
+}
+notif(String main,String subMain,AssetImage img,Color color ,EdgeInsets padding){
   return Container(width: 350.w,
     height: 60.h,
     margin: EdgeInsets.fromLTRB(20, 0, 20, 15),
@@ -25,12 +51,12 @@ Widget notif(String x,String y,AssetImage b,Color a ,EdgeInsets c){
               width: 40.w,
               height: 40.h,
               margin: EdgeInsets.only(right: 15),
-              padding: c,
+              padding: padding,
               decoration: ShapeDecoration(
-                color:  a,
+                color:  color,
                 shape: OvalBorder(),
               ),
-              child: Image(image:b,),
+              child: Image(image:img,),
             ),
             Container(
               width:212.w,
@@ -39,7 +65,7 @@ Widget notif(String x,String y,AssetImage b,Color a ,EdgeInsets c){
               child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    x,
+                    main,
                     style: TextStyle(
                       color: Color(0xFF1D1517),
                       fontSize: 12.sp,
@@ -50,7 +76,7 @@ Widget notif(String x,String y,AssetImage b,Color a ,EdgeInsets c){
                     overflow: TextOverflow.ellipsis,
                   ),
                   Text(
-                    y,
+                    subMain,
                     style: TextStyle(
                       color: Color(0xFF7B6F72),
                       fontSize: 10.sp,
@@ -63,7 +89,7 @@ Widget notif(String x,String y,AssetImage b,Color a ,EdgeInsets c){
             ),
             Align(alignment: Alignment.centerRight,child: Icon(
               IconData(
-              0xf8da, fontFamily: CupertinoIcons.iconFont, fontPackage: CupertinoIcons.iconFontPackage,),color: Colors.grey,))
+                0xf8da, fontFamily: CupertinoIcons.iconFont, fontPackage: CupertinoIcons.iconFontPackage,),color: Colors.grey,))
           ],
         ),
         SizedBox(),
@@ -71,28 +97,4 @@ Widget notif(String x,String y,AssetImage b,Color a ,EdgeInsets c){
       ],
     ),
   );
-}
-
-class _NotificationsState extends State<Notifications> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: appBar(MaterialPageRoute<void>(builder:(context)=>Dashboard(),), context, 'Notifications',Color.fromRGBO(1, 1, 1, 1),),
-      body: Column(
-        children: [
-          notif('Hey, it’s time for lunch', 'About 1 minutes ago',Images().pie,Colours(). blueObacity, EdgeInsets.fromLTRB(7, 12, 7, 11.75)),
-
-          notif('Don’t miss your lowerbody workout'," About 3 hours ago", Images().lower,Colours().pinkObacity,EdgeInsets.fromLTRB(5, 5, 5, 5)),
-
-          notif('Hey, let’s add some meals for your b', 'About 3 hours ago',Images().pancake, Colours().blueObacity, EdgeInsets.fromLTRB(5, 5, 5, 5)),
-
-          notif('Congratulations, You have finished A', 'About 3 hours ago',Images().abs,Colours(). blueObacity, EdgeInsets.fromLTRB(5, 5, 5, 5)),
-
-          notif('Hey, it’s time for lunch', '8 April',Images().pie,Colours().blueObacity, EdgeInsets.fromLTRB(7, 12, 7, 11.75)),
-
-          notif('Ups, You have missed your Lowerbo', '3 April',Images().lower,Colours().pinkObacity , EdgeInsets.fromLTRB(5, 5, 5, 5)),
-        ],
-      ),
-    );
-  }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gym/PresentationLayer/Constants/Constants.dart';
+import 'package:gym/PresentationLayer/Constants/SharedWidgets.dart';
 import 'package:gym/PresentationLayer/Registeration/RegisterStep2.dart';
 import 'package:iconly/iconly.dart';
 
@@ -14,7 +16,7 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   var _formkey;
-  bool ispass = true;
+  bool ispassword = true;
   bool isCheecked = false;
   @override
   Widget build(BuildContext context) {
@@ -50,261 +52,21 @@ class _RegisterState extends State<Register> {
               SizedBox(
                 height: 30.h,
               ),
-              /*FirstName*/
-              Container(
-                width: 315.w,
-                height: 48.h,
-                margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                // padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(14),
-                    color: Color.fromRGBO(247, 248, 248, 1.0)),
-
-                child: TextFormField(
-                  style: TextStyle(
-                    color: Color.fromRGBO(123, 111, 114, 1.0),
-                  ),
-                  keyboardType: TextInputType.visiblePassword,
-                  cursorColor: Color.fromRGBO(146, 163, 253, 1.0),
-                  decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.symmetric(
-                        vertical: 5.0, horizontal: 10.0),
-                    labelText: "First Name",
-                    labelStyle: TextStyle(
-                      color: Color.fromRGBO(123, 111, 114, 1.0),
-                      fontSize: 12.sp,
-                    ),
-                    prefixIcon: Icon(
-                      IconlyLight.profile,
-                      color: Color.fromRGBO(123, 111, 114, 1.0),
-                    ),
-                    hintStyle: TextStyle(
-                      fontSize: 16.sp,
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(12),
-                      ),
-                      borderSide: BorderSide(
-                          style: BorderStyle.solid, color: Colors.transparent),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(14),
-                      ),
-                      borderSide: BorderSide(
-                          style: BorderStyle.none, color: Colors.transparent),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(color: Colors.red),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(color: Colors.red),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 15.h,
-              ),
-              //LastName
-              Container(
-                width: 315.w,
-                height: 48.h,
-                margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                // padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(14),
-                    color: Color.fromRGBO(247, 248, 248, 1.0)),
-
-                child: TextFormField(
-                  style: TextStyle(
-                    color: Color.fromRGBO(123, 111, 114, 1.0),
-                  ),
-                  keyboardType: TextInputType.visiblePassword,
-                  cursorColor: Color.fromRGBO(146, 163, 253, 1.0),
-                  decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.symmetric(
-                        vertical: 5.0, horizontal: 10.0),
-                    labelText: "Last Name",
-                    labelStyle: TextStyle(
-                      color: Color.fromRGBO(123, 111, 114, 1.0),
-                      fontSize: 12.sp,
-                    ),
-                    prefixIcon: Icon(
-                      IconlyLight.profile,
-                      color: Color.fromRGBO(123, 111, 114, 1.0),
-                    ),
-                    hintStyle: TextStyle(
-                      fontSize: 16.sp,
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(12),
-                      ),
-                      borderSide: BorderSide(
-                          style: BorderStyle.solid, color: Colors.transparent),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(14),
-                      ),
-                      borderSide: BorderSide(
-                          style: BorderStyle.none, color: Colors.transparent),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(color: Colors.red),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(color: Colors.red),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 15.h,
-              ),
-//E-mail
-              Container(
-                width: 315.w,
-                height: 48.h,
-                margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                // padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(14),
-                    color: Color.fromRGBO(247, 248, 248, 1.0)),
-
-                child: TextFormField(
-                  style: TextStyle(
-                    color: Color.fromRGBO(123, 111, 114, 1.0),
-                  ),
-                  keyboardType: TextInputType.visiblePassword,
-                  cursorColor: Color.fromRGBO(146, 163, 253, 1.0),
-                  decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.symmetric(
-                        vertical: 5.0, horizontal: 10.0),
-                    labelText: "Email",
-                    labelStyle: TextStyle(
-                      color: Color.fromRGBO(123, 111, 114, 1.0),
-                      fontSize: 12.sp,
-                    ),
-                    prefixIcon: Icon(
-                        IconlyLight.message,
-                      color: Color.fromRGBO(123, 111, 114, 1.0),
-                    ),
-                    hintStyle: TextStyle(
-                      fontSize: 16.sp,
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(12),
-                      ),
-                      borderSide: BorderSide(
-                          style: BorderStyle.solid, color: Colors.transparent),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(14),
-                      ),
-                      borderSide: BorderSide(
-                          style: BorderStyle.none, color: Colors.transparent),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(color: Colors.red),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(color: Colors.red),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 15.h,
-              ),
-//Password
-              Container(
-                width: 315.w,
-                height: 48.h,
-                margin: EdgeInsets.fromLTRB(30.w, 0, 30.w, 0),
-                // padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(14),
-                    color: Color.fromRGBO(247, 248, 248, 1.0)),
-
-                child: TextFormField(
-                  style: TextStyle(
-                    color: Color.fromRGBO(123, 111, 114, 1.0),
-                  ),
-                  validator: (String? val) {
-                    if (val!.isEmpty || val.length < 6) {
-                      return "Invalid password";
-                    }
-                    return null;
+              textfield[0],
+              textfield[1],
+              textfield[2],
+              passwordfield(ispassword, IconButton(
+                  onPressed: () {
+                    setState(() {
+                      ispassword = !ispassword;
+                    });
                   },
-                  obscureText: ispass,
-                  keyboardType: TextInputType.visiblePassword,
-                  cursorColor: Color.fromRGBO(123, 111, 114, 1.0),
-                  decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.symmetric(
-                        vertical: 15.0, horizontal: 10.0),
-                    labelText: "Password",
-                    labelStyle: TextStyle(
-                      color: Color.fromRGBO(123, 111, 114, 1.0),
-                      fontSize: 12.sp,
-                    ),
-                    prefixIcon: Icon(
-                      IconlyLight.lock,
-                      color: Color.fromRGBO(123, 111, 114, 1.0),
-                    ),
-                    suffixIcon: IconButton(
-                        onPressed: () {
-                          setState(() {
-                            ispass = !ispass;
-                          });
-                        },
-                        icon: Icon(
-                          ispass
-                              ? IconlyLight.hide
-                              : IconlyLight.show,
-                          color: Color.fromRGBO(173, 164, 165, 1.0),
-                        )),
-                    hintStyle: TextStyle(
-                      fontSize: 16.sp,
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(12),
-                      ),
-                      borderSide: BorderSide(
-                          style: BorderStyle.solid, color: Colors.transparent),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(14),
-                      ),
-                      borderSide: BorderSide(
-                          style: BorderStyle.none, color: Colors.transparent),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(color: Colors.red),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(color: Colors.red),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 15.h,
-              ),
+                  icon: Icon(
+                    ispassword
+                        ? IconlyLight.hide
+                        : IconlyLight.show,
+                    color: Color.fromRGBO(173, 164, 165, 1.0),
+                  )),),
               Container(
                 margin: EdgeInsets.fromLTRB(30.w, 0, 30.w, 0),
                 child: Row(
@@ -365,82 +127,12 @@ class _RegisterState extends State<Register> {
               SizedBox(
                 height: 147.h,
               ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute<void>(
-                          builder: (context) => Register2()));
-                },
-                child: Container(
-                  margin: EdgeInsets.all(30),
-                  padding: EdgeInsets.fromLTRB(124.w, 18.h, 123.w, 18.h),
-                  width: 315.w,
-                  height: 60.h,
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.bottomRight,
-                        end: Alignment.topLeft,
-                        colors: [
-                          Color.fromRGBO(146, 163, 253, 1.0),
-                          Color.fromRGBO(157, 206, 255, 1.0),
-                        ],
-                      ),
-                      borderRadius: BorderRadius.circular(99)),
-                  child: Text(
-                    "Register",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 141.w,
-                    child: Divider(
-                      color: Colors.grey,
-                    ),
-                  ),
-                  Text(
-                    "  Or ",
-                    style: TextStyle(fontSize: 12.sp),
-                  ),
-                  Container(
-                    width: 141.w,
-                    child: Divider(
-                      color: Colors.grey,
-                    ),
-                  ),
-                ],
-              ),
+              button(MaterialPageRoute<void>(
+                  builder: (context) => Register2()), context, 'Register', TextStyles().bold16White, 315.w, 60.h, Colours().gradientcolorBlue),
               SizedBox(
                 height: 20.h,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 50.w,
-                    height: 50.h,
-                    child: Image.asset('assets/icon/google.png'),
-                  ),
-                  SizedBox(
-                    width: 50,
-                  ),
-                  Container(
-                    width: 50.w,
-                    height: 50.h,
-                    child: Image.asset('assets/icon/facebook.png'),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 30.h,
-              ),
+              or(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -469,13 +161,298 @@ class _RegisterState extends State<Register> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 40.h,
-              ),
+
             ],
           ),
         ),
       ),
     );
   }
+}
+List<Container> textfield=[
+  /*FirstName*/
+  Container(
+    width: 315.w,
+    height: 48.h,
+    margin: EdgeInsets.fromLTRB(20, 0, 20, 15),
+    // padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(14),
+        color: Color.fromRGBO(247, 248, 248, 1.0)),
+
+    child: TextFormField(
+      style: TextStyle(
+        color: Color.fromRGBO(123, 111, 114, 1.0),
+      ),
+      keyboardType: TextInputType.visiblePassword,
+      cursorColor: Color.fromRGBO(146, 163, 253, 1.0),
+      decoration: InputDecoration(
+        contentPadding: const EdgeInsets.symmetric(
+            vertical: 5.0, horizontal: 10.0),
+        labelText: "First Name",
+        labelStyle: TextStyle(
+          color: Color.fromRGBO(123, 111, 114, 1.0),
+          fontSize: 12.sp,
+        ),
+        prefixIcon: Icon(
+          IconlyLight.profile,
+          color: Color.fromRGBO(123, 111, 114, 1.0),
+        ),
+        hintStyle: TextStyle(
+          fontSize: 16.sp,
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(12),
+          ),
+          borderSide: BorderSide(
+              style: BorderStyle.solid, color: Colors.transparent),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(14),
+          ),
+          borderSide: BorderSide(
+              style: BorderStyle.none, color: Colors.transparent),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: Colors.red),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: Colors.red),
+        ),
+      ),
+    ),
+  ),
+
+  //LastName
+  Container(
+    width: 315.w,
+    height: 48.h,
+    margin: EdgeInsets.fromLTRB(20, 0, 20, 15),
+    // padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(14),
+        color: Color.fromRGBO(247, 248, 248, 1.0)),
+
+    child: TextFormField(
+      style: TextStyle(
+        color: Color.fromRGBO(123, 111, 114, 1.0),
+      ),
+      keyboardType: TextInputType.visiblePassword,
+      cursorColor: Color.fromRGBO(146, 163, 253, 1.0),
+      decoration: InputDecoration(
+        contentPadding: const EdgeInsets.symmetric(
+            vertical: 5.0, horizontal: 10.0),
+        labelText: "Last Name",
+        labelStyle: TextStyle(
+          color: Color.fromRGBO(123, 111, 114, 1.0),
+          fontSize: 12.sp,
+        ),
+        prefixIcon: Icon(
+          IconlyLight.profile,
+          color: Color.fromRGBO(123, 111, 114, 1.0),
+        ),
+        hintStyle: TextStyle(
+          fontSize: 16.sp,
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(12),
+          ),
+          borderSide: BorderSide(
+              style: BorderStyle.solid, color: Colors.transparent),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(14),
+          ),
+          borderSide: BorderSide(
+              style: BorderStyle.none, color: Colors.transparent),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: Colors.red),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: Colors.red),
+        ),
+      ),
+    ),
+  ),
+
+//E-mail
+  Container(
+    width: 315.w,
+    height: 48.h,
+    margin: EdgeInsets.fromLTRB(20, 0, 20, 15),
+    // padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(14),
+        color: Color.fromRGBO(247, 248, 248, 1.0)),
+
+    child: TextFormField(
+      style: TextStyle(
+        color: Color.fromRGBO(123, 111, 114, 1.0),
+      ),
+      keyboardType: TextInputType.visiblePassword,
+      cursorColor: Color.fromRGBO(146, 163, 253, 1.0),
+      decoration: InputDecoration(
+        contentPadding: const EdgeInsets.symmetric(
+            vertical: 5.0, horizontal: 10.0),
+        labelText: "Email",
+        labelStyle: TextStyle(
+          color: Color.fromRGBO(123, 111, 114, 1.0),
+          fontSize: 12.sp,
+        ),
+        prefixIcon: Icon(
+          IconlyLight.message,
+          color: Color.fromRGBO(123, 111, 114, 1.0),
+        ),
+        hintStyle: TextStyle(
+          fontSize: 16.sp,
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(12),
+          ),
+          borderSide: BorderSide(
+              style: BorderStyle.solid, color: Colors.transparent),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(14),
+          ),
+          borderSide: BorderSide(
+              style: BorderStyle.none, color: Colors.transparent),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: Colors.red),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: Colors.red),
+        ),
+      ),
+    ),
+  ),
+];
+Container passwordfield(bool ispass,IconButton icon){
+  return Container(
+    width: 315.w,
+    height: 48.h,
+    margin: EdgeInsets.fromLTRB(30.w, 0, 30.w, 15),
+    // padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(14),
+        color: Color.fromRGBO(247, 248, 248, 1.0)),
+
+    child: TextFormField(
+      style: TextStyle(
+        color: Color.fromRGBO(123, 111, 114, 1.0),
+      ),
+      validator: (String? val) {
+        if (val!.isEmpty || val.length < 6) {
+          return "Invalid password";
+        }
+        return null;
+      },
+      obscureText: ispass,
+      keyboardType: TextInputType.visiblePassword,
+      cursorColor: Color.fromRGBO(123, 111, 114, 1.0),
+      decoration: InputDecoration(
+        contentPadding: const EdgeInsets.symmetric(
+            vertical: 15.0, horizontal: 10.0),
+        labelText: "Password",
+        labelStyle: TextStyle(
+          color: Color.fromRGBO(123, 111, 114, 1.0),
+          fontSize: 12.sp,
+        ),
+        prefixIcon: Icon(
+          IconlyLight.lock,
+          color: Color.fromRGBO(123, 111, 114, 1.0),
+        ),
+        suffixIcon: icon,
+        hintStyle: TextStyle(
+          fontSize: 16.sp,
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(12),
+          ),
+          borderSide: BorderSide(
+              style: BorderStyle.solid, color: Colors.transparent),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(14),
+          ),
+          borderSide: BorderSide(
+              style: BorderStyle.none, color: Colors.transparent),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: Colors.red),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: Colors.red),
+        ),
+      ),
+    ),
+  );
+}
+
+or(){
+  return Column(
+    children: [Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          width: 141.w,
+          child: Divider(
+            color: Colors.grey,
+          ),
+        ),
+        Text(
+          "  Or ",
+          style: TextStyle(fontSize: 12.sp),
+        ),
+        Container(
+          width: 141.w,
+          child: Divider(
+            color: Colors.grey,
+          ),
+        ),
+      ],
+    ),
+      SizedBox(
+        height: 20.h,
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 50.w,
+            height: 50.h,
+            child: Image.asset('assets/icon/google.png'),
+          ),
+          SizedBox(
+            width: 50,
+          ),
+          Container(
+            width: 50.w,
+            height: 50.h,
+            child: Image.asset('assets/icon/facebook.png'),
+          ),
+        ],
+      ),
+      SizedBox(
+        height: 30.h,
+      ),],
+  );
 }
