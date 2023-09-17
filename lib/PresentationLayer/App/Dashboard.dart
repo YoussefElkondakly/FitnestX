@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gym/PresentationLayer/App/Notification.dart';
 import 'package:gym/PresentationLayer/App/TodayTarget.dart';
+import 'package:gym/PresentationLayer/App/profile.dart';
+import 'package:gym/PresentationLayer/Constants/make.dart';
 import 'package:gym/PresentationLayer/Welcome/Welcome.dart';
 import 'package:iconly/iconly.dart';
 import '../Constants/Constants.dart';
@@ -21,12 +23,13 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:_dashboard(context) ,
+      body:_dashboard(context,pieChart(20.1)) ,
     );
   }
+
 }
 
-_dashboard(context){
+_dashboard(context,pie){
   return ListView(
     scrollDirection: Axis.vertical,
     children: <Widget>[
@@ -115,146 +118,67 @@ _dashboard(context){
                   'You have on over weight',
                   style: TextStyles().w50012White,
                 ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute<void>(
-                            builder: (context) => Notifications()));
-                  },
-                  child: Container(
-                    margin: EdgeInsets.only(top: 15),
-                    padding: EdgeInsets.fromLTRB(21.w, 10.h, 21.w, 10.h),
-                    width: 95.w,
-                    height: 35.h,
-                    decoration: ShapeDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment(-1.00, 0.08),
-                        end: Alignment(1, -0.08),
-                        colors: Colours().gradientcolorPink,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                    ),
-                    child: Text(
-                      'View More',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 10.sp,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w600,
-                        height: 1.50,
-                      ),
-                    ),
-                  ),
-                ),
+                SizedBox(height:26.h),
+                button(MaterialPageRoute<void>(
+                    builder: (context) => Profile()), context, 'View More', TextStyles().w60010White, 95.w, 35.h,  Colours().gradientcolorPink),
+                //white w60010
               ],
             ),
             Container(
               width: 106.w,
               height: 106.h,
-              child: PieChart(
-                PieChartData(
-                  centerSpaceRadius: -20.r,
-                  sectionsSpace: 1,
-                  startDegreeOffset: 270,
-                  sections: [
-                    PieChartSectionData(
-                      color: Color(0xFFC58BF2),
-                      value: 20.1.r,
-                      title: 20.1.toString(),
-                      titleStyle: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12.sp,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w600,
-                        height: 1.50,
-                      ),
-                      radius: 90,
-                      titlePositionPercentageOffset: 0.55,
-                    ),
-                    PieChartSectionData(
-                      color: Colors.white,
-                      value: 79.9,
-                      title: '',
-                      radius: 75.r,
-                      titlePositionPercentageOffset: 0.55,
-                    ),
-                  ],
-                  // read about it in the PieChartData section
-                ),
-                swapAnimationDuration:
-                Duration(milliseconds: 150), // Optional
-                swapAnimationCurve: Curves.linear, // Optional
-              ),
+              child: pie,
             ),
           ],
         ),
       ),),
-      Container(
-        width: 315.w,
-        height: 57.h,
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        margin: EdgeInsets.fromLTRB(30, 0, 30, 30),
-        decoration: ShapeDecoration(
-          gradient: LinearGradient(
-            begin: Alignment(-1.00, 0.08),
-            end: Alignment(1, -0.08),
-            colors: Colours().gradientcolorO,
-          ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              'Today Target',
-              style: TextStyle(
-                color: Color(0xFF1D1517),
-                fontSize: 14.sp,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w500,
-              ),
+      backgroundContainer(57.h, 0, 30, 16, EdgeInsets.fromLTRB(20, 0, 20, 0), Colours().gradientcolorO, Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            'Today Target',
+            style: TextStyle(
+              color: Color(0xFF1D1517),
+              fontSize: 14.sp,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w500,
             ),
-            GestureDetector(
-              onTap: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute<void>(
-                    builder: (context) => Target(),),);
-              },
-              child: Container(
-                width: 68.w,
-                height: 28.h,
-                padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
-                decoration: ShapeDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment(-1.00, 0.08),
-                    end: Alignment(1, -0.08),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute<void>(
+                  builder: (context) => Target(),),);
+            },
+            child: Container(
+              width: 68.w,
+              height: 28.h,
+              padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
+              decoration: ShapeDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment(-1.00, 0.08),
+                  end: Alignment(1, -0.08),
 
-                    colors: Colours().gradientcolorBlue,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
-                  ),
+                  colors: Colours().gradientcolorBlue,
                 ),
-                child: Text(
-                  'Check',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12.sp,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w400,
-                  ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50),
+                ),
+              ),
+              child: Text(
+                'Check',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 12.sp,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ),
-          ],
-        ),
-      ),
+          ),
+        ],
+      ),),
       Padding(
         padding: EdgeInsets.only(left: 20.w),
         child: Text(
@@ -268,149 +192,126 @@ _dashboard(context){
           ),
         ),
       ),
-      Container(
-        padding: EdgeInsets.only(
-          top: 20,
-        ),
-        width: 315.w,
-        height: 150.h,
-        margin: EdgeInsets.fromLTRB(30, 15, 30, 16),
-        decoration: ShapeDecoration(
-          gradient: LinearGradient(
-            begin: Alignment(-1.00, 0.08),
-            end: Alignment(1, -0.08),
-
-            colors:[Colours().gradientcolorO[1],Colours().gradientcolorO[0],],
-          ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0),
-              child: Text(
-                "Heart Rate",
-                style: TextStyle(
-                  color: Color(0xFF1D1517),
-                  fontSize: 12.sp,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w500,
-                  height: 1.50,
-                ),
+      backgroundContainer(150.h, 15, 16, 20, EdgeInsets.only(
+        top: 20,
+      ), [Colours().gradientcolorO[1],Colours().gradientcolorO[0],], Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0),
+            child: Text(
+              "Heart Rate",
+              style: TextStyle(
+                color: Color(0xFF1D1517),
+                fontSize: 12.sp,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w500,
+                height: 1.50,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0),
-              child: Text(
-                "78 BPM",
-                style: TextStyle(
-                  color: Color(0xFF92A3FD),
-                  fontSize: 14.sp,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w600,
-                  height: 1.50,
-                ),
-              ),
+          ),
+          mask(Colours().gradientcolorBlue, Padding(
+            padding: const EdgeInsets.only(left: 20.0),
+            child: Text(
+              "78 BPM",
+              style: TextStyles().w60014White,
             ),
-            Container(
-              width: 300.w,
-              height: 61.5.h,
-              child: AspectRatio(
-                aspectRatio: 3,
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 0,
-                    top: 10,
-                    bottom: 4,
-                  ),
-                  child: LineChart(
-                    LineChartData(
-                      lineBarsData: [
-                        LineChartBarData(
-                          spots: const [
-                            FlSpot(0, 0),
-                            FlSpot(.5, 2),
-                            FlSpot(1, 0),
-                            FlSpot(1.5, 1.5),
-                            FlSpot(2, 1.5),
-                            FlSpot(2.5, 10),
-                            FlSpot(3, 4),
-                            FlSpot(3.5, 1.5),
-                            FlSpot(4, 6),
-                            FlSpot(4.5, 0),
-                            FlSpot(5, 15),
-                            FlSpot(5.5, 8),
-                            FlSpot(6, 10),
-                            FlSpot(7, 21),
-                          ],
-                          isCurved: false,
-                          barWidth: 2,
-                          color: Color.fromRGBO(147, 167, 254, 1.0),
-                          dotData: const FlDotData(
-                            show: false,
-                          ),
-                        ),
-                        LineChartBarData(
-                          spots: const [
-                            FlSpot(7, 21),
-                            FlSpot(7.5, 9),
-                            FlSpot(8, 10),
-                            FlSpot(8.5, 11),
-                            FlSpot(9, 3),
-                            FlSpot(9.5, 20),
-                            FlSpot(10, 22),
-                            FlSpot(10.5, 10),
-                            FlSpot(11, 5),
-                          ],
-                          isCurved: false,
-                          barWidth: 1,
-                          color: Colors.grey,
-                          dotData: const FlDotData(
-                            show: false,
-                          ),
-                        ),
-                      ],
-                      minY: 0,
-                      borderData: FlBorderData(
-                        show: false,
-                      ),
-                      titlesData: FlTitlesData(
-                        bottomTitles: AxisTitles(
-                          sideTitles: SideTitles(
-                            showTitles: false,
-                            interval: 1,
-                          ),
-                        ),
-                        leftTitles: AxisTitles(
-                          sideTitles: SideTitles(
-                            showTitles: false,
-                            interval: 1,
-                            reservedSize: 36,
-                          ),
-                        ),
-                        topTitles: const AxisTitles(
-                          sideTitles: SideTitles(showTitles: false),
-                        ),
-                        rightTitles: const AxisTitles(
-                          sideTitles: SideTitles(showTitles: false),
+          ), Alignment.bottomLeft, Alignment.topRight),
+          Container(
+            width: 300.w,
+            height: 61.5.h,
+            child: AspectRatio(
+              aspectRatio: 3,
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 0,
+                  top: 10,
+                  bottom: 4,
+                ),
+                child: LineChart(
+                  LineChartData(
+                    lineBarsData: [
+                      LineChartBarData(
+                        spots: const [
+                          FlSpot(0, 0),
+                          FlSpot(.5, 2),
+                          FlSpot(1, 0),
+                          FlSpot(1.5, 1.5),
+                          FlSpot(2, 1.5),
+                          FlSpot(2.5, 10),
+                          FlSpot(3, 4),
+                          FlSpot(3.5, 1.5),
+                          FlSpot(4, 6),
+                          FlSpot(4.5, 0),
+                          FlSpot(5, 15),
+                          FlSpot(5.5, 8),
+                          FlSpot(6, 10),
+                          FlSpot(7, 21),
+                        ],
+                        isCurved: false,
+                        barWidth: 2,
+                        color: Color.fromRGBO(147, 167, 254, 1.0),
+                        dotData: const FlDotData(
+                          show: false,
                         ),
                       ),
-                      gridData: FlGridData(
-                        show: false,
-                        drawVerticalLine: false,
-                        horizontalInterval: 1,
+                      LineChartBarData(
+                        spots: const [
+                          FlSpot(7, 21),
+                          FlSpot(7.5, 9),
+                          FlSpot(8, 10),
+                          FlSpot(8.5, 11),
+                          FlSpot(9, 3),
+                          FlSpot(9.5, 20),
+                          FlSpot(10, 22),
+                          FlSpot(10.5, 10),
+                          FlSpot(11, 5),
+                        ],
+                        isCurved: false,
+                        barWidth: 1,
+                        color: Colors.grey,
+                        dotData: const FlDotData(
+                          show: false,
+                        ),
                       ),
+                    ],
+                    minY: 0,
+                    borderData: FlBorderData(
+                      show: false,
+                    ),
+                    titlesData: FlTitlesData(
+                      bottomTitles: AxisTitles(
+                        sideTitles: SideTitles(
+                          showTitles: false,
+                          interval: 1,
+                        ),
+                      ),
+                      leftTitles: AxisTitles(
+                        sideTitles: SideTitles(
+                          showTitles: false,
+                          interval: 1,
+                          reservedSize: 36,
+                        ),
+                      ),
+                      topTitles: const AxisTitles(
+                        sideTitles: SideTitles(showTitles: false),
+                      ),
+                      rightTitles: const AxisTitles(
+                        sideTitles: SideTitles(showTitles: false),
+                      ),
+                    ),
+                    gridData: FlGridData(
+                      show: false,
+                      drawVerticalLine: false,
+                      horizontalInterval: 1,
                     ),
                   ),
                 ),
               ),
             ),
-          ],
-        ),
-      ),
+          ),
+        ],
+      ),),
       Container(
         width: 315.w,
         height: 315.h,
@@ -455,16 +356,10 @@ _dashboard(context){
                           height: 1.50,
                         ),
                       ),
-                      Text(
+                      mask(Colours().gradientcolorBlue, Text(
                         '4 Liters',
-                        style: TextStyle(
-                          color: Color(0xFF92A3FD),
-                          fontSize: 14.sp,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w600,
-                          height: 1.50,
-                        ),
-                      ),
+                        style: TextStyles().w60014White,
+                      ), Alignment.topLeft, Alignment.bottomRight),
                       SizedBox(
                         height: 5.h,
                       ),
@@ -638,52 +533,32 @@ _dashboard(context){
                             height: 1.50,
                           ),
                         ),
-                        Text.rich(
+                        mask(Colours().gradientcolorBlue, Text.rich(
                           TextSpan(
                             children: [
                               TextSpan(
                                 text: '8',
-                                style: TextStyle(
-                                  color: Color(0xFF92A3FD),
-                                  fontSize: 14,
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w600,
-                                  height: 1.50,
-                                ),
+                                style: TextStyles().w60014White,
                               ),
                               TextSpan(
                                 text: 'h',
-                                style: TextStyle(
-                                  color: Color(0xFF92A3FD),
-                                  fontSize: 10,
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w600,
-                                  height: 2.10,
-                                ),
+                                style: TextStyles(
+
+                                ).w60010White,
                               ),
                               TextSpan(
                                 text: ' 20',
-                                style: TextStyle(
-                                  color: Color(0xFF92A3FD),
-                                  fontSize: 14,
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w600,
-                                  height: 1.50,
-                                ),
+                                style: TextStyles().w60014White,
                               ),
                               TextSpan(
                                 text: 'm',
-                                style: TextStyle(
-                                  color: Color(0xFF92A3FD),
-                                  fontSize: 10,
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w600,
-                                  height: 2.10,
-                                ),
+                                style: TextStyles(
+
+                                ).w60010White,
                               ),
                             ],
                           ),
-                        ),
+                        ), Alignment.centerLeft, Alignment.centerRight),
                         Container(
                           width: 110.w,
                           height: 78.h,
@@ -722,27 +597,21 @@ _dashboard(context){
                             height: 1.50,
                           ),
                         ),
-                        Text(
-                          '760 kCal',
-                          style: TextStyle(
-                            color: Color(0xFF92A3FD),
-                            fontSize: 14,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w600,
-                            height: 1.50,
+                        ShaderMask(
+                          shaderCallback: (Rect bounds) {
+                            return LinearGradient(
+                              begin: Alignment.centerRight,
+                              end: Alignment.centerLeft,
+                              colors: Colours().gradientcolorBlue,
+                            ).createShader(bounds);
+                          },
+                          child: Text(
+                            '760 kCal',
+                            style: TextStyles().w60014White,
                           ),
                         ),
                         SizedBox(height: 6.h),
-                        Container(
-                          width: 150.w,
-                          height: 66.h,
-                          child: Padding(
-                            padding: EdgeInsets.only(
-                              left: 20,
-                              right: 30,
-                            ),
-                            child:Text('Missed Design'),),
-                        ),
+                        stackCaloriesLeft(),
                       ]),
                 ),
               ],

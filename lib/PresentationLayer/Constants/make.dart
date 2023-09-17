@@ -13,114 +13,142 @@ class Make extends StatefulWidget {
 }
 
 class _MakeState extends State<Make> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pieContainer(
-        Container(
-        padding: EdgeInsets.fromLTRB(20, 12, 20, 20),
-        width: 315.w,
-        height: 146.h,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'BMI (Body Mass Index)',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14.sp,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w600,
-                    height: 1.50,
-                  ),
-                ),
-                Text(
-                  'You have on over weight',
-                  style: TextStyles().w50012White,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute<void>(
-                            builder: (context) => Notifications()));
-                  },
-                  child: Container(
-                    margin: EdgeInsets.only(top: 15),
-                    padding: EdgeInsets.fromLTRB(21.w, 10.h, 21.w, 10.h),
-                    width: 95.w,
-                    height: 35.h,
-                    decoration: ShapeDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment(-1.00, 0.08),
-                        end: Alignment(1, -0.08),
-                        colors: Colours().gradientcolorPink,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50),
-                      ),
+      body: Center(
+        child: Container(
+          width: 66.w,
+          height: 66.h,
+          child: Stack(
+            children: [
+              Align(alignment: Alignment.centerLeft,
+                child: Container(
+                  width: (66-33).w,
+                  height:66.h,
+                  decoration: ShapeDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment(-1.00, 0.05),
+                      end: Alignment(1, -0.05),
+
+                      colors: Colours().gradientcolorBlue,
                     ),
-                    child: Text(
-                      'View More',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 10.sp,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w600,
-                        height: 1.50,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(100),
+                        bottomLeft: Radius.circular(100),
                       ),
                     ),
                   ),
                 ),
-              ],
-            ),
-            Container(
-              width: 106.w,
-              height: 106.h,
-              child: PieChart(
-                PieChartData(
-                  centerSpaceRadius: -20.r,
-                  sectionsSpace: 1,
-                  startDegreeOffset: 270,
-                  sections: [
-                    PieChartSectionData(
-                      color: Color(0xFFC58BF2),
-                      value: 20.1.r,
-                      title: 20.1.toString(),
-                      titleStyle: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12.sp,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w600,
-                        height: 1.50,
-                      ),
-                      radius: 90,
-                      titlePositionPercentageOffset: 0.55,
-                    ),
-                    PieChartSectionData(
-                      color: Colors.white,
-                      value: 79.9,
-                      title: '',
-                      radius: 75.r,
-                      titlePositionPercentageOffset: 0.55,
-                    ),
-                  ],
-                  // read about it in the PieChartData section
-                ),
-                swapAnimationDuration:
-                Duration(milliseconds: 150), // Optional
-                swapAnimationCurve: Curves.linear, // Optional
               ),
-            ),
-          ],
+              Align(alignment: Alignment.centerRight,
+                child: Container(
+                  width: 33,
+                  height: 66.h,
+                  decoration: ShapeDecoration(
+                    color: Color.fromRGBO(247, 248, 248, 1.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(100),
+                        bottomRight: Radius.circular(100),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Align(alignment: Alignment.center,child: Container(
+                width: 48.w,
+                height: 48.h,
+
+                decoration: ShapeDecoration(
+
+                  gradient: LinearGradient(
+                    begin: Alignment(-1.00, 0.08),
+                    end: Alignment(1, -0.08),
+                    colors: [Color(0xFF92A3FD), Color(0xFF9DCEFF)],
+                  ),
+                  shape: OvalBorder(
+                    side: BorderSide(color: Colors.white,width: 5.w)
+                  ),
+
+                ),
+              ),),
+            ],
+          ),
         ),
-      ),),
+      ),
     );
   }
+
+
 }
+backgroundContainer(double height,double top,double bottom,double radius,EdgeInsets padding,gradient,Widget child,){
+  return Container(
+    width: 315.w,
+    height: height,
+    padding: padding,
+    margin: EdgeInsets.fromLTRB(30,top,30,bottom),
+    decoration: ShapeDecoration(
+      gradient: LinearGradient(
+        begin: Alignment(-1.00, 0.08),
+        end: Alignment(1, -0.08),
+        colors: gradient,
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(radius),
+      ),
+    ),
+    child: child,
+  );
+}
+// class _Badge extends StatelessWidget {
+//   const _Badge(
+//       this.svgAsset, {
+//         required this.size,
+//         required this.borderColor,
+//       });
+//   final String svgAsset;
+//   final double size;
+//   final Color borderColor;
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return AnimatedContainer(
+//       duration: PieChart.defaultDuration,
+//       width: size,
+//       height: size,
+//       decoration: BoxDecoration(
+//         color: Colors.white,
+//         shape: BoxShape.circle,
+//         border: Border.all(
+//           color: borderColor,
+//           width: 2,
+//         ),
+//         boxShadow: <BoxShadow>[
+//           BoxShadow(
+//             color: Colors.black.withOpacity(.5),
+//             offset: const Offset(3, 3),
+//             blurRadius: 3,
+//           ),
+//         ],
+//       ),
+//       padding: EdgeInsets.all(size * .15),
+//       child: Center(
+//         child: Container(
+//           width: 20.w,
+//           height: 20.h,
+//           decoration: BoxDecoration(
+//             color: Colors.pink
+//           ),
+//
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 
 // void main(){

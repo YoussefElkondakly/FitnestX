@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
             primaryColor: Colors.blueGrey,
             useMaterial3: true,
           ),
-          home: Dashboard(),
+          home: Welcome1(),
         );
       },
     );

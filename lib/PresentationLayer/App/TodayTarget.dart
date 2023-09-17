@@ -19,7 +19,7 @@ class _TargetState extends State<Target> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(MaterialPageRoute<void>(builder:(context)=>Dashboard(),), context, 'Today Target',Color.fromRGBO(1, 1, 1, 1)),
+      appBar: appBar(MaterialPageRoute<void>(builder:(context)=>Dashboard(),), context, 'Activity Tracker',Color.fromRGBO(1, 1, 1, 1)),
       body: Column(
         children: [
           Container(

@@ -8,6 +8,11 @@ class Colours{
     Color.fromRGBO(157, 206, 255, .2)
   ];
   List <Color> waterintake= [Color(0xFFC58BF2), Color(0xFFB3BFFD)];
+  List <Color> caloriesLeniar= [Color(0xFFC58BF2), Color(0xFFB4C0FE)];
+
+
+
+
   List <Color>gradientcolorBlue=[
     Color.fromRGBO(146, 163, 253, 1),
     Color.fromRGBO(157, 206, 255, 1),
@@ -142,10 +147,16 @@ class TextStyles{
     fontWeight: FontWeight.bold,
 
   );
-
   TextStyle w60012White= TextStyle(
     color: Colors.white,
     fontSize: 12.sp,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w600,
+
+  );
+  TextStyle w60010White= TextStyle(
+    color: Colors.white,
+    fontSize: 10.sp,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w600,
 

@@ -637,3 +637,15 @@ Stack welcomeStack(String asset,double picHeight,String main,String submain,){
     ],
   );
 }
+mask(gradient,Widget child,Alignment start,Alignment end){
+  return ShaderMask(
+    shaderCallback: (Rect bounds) {
+      return LinearGradient(
+        begin: start,
+        end: end,
+        colors: gradient,
+      ).createShader(bounds);
+    },
+  child:child ,
+  );
+}

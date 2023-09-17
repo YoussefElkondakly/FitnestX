@@ -1,5 +1,8 @@
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'Constants.dart';
 
 pieContainer (Widget wow){
 return Container(
@@ -576,3 +579,128 @@ Container conta=Container(
     ],
   ),
 );
+pieChart(double bmi){
+  List<PieChartSectionData> showingSections() {
+    return List.generate(2, (i) {
+      final fontSize = 16.0.sp;
+      final radius = 60.r;
+      const shadows =  [
+        BoxShadow(
+          color: Color(0x111D1617),
+          blurRadius: 40,
+          offset: Offset(0, 10),
+          spreadRadius: 0,
+        ),
+      ];
+
+      switch (i) {
+        case 0:
+          return PieChartSectionData(
+            color: Colors.white,
+            value: 100-bmi,
+            title: '${100-bmi}%',
+            radius: radius,
+            titleStyle: TextStyle(
+              fontSize: fontSize,
+              fontWeight: FontWeight.bold,
+              color: const Color(0xffffffff),
+              shadows: shadows,
+            ),
+            badgePositionPercentageOffset: .98,
+          );
+        case 1:
+          return PieChartSectionData(
+            color: Colours().gradientcolorPink[0].withOpacity(1),
+            value: bmi,
+            title: '  ${bmi.toString()}',
+            radius: radius,
+            titleStyle: TextStyle(
+              fontSize: fontSize,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+
+            ),
+
+            badgePositionPercentageOffset: .98,
+          );
+        default:
+          throw Exception('Oh no');
+      }
+    });
+  }
+  return Container(
+    child: PieChart(
+      PieChartData(
+        borderData: FlBorderData(
+          show: false,
+        ),
+        sectionsSpace: 0,
+        centerSpaceRadius: 0,
+        sections: showingSections(),
+      ),
+    ),
+  );
+}
+stackCaloriesLeft(){
+  return Container(margin: EdgeInsets.only(left:22 ),
+    width: 66.w,
+    height: 66.h,
+    child: Stack(
+      children: [
+        Align(alignment: Alignment.centerLeft,
+          child: Container(
+            width: (66-25).w,
+            height:66.h,
+            decoration: ShapeDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+
+                colors: Colours().caloriesLeniar,
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(100),
+                  bottomLeft: Radius.circular(100),
+                ),
+              ),
+            ),
+          ),
+        ),
+        Align(alignment: Alignment.centerRight,
+          child: Container(
+            width: 25.w,
+            height: 66.h,
+            decoration: ShapeDecoration(
+              color: Color.fromRGBO(247, 248, 248, 1.0),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(100),
+                  bottomRight: Radius.circular(100),
+                ),
+              ),
+            ),
+          ),
+        ),
+        Align(alignment: Alignment.center,child: Container(
+          width: 48.w,
+          height: 48.h,
+          padding: EdgeInsets.fromLTRB(6, 12, 6, 12),
+          decoration: ShapeDecoration(
+
+            gradient: LinearGradient(
+              begin: Alignment(-1.00, 0.08),
+              end: Alignment(1, -0.08),
+              colors: Colours().gradientcolorBlue,
+            ),
+            shape: OvalBorder(
+                side: BorderSide(color: Colors.white,width: 2.25.w)
+            ),
+
+          ),
+          child: Text('230kCal\nleft',textAlign: TextAlign.center,style: TextStyles().w4008White,),
+        ),),
+      ],
+    ),
+  );
+}
