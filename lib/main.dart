@@ -3,9 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gym/PresentationLayer/App/Dashboard.dart';
 import 'package:gym/PresentationLayer/App/WorkoutTracker.dart';
+import 'package:gym/PresentationLayer/Welcome/Welcome2.dart';
 
 import 'PresentationLayer/Welcome/Welcome.dart';
-import 'PresentationLayer/Constants/make.dart';
+import 'PresentationLayer/make.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:gym/PresentationLayer/Constants/Constants.dart';
 import 'package:gym/PresentationLayer/Constants/SharedWidgets.dart';
 import 'package:gym/PresentationLayer/Registeration/Onboard1.dart';
@@ -30,9 +31,10 @@ class _Register2State extends State<Register2> {
             ),
             Text(
               "Let’s complete your profile",
-              style: TextStyle(
+              style:GoogleFonts.poppins(textStyle: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20.sp,
+            fontFamily:'poppins'  ),
               ),
             ),
             SizedBox(
@@ -40,11 +42,11 @@ class _Register2State extends State<Register2> {
             ),
             Text(
               "It will help us to know more about you!",
-              style: TextStyle(
+              style: GoogleFonts.poppins(textStyle:TextStyle(
                 wordSpacing: .0000000001,
                 color: Colors.black,
                 fontWeight: FontWeight.w400,
-                fontSize: 16.sp,
+                fontSize: 16.sp,fontFamily:'poppins'),
               ),
             ),
             SizedBox(
@@ -61,8 +63,8 @@ class _Register2State extends State<Register2> {
                   color: Color.fromRGBO(247, 248, 248, 1.0)),
 
               child: TextFormField(
-                style: TextStyle(
-                  color: Color.fromRGBO(123, 111, 114, 1.0),
+                style: GoogleFonts.poppins(textStyle:TextStyle(
+                  color: Color.fromRGBO(123, 111, 114, 1.0),fontFamily:'poppins'),
                 ),
                 keyboardType: TextInputType.visiblePassword,
                 cursorColor: Color.fromRGBO(146, 163, 253, 1.0),
@@ -70,17 +72,17 @@ class _Register2State extends State<Register2> {
                   contentPadding: const EdgeInsets.symmetric(
                       vertical: 5.0, horizontal: 10.0),
                   labelText: "Choose Gender",
-                  labelStyle: TextStyle(
+                  labelStyle:GoogleFonts.poppins(textStyle: TextStyle(
                     color: Color.fromRGBO(123, 111, 114, 1.0),
-                    fontSize: 12.sp,
+                    fontSize: 12.sp,fontFamily:'poppins'),
                   ),
                   suffixIcon: Icon(IconlyLight.arrow_down_2,color: Colors.grey,),
                   prefixIcon: Icon(
                     IconlyLight.user,
                     color: Color.fromRGBO(123, 111, 114, 1.0),
                   ),
-                  hintStyle: TextStyle(
-                    fontSize: 16.sp,
+                  hintStyle: GoogleFonts.poppins(textStyle:TextStyle(
+                    fontSize: 16.sp,fontFamily:'poppins'),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(
@@ -118,26 +120,26 @@ class _Register2State extends State<Register2> {
                   color: Color.fromRGBO(247, 248, 248, 1.0)),
 
               child: TextFormField(
-                style: TextStyle(
+                style: GoogleFonts.poppins(textStyle:TextStyle(
                   color: Color.fromRGBO(123, 111, 114, 1.0),
-                ),
+               fontFamily:'poppins' ),),
                 keyboardType: TextInputType.visiblePassword,
                 cursorColor: Color.fromRGBO(146, 163, 253, 1.0),
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.symmetric(
                       vertical: 5.0, horizontal: 10.0),
                   labelText: "Date Of Birth",
-                  labelStyle: TextStyle(
+                  labelStyle: GoogleFonts.poppins(textStyle:TextStyle(
                     color: Color.fromRGBO(123, 111, 114, 1.0),
                     fontSize: 12.sp,
-                  ),
+                 fontFamily:'poppins' ), ),
                   prefixIcon: Icon(
                     IconlyLight.calendar,
                     color: Color.fromRGBO(123, 111, 114, 1.0),
                   ),
-                  hintStyle: TextStyle(
+                  hintStyle: GoogleFonts.poppins(textStyle:TextStyle(
                     fontSize: 16.sp,
-                  ),
+                  fontFamily:'poppins'),),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(
                       Radius.circular(12),
@@ -176,26 +178,26 @@ class _Register2State extends State<Register2> {
                       color: Color.fromRGBO(247, 248, 248, 1.0)),
 
                   child: TextFormField(
-                    style: TextStyle(
+                    style:GoogleFonts.poppins(textStyle: TextStyle(
                       color: Color.fromRGBO(123, 111, 114, 1.0),
-                    ),
+                   fontFamily:'poppins' ),),
                     keyboardType: TextInputType.visiblePassword,
                     cursorColor: Color.fromRGBO(146, 163, 253, 1.0),
                     decoration: InputDecoration(
                       contentPadding: const EdgeInsets.symmetric(
                           vertical: 5.0, horizontal: 10.0),
                       labelText: "Your Weight",
-                      labelStyle: TextStyle(
+                      labelStyle: GoogleFonts.poppins(textStyle:TextStyle(
                         color: Color.fromRGBO(123, 111, 114, 1.0),
                         fontSize: 12.sp,
-                      ),
+                     fontFamily:'poppins'), ),
                       prefixIcon: Icon(
                         Icons.monitor_weight_outlined,
                         color: Color.fromRGBO(123, 111, 114, 1.0),
                       ),
-                      hintStyle: TextStyle(
+                      hintStyle: GoogleFonts.poppins(textStyle:TextStyle(
                         fontSize: 16.sp,
-                      ),
+                   fontFamily:'poppins'   ), ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(12),
@@ -236,11 +238,11 @@ class _Register2State extends State<Register2> {
                       borderRadius: BorderRadius.circular(14)),
                   child: Text(
                     " KG",
-                    style: TextStyle(
+                    style:GoogleFonts.poppins(textStyle: TextStyle(
                         color: Colors.white,
                         fontSize: 12.sp,
-                        fontWeight: FontWeight.bold),
-                  ),
+                        fontWeight: FontWeight.bold,fontFamily:'poppins'  ),),
+                 ),
                 ),
               ],
             ),
@@ -261,26 +263,26 @@ class _Register2State extends State<Register2> {
                       color: Color.fromRGBO(247, 248, 248, 1.0)),
 
                   child: TextFormField(
-                    style: TextStyle(
+                    style:GoogleFonts.poppins(textStyle: TextStyle(
                       color: Color.fromRGBO(123, 111, 114, 1.0),
-                    ),
+                   fontFamily:'poppins' ),),
                     keyboardType: TextInputType.visiblePassword,
                     cursorColor: Color.fromRGBO(146, 163, 253, 1.0),
                     decoration: InputDecoration(
                       contentPadding: const EdgeInsets.symmetric(
                           vertical: 5.0, horizontal: 10.0),
                       labelText: "Height",
-                      labelStyle: TextStyle(
+                      labelStyle:GoogleFonts.poppins(textStyle: TextStyle(
                         color: Color.fromRGBO(123, 111, 114, 1.0),
                         fontSize: 12.sp,
-                      ),
+                    fontFamily:'poppins'  ), ),
                       prefixIcon: Icon(
                         IconlyLight.swap,
                         color: Color.fromRGBO(123, 111, 114, 1.0),
                       ),
-                      hintStyle: TextStyle(
+                      hintStyle:GoogleFonts.poppins(textStyle: TextStyle(
                         fontSize: 16.sp,
-                      ),
+                   fontFamily:'poppins'   ),  ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(12),
@@ -322,11 +324,11 @@ class _Register2State extends State<Register2> {
                       borderRadius: BorderRadius.circular(14)),
                   child: Text(
                     "CM",
-                    style: TextStyle(
+                    style:GoogleFonts.poppins(textStyle: TextStyle(
                         color: Colors.white,
                         fontSize: 12.sp,
-                        fontWeight: FontWeight.bold),
-                  ),
+                        fontWeight: FontWeight.bold,fontFamily:'poppins'),
+                    ), ),
                 ),
               ],
             ),

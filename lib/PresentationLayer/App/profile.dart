@@ -58,23 +58,15 @@ class _ProfileState extends State<Profile> {
                   children: [
                     Text(
                       'Youssef Elkondakly',
-                      style: TextStyle(
-                        color: Color(0xFF1D1517),
-                        fontSize: 14.sp,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w500,
-                        height: 1.50,
-                      ),
+                      style: TextStyles(
+
+                      ).w50014Black,
                     ),
                     Text(
                       'Lose a Fat Program',
-                      style: TextStyle(
-                        color: Color(0xFF7B6F72),
-                        fontSize: 12.sp,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w400,
-                        height: 1.50,
-                      ),
+                      style: TextStyles(
+
+                      ).w40012Grey,
                     ),
                   ],
                 ),
@@ -85,13 +77,9 @@ class _ProfileState extends State<Profile> {
                   ),
                   context,
                   "Edit",
-                  TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w500,
-                    height: 0.12,
-                  ),
+                  TextStyles(
+
+                  ).w50012White,
                   83.w,
                   30.h,
                   Colours().gradientcolorBlue,
@@ -144,13 +132,9 @@ class _ProfileState extends State<Profile> {
                   padding: EdgeInsets.only(bottom: 7.5),
                   child: Text(
                     'Account',
-                    style: TextStyle(
-                      color: Color(0xFF1D1517),
-                      fontSize: 16.sp,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w600,
-                      height: 0.09,
-                    ),
+                    style: TextStyles(
+
+                    ).w60016Black,
                   ),
                 ),
                 Row(
@@ -289,13 +273,9 @@ class _ProfileState extends State<Profile> {
               children: [
                 Text(
                   'Notification',
-                  style: TextStyle(
-                    color: Color(0xFF1D1517),
-                    fontSize: 16,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w600,
-                    height: 0.09,
-                  ),
+                  style: TextStyles(
+
+                  ).w60016Black,
                 ),
                 Row(
                   children: [
@@ -374,13 +354,9 @@ class _ProfileState extends State<Profile> {
                   padding: EdgeInsets.only(bottom: 7.5),
                   child: Text(
                     'Other',
-                    style: TextStyle(
-                      color: Color(0xFF1D1517),
-                      fontSize: 16.sp,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w600,
-                      height: 0.09,
-                    ),
+                    style: TextStyles(
+
+                    ).w60016Black,
                   ),
                 ),
                 Row(
@@ -473,13 +449,9 @@ class _ProfileState extends State<Profile> {
   }
 }
 
-TextStyle stylee = TextStyle(
-  color: Color(0xFF7B6F72),
-  fontSize: 12.sp,
-  fontFamily: 'Poppins',
-  fontWeight: FontWeight.w400,
-  height: .12,
-);
+TextStyle stylee = TextStyles(
+
+).w40012Grey;
 Container container(String up, String down) {
   return Container(
     width: 95.w,
@@ -513,23 +485,16 @@ Container container(String up, String down) {
           },
           child: Text(
             up,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 14.sp,
-              fontFamily: 'Poppins',
-              fontWeight: FontWeight.w500,
-            ),
+            style: TextStyles(
+
+            ).w50014White,
           ),
         ),
         Text(
           down,
-          style: TextStyle(
-            color: Color(0xFF7B6F72),
-            fontSize: 12.sp,
-            fontFamily: 'Poppins',
-            fontWeight: FontWeight.w400,
-            height: 0.12,
-          ),
+          style: TextStyles(
+
+          ).w40012Grey,
         ),
       ],
     ),

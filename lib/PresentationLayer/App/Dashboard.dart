@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gym/PresentationLayer/App/Notification.dart';
 import 'package:gym/PresentationLayer/App/TodayTarget.dart';
 import 'package:gym/PresentationLayer/App/profile.dart';
-import 'package:gym/PresentationLayer/Constants/make.dart';
+import 'package:gym/PresentationLayer/make.dart';
 import 'package:gym/PresentationLayer/Welcome/Welcome.dart';
 import 'package:iconly/iconly.dart';
 import '../Constants/Constants.dart';
@@ -49,7 +49,7 @@ _dashboard(context,pie){
                 ),
                 Text(
                   'Youssef Elkondakly',
-                  style: TextStyles().blodBlack20,
+                  style: TextStyles().boldBlack20,
                 ),
               ],
             ),
@@ -106,13 +106,9 @@ _dashboard(context,pie){
               children: [
                 Text(
                   'BMI (Body Mass Index)',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14.sp,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w600,
-                    height: 1.50,
-                  ),
+                  style: TextStyles(
+
+                  ).w60014White,
                 ),
                 Text(
                   'You have on over weight',
@@ -137,12 +133,9 @@ _dashboard(context,pie){
         children: [
           Text(
             'Today Target',
-            style: TextStyle(
-              color: Color(0xFF1D1517),
-              fontSize: 14.sp,
-              fontFamily: 'Poppins',
-              fontWeight: FontWeight.w500,
-            ),
+            style: TextStyles(
+
+            ).w50014Black,
           ),
           GestureDetector(
             onTap: () {
@@ -168,12 +161,9 @@ _dashboard(context,pie){
               ),
               child: Text(
                 'Check',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 12.sp,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w400,
-                ),
+                style: TextStyles(
+
+                ).w40012White,
               ),
             ),
           ),
@@ -183,13 +173,9 @@ _dashboard(context,pie){
         padding: EdgeInsets.only(left: 20.w),
         child: Text(
           'Activity Status',
-          style: TextStyle(
-            color: Color(0xFF1D1517),
-            fontSize: 16.sp,
-            fontFamily: 'Poppins',
-            fontWeight: FontWeight.w600,
-            height: 1.50,
-          ),
+          style: TextStyles(
+
+          ).w60016Black,
         ),
       ),
       backgroundContainer(150.h, 15, 16, 20, EdgeInsets.only(
@@ -201,13 +187,9 @@ _dashboard(context,pie){
             padding: const EdgeInsets.only(left: 20.0),
             child: Text(
               "Heart Rate",
-              style: TextStyle(
-                color: Color(0xFF1D1517),
-                fontSize: 12.sp,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w500,
-                height: 1.50,
-              ),
+              style: TextStyles(
+
+              ).w50012Black,
             ),
           ),
           mask(Colours().gradientcolorBlue, Padding(
@@ -320,7 +302,7 @@ _dashboard(context,pie){
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              padding: EdgeInsets.fromLTRB(20, 20, 8, 20),
+              padding: EdgeInsets.fromLTRB(20, 20, 0, 20),
               width: 150.w,
               height: 315.h,
               decoration: ShapeDecoration(
@@ -348,13 +330,9 @@ _dashboard(context,pie){
                     children: [
                       Text(
                         'Water Intake',
-                        style: TextStyle(
-                          color: Color(0xFF1C242A),
-                          fontSize: 12.sp,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w500,
-                          height: 1.50,
-                        ),
+                        style: TextStyles(
+
+                        ).w50012Black,
                       ),
                       mask(Colours().gradientcolorBlue, Text(
                         '4 Liters',
@@ -365,13 +343,9 @@ _dashboard(context,pie){
                       ),
                       Text(
                         'Real time updates',
-                        style: TextStyle(
-                          color: Color(0xFF7B6F72),
-                          fontSize: 10.sp,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w400,
-                          height: 1.50,
-                        ),
+                        style: TextStyles(
+
+                        ).w40010Grey,
                       ),
                       Row(
                         children: [
@@ -381,114 +355,72 @@ _dashboard(context,pie){
                           ),
                           Container(
                             height: 173.h,
-                            width: 47.h,
+
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
                                   '6am - 8am',
-                                  style: TextStyle(
-                                    color: Color(0xFFACA3A5),
-                                    fontSize: 8,
-                                    fontFamily: 'Poppins',
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.50,
-                                  ),
+                                  style: TextStyles(
+                                  ).w4008Grey,
                                 ),
-                                Text(
+                                mask(Colours().gradientcolorPink, Text(
                                   '600ml',
-                                  style: TextStyle(
-                                    color: Color(0xFFC58BF2),
-                                    fontSize: 8.sp,
-                                    fontFamily: 'Poppins',
-                                    fontWeight: FontWeight.w500,
-                                    height: 1.50,
-                                  ),
-                                ),
+                                  style: TextStyles(
+                                  ).w5008White,
+                                ), Alignment.topLeft, Alignment.bottomRight),
                                 SizedBox(height: 14.h),
                                 Text(
                                   '9am - 11am',
-                                  style: TextStyle(
-                                    color: Color(0xFFACA3A5),
-                                    fontSize: 8.sp,
-                                    fontFamily: 'Poppins',
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.50,
-                                  ),
+                                  style: TextStyles(
+
+                                  ).w4008Grey,
                                 ),
-                                Text(
+                                mask(Colours().gradientcolorPink, Text(
                                   '500ml',
-                                  style: TextStyle(
-                                    color: Color(0xFFC58BF2),
-                                    fontSize: 8.sp,
-                                    fontFamily: 'Poppins',
-                                    fontWeight: FontWeight.w500,
-                                    height: 1.50,
-                                  ),
-                                ),
+                                  style: TextStyles(
+                                  ).w5008White,
+                                ), Alignment.topLeft, Alignment.bottomRight),
+
                                 SizedBox(height: 11.h),
                                 Text(
                                   '11am - 2pm',
-                                  style: TextStyle(
-                                    color: Color(0xFFACA3A5),
-                                    fontSize: 8.sp,
-                                    fontFamily: 'Poppins',
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.50,
-                                  ),
+                                  style: TextStyles(
+
+                                  ).w4008Grey,
                                 ),
-                                Text(
+                                mask(Colours().gradientcolorPink, Text(
                                   '1000ml',
-                                  style: TextStyle(
-                                    color: Color(0xFFC58BF2),
-                                    fontSize: 8.sp,
-                                    fontFamily: 'Poppins',
-                                    fontWeight: FontWeight.w500,
-                                    height: 1.50,
-                                  ),
-                                ),
+                                  style: TextStyles(
+                                  ).w5008White,
+                                ), Alignment.topLeft, Alignment.bottomRight),
+
                                 SizedBox(height: 14.h),
                                 Text(
                                   '2pm - 4pm',
-                                  style: TextStyle(
-                                    color: Color(0xFFACA3A5),
-                                    fontSize: 8.sp,
-                                    fontFamily: 'Poppins',
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.50,
-                                  ),
+                                  style: TextStyles(
+
+                                  ).w4008Grey,
                                 ),
-                                Text(
+                                mask(Colours().gradientcolorPink, Text(
                                   '700ml',
-                                  style: TextStyle(
-                                    color: Color(0xFFC58BF2),
-                                    fontSize: 8.sp,
-                                    fontFamily: 'Poppins',
-                                    fontWeight: FontWeight.w500,
-                                    height: 1.50,
-                                  ),
-                                ),
+                                  style: TextStyles(
+                                  ).w5008White,
+                                ), Alignment.topLeft, Alignment.bottomRight),
+
                                 SizedBox(height: 11.h),
                                 Text(
                                   '4pm - now',
-                                  style: TextStyle(
-                                    color: Color(0xFFACA3A5),
-                                    fontSize: 8.sp,
-                                    fontFamily: 'Poppins',
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.50,
-                                  ),
+                                  style: TextStyles(
+
+                                  ).w4008Grey,
                                 ),
-                                Text(
+                                mask(Colours().gradientcolorPink, Text(
                                   '900ml',
-                                  style: TextStyle(
-                                    color: Color(0xFFC58BF2),
-                                    fontSize: 8.sp,
-                                    fontFamily: 'Poppins',
-                                    fontWeight: FontWeight.w500,
-                                    height: 1.50,
-                                  ),
-                                ),
+                                  style: TextStyles(
+                                  ).w5008White,
+                                ), Alignment.topLeft, Alignment.bottomRight),
+
                               ],
                             ),
                           ),
@@ -525,13 +457,9 @@ _dashboard(context,pie){
                       children: [
                         Text(
                           'Sleep',
-                          style: TextStyle(
-                            color: Color(0xFF1D1517),
-                            fontSize: 12.sp,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w500,
-                            height: 1.50,
-                          ),
+                          style: TextStyles(
+
+                          ).w50012Black,
                         ),
                         mask(Colours().gradientcolorBlue, Text.rich(
                           TextSpan(
@@ -589,13 +517,9 @@ _dashboard(context,pie){
                       children: [
                         Text(
                           'Calories',
-                          style: TextStyle(
-                            color: Color(0xFF1D1517),
-                            fontSize: 12,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w500,
-                            height: 1.50,
-                          ),
+                          style: TextStyles(
+
+                          ).w50012Black,
                         ),
                         ShaderMask(
                           shaderCallback: (Rect bounds) {

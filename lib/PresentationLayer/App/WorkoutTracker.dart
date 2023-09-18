@@ -83,13 +83,9 @@ class _WorkoutTrackerState extends State<WorkoutTracker> {
 
                         ),
                       ),
-                      Text('Workout Tracker',style:TextStyle(
-                        color: Colors.white,
-                        fontSize: 16.sp,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w700,
-                        height: 1.50,
-                      ),
+                      Text('Workout Tracker',style:TextStyles(
+
+                      ).bold16White,
                       ),
                       Container(
                         width: 32.w,
@@ -246,12 +242,9 @@ class _WorkoutTrackerState extends State<WorkoutTracker> {
                             children: [
                               Text(
                                 'Daily Workout Schedule',
-                                style: TextStyle(
-                                  color: Color(0xFF1D1517),
-                                  fontSize: 14.sp,
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w500,
-                                ),
+                                style: TextStyles(
+
+                                ).w50014Black,
                               ),
                                 button(MaterialPageRoute(builder: (context)=>Profile()), context, 'Check', TextStyles().w50012White, 68.w, 28.h, Colours().gradientcolorBlue)
                             ],
@@ -295,23 +288,15 @@ class _WorkoutTrackerState extends State<WorkoutTracker> {
                                 children: [
                                   Text(
                                     'Fullbody Workout',
-                                    style: TextStyle(
-                                      color: Color(0xFF1D1517),
-                                      fontSize: 12,
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w500,
-                                      height: 1.50,
-                                    ),
+                                    style: TextStyles(
+
+                                    ).w50012Black,
                                   ),
                                   Text(
                                     'Today, 03:00pm',
-                                    style: TextStyle(
-                                      color: Color(0xFFA3A8AC),
-                                      fontSize: 10,
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w400,
-                                      height: 1.50,
-                                    ),
+                                    style: TextStyles(
+
+                                    ).w40010Grey,
                                   ),
                                 ],
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -380,23 +365,15 @@ class _WorkoutTrackerState extends State<WorkoutTracker> {
                                 children: [
                                   Text(
                                     'Upperbody Workout',
-                                    style: TextStyle(
-                                      color: Color(0xFF1D1517),
-                                      fontSize: 12.sp,
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w500,
-                                      height: 1.50,
-                                    ),
+                                    style: TextStyles(
+
+                                    ).w50012Black,
                                   ),
                                   Text(
                                     'June 05, 02:00pm',
-                                    style: TextStyle(
-                                      color: Color(0xFFA3A8AC),
-                                      fontSize: 10.sp,
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w400,
-                                      height: 1.50,
-                                    ),
+                                    style: TextStyles(
+
+                                    ).w40010Grey,
                                   ),
                                 ],
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -432,13 +409,9 @@ class _WorkoutTrackerState extends State<WorkoutTracker> {
                           Text(
                             'What Do You Want to Train',
 
-                            style: TextStyle(
-                              color: Color(0xFF1D1517),
-                              fontSize: 16.sp,
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.w600,
-                              height: 0.09,
-                            ),
+                            style: TextStyles(
+
+                            ).w60016Black,
                           ),Spacer(),
                         ],),
                         containere('Fullbody Workout', '11 Exercises | 32mins', context, MaterialPageRoute(builder:(context)=>FullbodyWorkout()), Images().jumbrobe),
@@ -459,14 +432,9 @@ class _WorkoutTrackerState extends State<WorkoutTracker> {
 }
 
 Widget bottomTitleWidgetswhite(double value, TitleMeta meta) {
-  var style = TextStyle(
-    color:
-    Colors.white
-    ,
-    fontSize: 12.sp,
-    fontFamily: 'Poppins',
-    fontWeight: FontWeight.w400,
-  );
+  var style = TextStyles(
+
+  ).w40012White;
   String text;
   switch (value.toInt()) {
     case 0:

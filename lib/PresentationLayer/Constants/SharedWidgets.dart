@@ -2,6 +2,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:iconly/iconly.dart';
 import 'Constants.dart';
 
@@ -81,23 +82,14 @@ latestWorkout(String main,String details,AssetImage img,Color cl,double x,double
           children: [
             Text(
               main,
-              style: TextStyle(
-                color: Color(0xFF1D1517),
-                fontSize: 12,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w500,
-                height: 1.50,
-              ),
+              style: TextStyles(
+               ).w50012Black,
             ),
             Text(
               details,
-              style: TextStyle(
-                color: Color(0xFFA3A8AC),
-                fontSize: 10,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w400,
-                height: 1.50,
-              ),
+              style: TextStyles(
+
+              ).w40010Grey,
             ),
             SizedBox(
               height: 9.h,
@@ -165,14 +157,9 @@ indicatorH(double baseWidth,double width,double height,List<Color> gradient){
   );
 }
 Widget bottomTitleWidgets(double value, TitleMeta meta) {
-  var style = TextStyle(
-    color:
-    Color(0xFF7B6F72)
-    ,
-    fontSize: 12.sp,
-    fontFamily: 'Poppins',
-    fontWeight: FontWeight.w400,
-  );
+  var style = TextStyles(
+
+  ).w40012Grey;
   String text;
   switch (value.toInt()) {
     case 0:
@@ -222,14 +209,9 @@ Widget bottomTitleWidgets(double value, TitleMeta meta) {
   );
 }
 Widget rightTitleWidgets(double sale, TitleMeta meta) {
-  var style = TextStyle(
-    color:
-    Color(0xFF7B6F72)
-    ,
-    fontSize: 10.sp,
-    fontFamily: 'Poppins',
-    fontWeight: FontWeight.w400,
-  );
+  var style = TextStyles(
+
+  ).w40010Grey;
   String percent;
   switch (sale.toInt()) {
     case 0:
@@ -307,29 +289,21 @@ latestActivity(String main,String details,AssetImage img,Color cl,){
         SizedBox(
           width: 10.w,
         ),
-        Container(margin: EdgeInsets.only(right: 82),
-          width: 131.w,height: 36.h,
+        Padding(
+          padding:  EdgeInsets.only(top: (22-15).h,),
           child: Column(
             children: [
               Text(
                 main,
-                style: TextStyle(
-                  color: Color(0xFF1D1517),
-                  fontSize: 12,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w500,
-                  height: 1.50,
-                ),
+                style: TextStyles(
+
+                ).w50012Black,
               ),
               Text(
                 details,
-                style: TextStyle(
-                  color: Color(0xFFA3A8AC),
-                  fontSize: 10,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w400,
-                  height: 1.50,
-                ),
+                style: TextStyles(
+
+                ).w40010Grey,
               ),
 
 
@@ -337,6 +311,7 @@ latestActivity(String main,String details,AssetImage img,Color cl,){
             crossAxisAlignment: CrossAxisAlignment.start,
           ),
         ),
+        Spacer(),
         Icon(
           IconData(
             0xf8da, fontFamily: CupertinoIcons.iconFont, fontPackage: CupertinoIcons.iconFontPackage,),color: Colors.grey,
@@ -379,13 +354,13 @@ appBar(MaterialPageRoute backTo,ctx,String titleName,Color color){
   return AppBar(
     title: Text(titleName,
     ),
-    titleTextStyle: TextStyle(
+    titleTextStyle: GoogleFonts.poppins(textStyle:TextStyle(
       color: color,
       fontSize: 16.sp,
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w700,
       height: 1.50,
-    ),
+    )),
     centerTitle: true,
     actions: [
       //view head line
@@ -440,13 +415,9 @@ seemore (String textL,String textS,EdgeInsets padding,ctx,MaterialPageRoute wher
     children: [
       Text(
         textL,
-        style: TextStyle(
-          color: Color(0xFF1D1517),
-          fontSize: 16.sp,
-          fontFamily: 'Poppins',
-          fontWeight: FontWeight.w600,
-          height: 1.50,
-        ),
+        style: TextStyles(
+
+        ).w60016Black,
       ),
       GestureDetector(
         onTap: () {
@@ -456,13 +427,9 @@ seemore (String textL,String textS,EdgeInsets padding,ctx,MaterialPageRoute wher
         },
         child: Text(
           textS,
-          style: TextStyle(
-            color: Color(0xFFACA3A5),
-            fontSize: 12,
-            fontFamily: 'Poppins',
-            fontWeight: FontWeight.w500,
-            height: 1.50,
-          ),
+          style: TextStyles(
+
+          ).w50012Grey,
         ),
       ),
     ],
@@ -485,29 +452,23 @@ containere(String textL,String textS,ctx, MaterialPageRoute w,AssetImage img,){
       ),
     ),
     child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children:[ Container(width:123.w,
-        height: 94.h,
+      children:[ Container(
+
         margin:EdgeInsets.only(top: 6),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               textL,
-              style: TextStyle(
-                color: Color(0xFF1D1517),
-                fontSize: 14.sp,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w500,
-              ),
+              style: TextStyles(
+
+              ).w50014Black,
             ),
             SizedBox(height: 5.h,),
             Text(
               textS,
-              style: TextStyle(
-                color: Color(0xFF7B6F72),
-                fontSize: 12.sp,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w400,
-              ),
+              style: TextStyles(
+
+              ).w40012Grey,
             ),
             SizedBox(height: 10.h,),
 
@@ -540,13 +501,9 @@ containere(String textL,String textS,ctx, MaterialPageRoute w,AssetImage img,){
                     },
                     child:Text(
                       'View More',
-                      style:TextStyle(
-                        color: Colors.white,
-                        fontSize: 12.sp,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w500,
+                      style:TextStyles(
 
-                      ),
+                      ).w50012White,
                     ) ,
                   ) ,
                 ),
@@ -621,12 +578,12 @@ Stack welcomeStack(String asset,double picHeight,String main,String submain,){
                     Text(
                       main,
                       style:
-                      TextStyle(fontSize: 24.sp, fontWeight: FontWeight.bold),
+                      GoogleFonts.poppins(textStyle:TextStyle(fontSize: 24.sp, fontWeight: FontWeight.bold,fontFamily: 'poppins'),),
                     ),
                     SizedBox(height: 17.h,),
                     Text(submain
                       ,style:
-                      TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w400,color: Colors.grey),),
+                      TextStyles( ).w40014Grey,),
                   ],
                 ),
               )

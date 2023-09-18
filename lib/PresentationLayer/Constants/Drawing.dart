@@ -1,6 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'Constants.dart';
 
@@ -600,11 +601,12 @@ pieChart(double bmi){
             value: 100-bmi,
             title: '${100-bmi}%',
             radius: radius,
-            titleStyle: TextStyle(
+            titleStyle: GoogleFonts.poppins(textStyle:TextStyle(
               fontSize: fontSize,
               fontWeight: FontWeight.bold,
               color: const Color(0xffffffff),
               shadows: shadows,
+              fontFamily:'poppins'),
             ),
             badgePositionPercentageOffset: .98,
           );
@@ -614,12 +616,12 @@ pieChart(double bmi){
             value: bmi,
             title: '  ${bmi.toString()}',
             radius: radius,
-            titleStyle: TextStyle(
+            titleStyle:GoogleFonts.poppins(textStyle: TextStyle(
               fontSize: fontSize,
               fontWeight: FontWeight.bold,
               color: Colors.white,
-
-            ),
+fontFamily:'poppins'
+            ),),
 
             badgePositionPercentageOffset: .98,
           );
@@ -685,7 +687,7 @@ stackCaloriesLeft(){
         Align(alignment: Alignment.center,child: Container(
           width: 48.w,
           height: 48.h,
-          padding: EdgeInsets.fromLTRB(6, 12, 6, 12),
+          padding: EdgeInsets.fromLTRB(6.w, 10.h, 3.w, 2.h),
           decoration: ShapeDecoration(
 
             gradient: LinearGradient(

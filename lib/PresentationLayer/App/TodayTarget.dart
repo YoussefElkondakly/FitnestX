@@ -41,13 +41,9 @@ padding: EdgeInsets.all(20),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('Today Target',
-                  style: TextStyle(
-                    color: Color(0xFF1D1517),
-                    fontSize: 14.sp,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w600,
-                    height: 1.50,
-                  ),),
+                  style: TextStyles(
+
+                  ).w60014Black,),
 Container(
   width: 24.w,height: 24.h,
   decoration: ShapeDecoration(
@@ -76,40 +72,23 @@ Container(
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
-                padding: EdgeInsets.fromLTRB(9, 10, 11, 9),
+                padding: EdgeInsets.fromLTRB(9, 10, 0, 9),
                 child: Row(
                   children: [
                     Image(image: Images().water,width: 25.w,height: 33.06.h,),
                     SizedBox(width: 8.w,),
                     Column(crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        ShaderMask(
-                          shaderCallback: (Rect bounds) {
-                            return LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: Colours().gradientcolorBlue,
-                            ).createShader(bounds);
-                          },
-                          child:  Text(
-                            '8L',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 14.sp,
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.w500,
-                              height: 1.50,
-                            ),
-                          ),
-                        ),
+                        mask(Colours().gradientcolorBlue, Text(
+                          '8L'  ,
+                          style: TextStyles(
+                          ).w50014White,
+                        ), Alignment.centerLeft, Alignment.centerRight),
+
                         Text('Water Intake',
-                          style: TextStyle(
-                            color: Color(0xFF7B6F72),
-                            fontSize: 12.sp,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w400,
-                            height: 1.67,
-                          ),),
+                          style: TextStyles(
+
+                          ).w40012Grey,),
                       ],
                     ),
                   ],
@@ -131,33 +110,16 @@ Container(
                         SizedBox(width: 8.w,),
                         Column(crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            ShaderMask(
-                              shaderCallback: (Rect bounds) {
-                                return LinearGradient(
-                                  begin: Alignment.topCenter,
-                                  end: Alignment.bottomCenter,
-                                  colors: Colours().gradientcolorBlue,
-                                ).createShader(bounds);
-                              },
-                              child:  Text(
-                                '2400',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14.sp,
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w500,
-                                  height: 1.50,
-                                ),
-                              ),
-                            ),
+                            mask(Colours().gradientcolorBlue, Text(
+                              '2400'  ,
+                              style: TextStyles(
+                              ).w50014White,
+                            ), Alignment.centerLeft, Alignment.centerRight),
+
                             Text('Foot Steps',
-                              style: TextStyle(
-                                color: Color(0xFF7B6F72),
-                                fontSize: 12.sp,
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.w400,
-                                height: 1.67,
-                              ),),
+                              style: TextStyles(
+
+                              ).w40012Grey,),
                           ],
                         ),
                       ],
@@ -174,13 +136,9 @@ Container(
               children: [
                 Text(
                   'Workout Progress',
-                  style: TextStyle(
-                    color: Color(0xFF1D1517),
-                    fontSize: 16.sp,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w600,
-                    height: 1.50,
-                  ),
+                  style: TextStyles(
+
+                  ).w60016Black,
                 ),
                 GestureDetector(
                   onTap: () {
@@ -207,14 +165,10 @@ Container(
                     child: Row(
                       children: [
                         Text(
-                          'Weekly   ' ,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 10.sp,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w400,
-                            height: 1.50,
-                          ),
+                          'Weekly' ,
+                          style: TextStyles(
+
+                          ).w40010White,
                         ),
                         Icon(IconlyLight.arrow_down_2,size: 15.sp,color: Colors.white,),
                       ],
@@ -271,13 +225,9 @@ Widget linechart(double height,String text,List<Color>gradC){
       SizedBox(height:7.h ,),
       Text(
         text,
-        style: TextStyle(
-          color: Color(0xFF7B6F72),
-          fontSize: 12.sp,
-          fontFamily: 'Poppins',
-          fontWeight: FontWeight.w400,
-          height: 1.50,
-        ),
+        style: TextStyles(
+
+        ).w40012Grey,
       ),
     ],
   );

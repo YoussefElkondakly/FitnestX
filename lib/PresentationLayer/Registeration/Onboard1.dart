@@ -55,10 +55,9 @@ stackBoard(context,nextTo,String image,String main ,String subMain){
             ),
             Text(
               "What is your goal ?",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20.sp,
-              ),
+              style: TextStyles(
+
+              ).boldBlack20,
             ),
             SizedBox(
               height: 5.h,
@@ -66,10 +65,8 @@ stackBoard(context,nextTo,String image,String main ,String subMain){
             Text(
               "It will help us to choose a best\nprogram for you",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Color.fromRGBO(123, 111, 114, 1.0),
-                fontSize: 12.sp,
-              ),
+              style: TextStyles(
+              ).w40012Grey,
             ),
             Container(
               padding: EdgeInsets.fromLTRB(30, 35, 30, 30),

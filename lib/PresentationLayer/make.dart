@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gym/PresentationLayer/Constants/Drawing.dart';
 
-import 'Constants.dart';
-import '../App/Notification.dart';
+import 'Constants/Constants.dart';
+import 'App/Notification.dart';
 class Make extends StatefulWidget {
   const Make({super.key});
 

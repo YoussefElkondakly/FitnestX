@@ -32,12 +32,11 @@ class _WelcomeUserState extends State<WelcomeUser> {
                 Text(
                   "Welcome, Joe",
                   style:
-                  TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
+                  TextStyles().boldBlack20,
                 ),
                 SizedBox(height: 7.h,),
                 Text("You are all set now, let’s reach your\ngoals together with us",style:
-                TextStyle(fontSize: 12.sp,color: Color.fromRGBO(
-                    123, 111, 114, 1.0)),textAlign: TextAlign.center,),
+                TextStyles().w40012Grey,textAlign: TextAlign.center,),
 
               ],
             ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:gym/PresentationLayer/Constants/Constants.dart';
 import 'package:gym/PresentationLayer/Constants/SharedWidgets.dart';
 import 'package:gym/PresentationLayer/Registeration/RegisterStep2.dart';
@@ -26,17 +27,15 @@ class _RegisterState extends State<Register> {
           key: _formkey,
           child: Column(
             children: <Widget>[
+
               SizedBox(
                 height: 40.h,
               ),
               Text(
                 "Hey There,",
-                style: TextStyle(
-                  wordSpacing: .0000000001,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 16.sp,
-                ),
+                style: TextStyles(
+
+                ).w40016Black,
               ),
 
               SizedBox(
@@ -44,10 +43,9 @@ class _RegisterState extends State<Register> {
               ),
               Text(
                 "Create An Account",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20.sp,
-                ),
+                style: TextStyles(
+
+                ).boldBlack20,
               ),
               SizedBox(
                 height: 30.h,
@@ -71,55 +69,75 @@ class _RegisterState extends State<Register> {
                 margin: EdgeInsets.fromLTRB(30.w, 0, 30.w, 0),
                 child: Row(
                   children: <Widget>[
-                    // Checkbox(
-                    //     shape: RoundedRectangleBorder(
-                    //       borderRadius: BorderRadius.circular(3),
-                    //     ),
-                    //     checkColor: Colors.white,
-                    //     value: isCheecked,
-                    //     onChanged: (bool? value) {
-                    //       setState(() {
-                    //         isCheecked = value!;
-                    //       });
-                    //     }),
-                    RichText(
-                      text: TextSpan(
-                        text: 'By continuing you accept our ',
-                        style: TextStyle(
-                          wordSpacing: .0001,
-                          fontSize: 12.sp,
-                          color: Color.fromRGBO(103, 114, 148, 1.0),
-                          fontWeight: FontWeight.w400,
-                        ),
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Privacy Policy',
-                            style: TextStyle(
-                              decoration: TextDecoration.underline,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12.sp,
-                              color: Color.fromRGBO(103, 114, 148, 1.0),
-                            ),
+                    Container(width: 16.w,height: 16.h,
+                      margin: EdgeInsets.only(right: 10),
+                      child: Checkbox(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(3,),
                           ),
-                          TextSpan(
-                            text: ' and\n',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12.sp,
-                              color: Color.fromRGBO(103, 114, 148, 1.0),
-                            ),
+                          side: BorderSide(color: Colors.grey,width: .8),
+                          checkColor: Colors.white,
+                          fillColor: isCheecked==false?MaterialStateProperty.all<Color>(Colors.white):MaterialStateProperty.all<Color>(Colors.grey.withOpacity(.6)),
+                         overlayColor:MaterialStateProperty.all(Colors.transparent),
+                          value: isCheecked,
+                          onChanged: (bool? value) {
+                            setState(() {
+                              isCheecked = value!;
+                            });
+                          }
                           ),
-                          TextSpan(
-                            text: 'Term of Use',
-                            style: TextStyle(
-                              decoration: TextDecoration.underline,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12.sp,
-                              color: Color.fromRGBO(103, 114, 148, 1.0),
-                            ),
-                          ),
-                        ],
-                      ),
+                    ),
+
+                Text.rich(
+                TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'By continuing you accept our ',
+                      style: GoogleFonts.poppins(textStyle:TextStyle(
+                        color: Color(0xFFACA3A5),
+                        fontSize: 10.sp,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w400,
+
+                      )),
+                    ),
+                    TextSpan(
+                      text: 'Privacy Policy',
+                      style: GoogleFonts.poppins(textStyle:TextStyle(
+                        color: Color(0xFFACA3A5),
+                        fontSize: 10.sp,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w400,
+                        decoration: TextDecoration.underline,
+                        decorationColor: Color(0xFFACA3A5),
+
+                      )),
+                    ),
+                    TextSpan(
+                      text: ' and\n',
+                      style: GoogleFonts.poppins(textStyle:TextStyle(
+                        color: Color(0xFFACA3A5),
+                        fontSize: 10.sp,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w400,
+
+                      )),
+                    ),
+                    TextSpan(
+                      text: 'Term of Use',
+                      style: GoogleFonts.poppins(textStyle:TextStyle(
+                        color:Color(0xFFACA3A5),
+                        fontSize: 10.sp,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w400,
+                        decoration: TextDecoration.underline,
+                        decorationColor:  Color(0xFFACA3A5),
+
+                      )),
+                    ),
+                  ],
+                ),
+
                     ),
                   ],
                 ),
@@ -133,17 +151,17 @@ class _RegisterState extends State<Register> {
                 height: 20.h,
               ),
               or(),
+              SizedBox(
+                height: 30.h,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
                     'Already Have An Account? ',
-                    style: TextStyle(
-                      wordSpacing: .0001,
-                      fontSize: 14.sp,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
-                    ),
+                    style: TextStyles(
+
+                    ).w40014Black,
                   ),
                   GestureDetector(
                     onTap: () {
@@ -152,10 +170,11 @@ class _RegisterState extends State<Register> {
                     },
                     child: Text(
                       'Login',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                      style: GoogleFonts.poppins(textStyle:TextStyle(
+                        fontWeight: FontWeight.w500,
                         fontSize: 14.sp,
                         color: Color.fromRGBO(197, 139, 242, 1.0),
+                        fontFamily: 'poppins'),
                       ),
                     ),
                   ),
@@ -174,33 +193,35 @@ List<Container> textfield=[
   Container(
     width: 315.w,
     height: 48.h,
-    margin: EdgeInsets.fromLTRB(20, 0, 20, 15),
+    margin: EdgeInsets.fromLTRB(20, 0, 20, 15.h),
     // padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
     decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
         color: Color.fromRGBO(247, 248, 248, 1.0)),
 
     child: TextFormField(
-      style: TextStyle(
+      style:GoogleFonts.poppins(textStyle: TextStyle(
         color: Color.fromRGBO(123, 111, 114, 1.0),
-      ),
+        fontFamily: 'poppins',
+      ),),
       keyboardType: TextInputType.visiblePassword,
       cursorColor: Color.fromRGBO(146, 163, 253, 1.0),
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.symmetric(
             vertical: 5.0, horizontal: 10.0),
         labelText: "First Name",
-        labelStyle: TextStyle(
-          color: Color.fromRGBO(123, 111, 114, 1.0),
+        labelStyle: GoogleFonts.poppins(textStyle:TextStyle(
+          color: Color(0xFFACA3A5),
           fontSize: 12.sp,
-        ),
+          fontFamily: 'poppins',
+        ),),
         prefixIcon: Icon(
           IconlyLight.profile,
           color: Color.fromRGBO(123, 111, 114, 1.0),
         ),
-        hintStyle: TextStyle(
-          fontSize: 16.sp,
-        ),
+        hintStyle: GoogleFonts.poppins(textStyle:TextStyle(
+          fontSize: 16.sp,fontFamily: 'poppins'
+        ),),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(12),
@@ -231,33 +252,36 @@ List<Container> textfield=[
   Container(
     width: 315.w,
     height: 48.h,
-    margin: EdgeInsets.fromLTRB(20, 0, 20, 15),
+    margin: EdgeInsets.fromLTRB(20, 0, 20, 15.h),
     // padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
     decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
         color: Color.fromRGBO(247, 248, 248, 1.0)),
 
     child: TextFormField(
-      style: TextStyle(
+      style:GoogleFonts.poppins(textStyle: TextStyle(
         color: Color.fromRGBO(123, 111, 114, 1.0),
-      ),
+        fontFamily: 'poppins',
+      ),),
       keyboardType: TextInputType.visiblePassword,
       cursorColor: Color.fromRGBO(146, 163, 253, 1.0),
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.symmetric(
             vertical: 5.0, horizontal: 10.0),
         labelText: "Last Name",
-        labelStyle: TextStyle(
-          color: Color.fromRGBO(123, 111, 114, 1.0),
+        labelStyle:GoogleFonts.poppins(textStyle: TextStyle(
+          color: Color(0xFFACA3A5),
           fontSize: 12.sp,
-        ),
+          fontFamily: 'poppins'
+        ),),
         prefixIcon: Icon(
           IconlyLight.profile,
           color: Color.fromRGBO(123, 111, 114, 1.0),
         ),
-        hintStyle: TextStyle(
+        hintStyle:GoogleFonts.poppins(textStyle: TextStyle(
           fontSize: 16.sp,
-        ),
+fontFamily: 'poppins'
+        ),),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(12),
@@ -288,33 +312,36 @@ List<Container> textfield=[
   Container(
     width: 315.w,
     height: 48.h,
-    margin: EdgeInsets.fromLTRB(20, 0, 20, 15),
+    margin: EdgeInsets.fromLTRB(20, 0, 20, 15.h),
     // padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
     decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
         color: Color.fromRGBO(247, 248, 248, 1.0)),
 
     child: TextFormField(
-      style: TextStyle(
+      style:GoogleFonts.poppins(textStyle: TextStyle(
         color: Color.fromRGBO(123, 111, 114, 1.0),
-      ),
+        fontFamily: 'poppins'
+      ),),
       keyboardType: TextInputType.visiblePassword,
       cursorColor: Color.fromRGBO(146, 163, 253, 1.0),
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.symmetric(
             vertical: 5.0, horizontal: 10.0),
         labelText: "Email",
-        labelStyle: TextStyle(
-          color: Color.fromRGBO(123, 111, 114, 1.0),
+        labelStyle: GoogleFonts.poppins(textStyle:TextStyle(
+          color: Color(0xFFACA3A5),
           fontSize: 12.sp,
-        ),
+fontFamily: 'poppins'
+        ),),
         prefixIcon: Icon(
           IconlyLight.message,
           color: Color.fromRGBO(123, 111, 114, 1.0),
         ),
-        hintStyle: TextStyle(
+        hintStyle: GoogleFonts.poppins(textStyle:TextStyle(
           fontSize: 16.sp,
-        ),
+          fontFamily: 'poppins'
+        ),),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(12),
@@ -345,16 +372,17 @@ Container passwordfield(bool ispass,IconButton icon){
   return Container(
     width: 315.w,
     height: 48.h,
-    margin: EdgeInsets.fromLTRB(30.w, 0, 30.w, 15),
+    margin: EdgeInsets.fromLTRB(30.w, 0, 30.w, 15.h),
     // padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
     decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
         color: Color.fromRGBO(247, 248, 248, 1.0)),
 
     child: TextFormField(
-      style: TextStyle(
+      style: GoogleFonts.poppins(textStyle:TextStyle(
         color: Color.fromRGBO(123, 111, 114, 1.0),
-      ),
+        fontFamily: 'poppins'
+      ),),
       validator: (String? val) {
         if (val!.isEmpty || val.length < 6) {
           return "Invalid password";
@@ -368,18 +396,19 @@ Container passwordfield(bool ispass,IconButton icon){
         contentPadding: const EdgeInsets.symmetric(
             vertical: 15.0, horizontal: 10.0),
         labelText: "Password",
-        labelStyle: TextStyle(
-          color: Color.fromRGBO(123, 111, 114, 1.0),
+        labelStyle:GoogleFonts.poppins(textStyle: TextStyle(
+          color: Color(0xFFACA3A5),
           fontSize: 12.sp,
-        ),
+  fontFamily:'poppins'
+        ),),
         prefixIcon: Icon(
           IconlyLight.lock,
           color: Color.fromRGBO(123, 111, 114, 1.0),
         ),
         suffixIcon: icon,
-        hintStyle: TextStyle(
+        hintStyle:GoogleFonts.poppins(textStyle: TextStyle(fontFamily:'poppins',
           fontSize: 16.sp,
-        ),
+        ),),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(12),
@@ -420,7 +449,9 @@ or(){
         ),
         Text(
           "  Or ",
-          style: TextStyle(fontSize: 12.sp),
+          style: GoogleFonts.poppins(textStyle:TextStyle(fontSize: 12.sp,
+            fontFamily:'poppins'
+          ),),
         ),
         Container(
           width: 141.w,
@@ -442,7 +473,7 @@ or(){
             child: Image.asset('assets/icon/google.png'),
           ),
           SizedBox(
-            width: 50,
+            width: 30.w,
           ),
           Container(
             width: 50.w,

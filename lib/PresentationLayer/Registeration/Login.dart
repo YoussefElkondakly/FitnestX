@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:gym/PresentationLayer/Constants/Constants.dart';
 import 'package:gym/PresentationLayer/App/Dashboard.dart';
 import 'package:gym/PresentationLayer/Constants/SharedWidgets.dart';
@@ -30,12 +31,8 @@ class _LoginState extends State<Login> {
               ),
               Text(
                 "Hey There,",
-                style: TextStyle(
-                  wordSpacing: .0000000001,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 16.sp,
-                ),
+                style: TextStyles(
+                ).w40016Black,
               ),
 
               SizedBox(
@@ -43,10 +40,9 @@ class _LoginState extends State<Login> {
               ),
               Text(
                 "Welcome Back",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20.sp,
-                ),
+                style: TextStyles(
+
+                ).boldBlack20,
               ),
               SizedBox(
                 height: 30.h,
@@ -70,11 +66,8 @@ textfield[2],
               ),
               Text(
                 "Forgot Your Password?",
-                style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromRGBO(173, 164, 165, 1.0)),
+                style: TextStyles(
+                  ).w50012Grey,
               ),
               SizedBox(
                 height: 285.h,
@@ -92,12 +85,9 @@ textfield[2],
                 children: <Widget>[
                   Text(
                     "Don't have an account yet? ",
-                    style: TextStyle(
-                      wordSpacing: .0001,
-                      fontSize: 14.sp,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
-                    ),
+                    style: TextStyles(
+
+                    ).w40014Black,
                   ),
                   GestureDetector(
                     onTap: () {
@@ -108,11 +98,11 @@ textfield[2],
                     },
                     child: Text(
                       'Register',
-                      style: TextStyle(
+                      style:GoogleFonts.poppins(textStyle: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 14.sp,
                         color: Color.fromRGBO(197, 139, 242, 1.0),
-                      ),
+                     fontFamily:'poppins' ), ),
                     ),
                   ),
                 ],

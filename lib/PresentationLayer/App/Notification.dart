@@ -66,24 +66,16 @@ notif(String main,String subMain,AssetImage img,Color color ,EdgeInsets padding)
                 children: [
                   Text(
                     main,
-                    style: TextStyle(
-                      color: Color(0xFF1D1517),
-                      fontSize: 12.sp,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w500,
-                      height: 1.50,
-                    ),
+                    style: TextStyles(
+
+                    ).w50012Black,
                     overflow: TextOverflow.ellipsis,
                   ),
                   Text(
                     subMain,
-                    style: TextStyle(
-                      color: Color(0xFF7B6F72),
-                      fontSize: 10.sp,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w400,
-                      height: 1.50,
-                    ),
+                    style: TextStyles(
+
+                    ).w40010Grey,
                   ),
                 ],),
             ),

@@ -28,8 +28,7 @@ class _UserCongratsState extends State<UserCongrats> {
               ),
               SizedBox(height: 44.h),
               Container(
-                //margin: EdgeInsets.fromLTRB(80.w, 0, 80.w,0),
-                width: 315.w,
+
                 height: 134.h,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -37,7 +36,7 @@ class _UserCongratsState extends State<UserCongrats> {
                     Text(
                       "Congratulations, You Have\nFinished Your Workout",
                       style:
-                      TextStyles().blodBlack20,
+                      TextStyles().boldBlack20,
                       textAlign:TextAlign.center,
                     ),
                     SizedBox(height: 7.h,),

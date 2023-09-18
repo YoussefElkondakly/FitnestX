@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:gym/PresentationLayer/Constants/Constants.dart';
 import 'package:gym/PresentationLayer/Constants/SharedWidgets.dart';
 
@@ -28,19 +29,19 @@ class _Welcome1State extends State<Welcome1> {
             RichText(
               text: TextSpan(
                 text: 'Fitnest',
-                style: TextStyle(
+                style: GoogleFonts.poppins(textStyle:TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 35.sp,
-                ),
+                )),
                 children: <TextSpan>[
                   TextSpan(
                     text: 'X',
-                    style: TextStyle(
+                    style:GoogleFonts.poppins(textStyle: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 35.sp,
                       color: Color.fromRGBO(204, 143, 237, 1.0),
-                    ),
+                    ),),
                   ),
                 ],
               ),
@@ -48,14 +49,11 @@ class _Welcome1State extends State<Welcome1> {
             SizedBox(
               height: 10.h,
             ),
-            Text("Everybody Can Train",style: TextStyle(
-              color: Colors.grey,
-              fontWeight: FontWeight.w400,
-              fontSize: 18.sp,
-            ),),
+            Text("Everybody Can Train",style: TextStyles(
+            ).w40018Grey,),
             Spacer(),
-            button(MaterialPageRoute(builder: (context)=>Welcome2()), context, 'Get Started', TextStyles().bold16White, 315.w, 60.h, Colours().gradientcolorBlue),
-
+            Padding(padding: EdgeInsets.only(bottom:40),child:button(MaterialPageRoute(builder: (context)=>Welcome2()), context, 'Get Started', TextStyles().bold16White, 315.w, 60.h, Colours().gradientcolorBlue),
+      ),
           ],
         ),
       ),

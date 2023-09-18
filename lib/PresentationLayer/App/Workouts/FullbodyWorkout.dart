@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gym/PresentationLayer/App/Dashboard.dart';
 import 'package:gym/PresentationLayer/App/WorkoutTracker.dart';
-import 'package:gym/PresentationLayer/Constants/make.dart';
+import 'package:gym/PresentationLayer/make.dart';
 import 'package:iconly/iconly.dart';
 
 import '../../Constants/Constants.dart';
@@ -150,7 +150,7 @@ class FullbodyWorkout extends StatelessWidget {
                                 children: [
                                   Text(
                                     "Fullbody Workout",
-                                    style: TextStyles().blodBlack16,
+                                    style: TextStyles().boldBlack16,
                                   ),
                                   Text(
                                     '11 Exercises | 32mins | 320 Calories Burn',
@@ -182,19 +182,21 @@ class FullbodyWorkout extends StatelessWidget {
                                   IconlyLight.calendar,
                                   color: Colors.grey,
                                 ),
+
                                 Padding(
                                   padding:
-                                      EdgeInsets.only(left: 10.w, right: 46.w),
+                                      EdgeInsets.only(left: 10.w, ),
                                   child: Text(
                                     "Schedule Workout",
                                     style: TextStyles().w40012Grey,
                                   ),
                                 ),
+                                Spacer(),
                                 Text(
                                   "5/27, 09:00 AM",
                                   style: TextStyles().w40012Grey,
                                 ),
-                                Spacer(),
+
                                 Icon(
                                   Icons.navigate_next,
                                   color: Colors.grey,
@@ -219,17 +221,17 @@ class FullbodyWorkout extends StatelessWidget {
                               ),
                               Padding(
                                 padding:
-                                    EdgeInsets.only(left: 10.w, right: 129.w),
+                                    EdgeInsets.only(left: 10.w, ),
                                 child: Text(
                                   "Difficulity",
                                   style: TextStyles().w40012Grey,
                                 ),
-                              ),
+                              ),Spacer(),
                               Text(
                                 "Beginner",
                                 style: TextStyles().w40012Grey,
                               ),
-                              Spacer(),
+
                               Icon(
                                 Icons.navigate_next,
                                 color: Colors.grey,
