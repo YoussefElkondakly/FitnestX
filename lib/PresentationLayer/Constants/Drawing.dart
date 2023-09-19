@@ -1,9 +1,11 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dash/flutter_dash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'Constants.dart';
+import 'SharedWidgets.dart';
 
 pieContainer (Widget wow){
 return Container(
@@ -239,7 +241,11 @@ Container conta=Container(
       SizedBox(
         height: 2.h,
       ),
-//---------------------------------
+//------------------mask(Colours().gradientcolorPink,  Dash(
+//                         direction: Axis.vertical,
+//                         length: 79.h,
+//                         dashLength: 79/7,
+//                         dashColor: Colors.white), Alignment.topLeft, Alignment.bottomRight),---------------
       Container(
         width: 6.w,
         height: 6.h,
@@ -593,7 +599,7 @@ pieChart(double bmi){
           spreadRadius: 0,
         ),
       ];
-
+//596
       switch (i) {
         case 0:
           return PieChartSectionData(
@@ -704,5 +710,166 @@ stackCaloriesLeft(){
         ),),
       ],
     ),
+  );
+}
+steps(){
+  return Row(crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Container(height: 318.h,
+        margin: EdgeInsets.only(right: 10.w),
+        child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            mask(Colours().gradientcolorPink, Text('01',style: TextStyles().w40014White,),  Alignment.topLeft, Alignment.bottomRight),
+            mask(Colours().gradientcolorPink, Text('02',style: TextStyles().w40014White,),  Alignment.topLeft, Alignment.bottomRight),
+            mask(Colours().gradientcolorPink, Text('03',style: TextStyles().w40014White,),  Alignment.topLeft, Alignment.bottomRight),
+            mask(Colours().gradientcolorPink, Text('04',style: TextStyles().w40014White,),  Alignment.topLeft, Alignment.bottomRight),
+
+          ],
+        ),
+      ),
+      Container(height:348.h ,
+        child: Column(children: [
+          Container(
+            width: 20.w,height: 20.h,
+            //margin: EdgeInsets.only(left:13.w, ),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                begin: Alignment(-1.00, 0.08),
+                end: Alignment(1, -0.08),
+                colors: Colours().gradientcolorPink,
+              ),
+            ),
+            child: Center(
+              child: Container(
+                width: 18.w,
+                height: 18.h,
+
+                decoration:ShapeDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment(-1.00, 0.08),
+                    end: Alignment(1, -0.08),
+                    colors: Colours().gradientcolorPink,
+                  ),
+                  shape: CircleBorder(
+                    side: BorderSide(color: Colors.white,width: 3.5.w),
+                  ),
+
+                ),
+              ),
+            ),
+          ),
+          mask(Colours().gradientcolorPink,  Dash(
+              direction: Axis.vertical,
+              length: 79.h,
+              dashLength: 79/7,
+              dashColor: Colors.white), Alignment.topLeft, Alignment.bottomRight),
+          Container(
+            width: 20.w,height: 20.h,
+            //margin: EdgeInsets.only(left:13.w, ),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                begin: Alignment(-1.00, 0.08),
+                end: Alignment(1, -0.08),
+                colors: Colours().gradientcolorPink,
+              ),
+            ),
+            child: Center(
+              child: Container(
+                width: 18.w,
+                height: 18.h,
+
+                decoration:ShapeDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment(-1.00, 0.08),
+                    end: Alignment(1, -0.08),
+                    colors: Colours().gradientcolorPink,
+                  ),
+                  shape: CircleBorder(
+                    side: BorderSide(color: Colors.white,width: 3.5.w),
+                  ),
+
+                ),
+              ),
+            ),
+          ),
+          mask(Colours().gradientcolorPink,  Dash(
+              direction: Axis.vertical,
+              length: 79.h,
+              dashLength: 79/7,
+              dashColor: Colors.white), Alignment.topLeft, Alignment.bottomRight),
+          Container(
+            width: 20.w,height: 20.h,
+            //margin: EdgeInsets.only(left:13.w, ),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                begin: Alignment(-1.00, 0.08),
+                end: Alignment(1, -0.08),
+                colors: Colours().gradientcolorPink,
+              ),
+            ),
+            child: Center(
+              child: Container(
+                width: 18.w,
+                height: 18.h,
+
+                decoration:ShapeDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment(-1.00, 0.08),
+                    end: Alignment(1, -0.08),
+                    colors: Colours().gradientcolorPink,
+                  ),
+                  shape: CircleBorder(
+                    side: BorderSide(color: Colors.white,width: 3.5.w),
+                  ),
+
+                ),
+              ),
+            ),
+          ),
+          mask(Colours().gradientcolorPink,  Dash(
+              direction: Axis.vertical,
+              length: 79.h,
+              dashLength: 79/7,
+              dashColor: Colors.white), Alignment.topLeft, Alignment.bottomRight), Container(
+            width: 20.w,height: 20.h,
+            //margin: EdgeInsets.only(left:13.w, ),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                begin: Alignment(-1.00, 0.08),
+                end: Alignment(1, -0.08),
+                colors: Colours().gradientcolorPink,
+              ),
+            ),
+            child: Center(
+              child: Container(
+                width: 18.w,
+                height: 18.h,
+
+                decoration:ShapeDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment(-1.00, 0.08),
+                    end: Alignment(1, -0.08),
+                    colors: Colours().gradientcolorPink,
+                  ),
+                  shape: CircleBorder(
+                    side: BorderSide(color: Colors.white,width: 3.5.w),
+                  ),
+
+                ),
+              ),
+            ),
+          ),
+
+        ],),
+      ),
+
+
+
+
+    ],
   );
 }

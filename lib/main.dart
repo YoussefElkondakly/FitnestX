@@ -8,7 +8,7 @@ import 'package:gym/PresentationLayer/Welcome/Welcome2.dart';
 import 'PresentationLayer/Welcome/Welcome.dart';
 import 'PresentationLayer/make.dart';
 
-void main() {
+Future<void> main() async{
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     systemNavigationBarColor: Colors.transparent, // navigation bar color
     statusBarColor: Colors.transparent, // status bar color
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
             primaryColor: Colors.blueGrey,
             useMaterial3: true,
           ),
-          home: Welcome1(),
+          home: Make(),
         );
       },
     );

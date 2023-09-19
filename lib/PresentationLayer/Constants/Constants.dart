@@ -256,6 +256,14 @@ class TextStyles{
     fontWeight: FontWeight.w400,
 
   ));
+  TextStyle w40014White= GoogleFonts.poppins(textStyle:TextStyle(
+    color: Colors.white,
+    fontSize: 14.sp,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w400,
+
+  ));
+
   TextStyle w40016White= GoogleFonts.poppins(textStyle:TextStyle(
     color: Colors.white,
     fontSize: 16.sp,

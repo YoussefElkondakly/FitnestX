@@ -606,3 +606,22 @@ mask(gradient,Widget child,Alignment start,Alignment end){
   child:child ,
   );
 }
+backgroundContainer(double height,double top,double bottom,double radius,EdgeInsets padding,gradient,Widget child,){
+  return Container(
+    width: 315.w,
+    height: height,
+    padding: padding,
+    margin: EdgeInsets.fromLTRB(30.w,top,30.w,bottom),
+    decoration: ShapeDecoration(
+      gradient: LinearGradient(
+        begin: Alignment(-1.00, 0.08),
+        end: Alignment(1, -0.08),
+        colors: gradient,
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(radius),
+      ),
+    ),
+    child: child,
+  );
+}

@@ -1,10 +1,15 @@
-import 'package:fl_chart/fl_chart.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gym/PresentationLayer/Constants/Drawing.dart';
+import 'dart:developer';
 
-import 'Constants/Constants.dart';
-import 'App/Notification.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_dash/flutter_dash.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gym/PresentationLayer/App/Workouts/FullbodyWorkout.dart';
+import 'package:gym/PresentationLayer/Constants/Constants.dart';
+import 'package:gym/PresentationLayer/Constants/SharedWidgets.dart';
+import 'package:iconly/iconly.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import 'Constants/Drawing.dart';
 class Make extends StatefulWidget {
   const Make({super.key});
 
@@ -18,150 +23,98 @@ class _MakeState extends State<Make> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Container(
-          width: 66.w,
-          height: 66.h,
-          child: Stack(
+
+      body:SingleChildScrollView(child:Column(crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+      appBar(MaterialPageRoute(builder: (context)=>FullbodyWorkout()), context,'', Colors.transparent) ,
+          backgroundContainer(150.h, 10.h, 020.h, 22, EdgeInsets.zero, Colours().gradientcolorBlue, Center(
+          child: Icon(IconlyBold.play,color: Colors.white,size: 23.33.h,),
+        )),
+        Padding(
+          padding:  EdgeInsets.only(left: 30.w,right: 30.w),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Align(alignment: Alignment.centerLeft,
-                child: Container(
-                  width: (66-33).w,
-                  height:66.h,
-                  decoration: ShapeDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment(-1.00, 0.05),
-                      end: Alignment(1, -0.05),
+              Text("Jumping Jack",style: TextStyles().w60016Black,),
+                Text('Easy | 390 Calories Burn',style: TextStyles().w40012Grey,),
+                Padding(padding: EdgeInsets.only(top: 030.h,bottom: 15.h)),
+              Text("Descriptions",style: TextStyles().w60016Black,),
+              Text.rich(
+                TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'A jumping jack, also known as a star jump and\ncalled a side-straddle hop in the US military, is a\nphysical jumping exercise performed by jumping to\na position with the legs spread wide ',
+                      style: TextStyles(
 
-                      colors: Colours().gradientcolorBlue,
+                      ).w40012Grey,
                     ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(100),
-                        bottomLeft: Radius.circular(100),
+                    TextSpan(
+                      text: 'Read More...',
+                      style: TextStyle(
+                        color: Color(0xFF92A3FD),
+                        fontSize: 12.sp,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w500,
+
                       ),
                     ),
-                  ),
+                  ],
                 ),
               ),
-              Align(alignment: Alignment.centerRight,
-                child: Container(
-                  width: 33,
-                  height: 66.h,
-                  decoration: ShapeDecoration(
-                    color: Color.fromRGBO(247, 248, 248, 1.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(100),
-                        bottomRight: Radius.circular(100),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Align(alignment: Alignment.center,child: Container(
-                width: 48.w,
-                height: 48.h,
+              seemore('How To Do It', '4 Steps', EdgeInsets.fromLTRB(0, 30, 0, 10), context,MaterialPageRoute(builder: (context)=>FullbodyWorkout()) ),
+            Row(crossAxisAlignment: CrossAxisAlignment.start,
+             mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                steps(),
 
-                decoration: ShapeDecoration(
+                Column(crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                  instructions(maiN[0], subMaiN[0]),
+                  instructions(maiN[1], subMaiN[1]),
+                  instructions(maiN[2], subMaiN[2],),
+                  instructions(maiN[3], subMaiN[3]),
 
-                  gradient: LinearGradient(
-                    begin: Alignment(-1.00, 0.08),
-                    end: Alignment(1, -0.08),
-                    colors: [Color(0xFF92A3FD), Color(0xFF9DCEFF)],
-                  ),
-                  shape: OvalBorder(
-                    side: BorderSide(color: Colors.white,width: 5.w)
-                  ),
+                ],),
+              ],
+            ),
 
-                ),
-              ),),
             ],
           ),
         ),
-      ),
+        ],
+      ),),
     );
   }
-
-
 }
-backgroundContainer(double height,double top,double bottom,double radius,EdgeInsets padding,gradient,Widget child,){
-  return Container(
-    width: 315.w,
-    height: height,
-    padding: padding,
-    margin: EdgeInsets.fromLTRB(30,top,30,bottom),
-    decoration: ShapeDecoration(
-      gradient: LinearGradient(
-        begin: Alignment(-1.00, 0.08),
-        end: Alignment(1, -0.08),
-        colors: gradient,
-      ),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(radius),
-      ),
+instructions(String main,String subMain){
+  return Container(margin: EdgeInsets.only(bottom: 21.h,left: 15.w,),
+    child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(main,style: TextStyles().w40014Black,textAlign: TextAlign.start,),
+        SizedBox(height: 5.h,),
+        Text(subMain,style: TextStyles().w40012Grey,textAlign: TextAlign.start,),
+      ],
     ),
-    child: child,
   );
 }
-// class _Badge extends StatelessWidget {
-//   const _Badge(
-//       this.svgAsset, {
-//         required this.size,
-//         required this.borderColor,
-//       });
-//   final String svgAsset;
-//   final double size;
-//   final Color borderColor;
+
+
+
+// final Uri _url = Uri.parse('https://www.google.com',);
 //
-//   @override
-//   Widget build(BuildContext context) {
-//     return AnimatedContainer(
-//       duration: PieChart.defaultDuration,
-//       width: size,
-//       height: size,
-//       decoration: BoxDecoration(
-//         color: Colors.white,
-//         shape: BoxShape.circle,
-//         border: Border.all(
-//           color: borderColor,
-//           width: 2,
-//         ),
-//         boxShadow: <BoxShadow>[
-//           BoxShadow(
-//             color: Colors.black.withOpacity(.5),
-//             offset: const Offset(3, 3),
-//             blurRadius: 3,
-//           ),
-//         ],
-//       ),
-//       padding: EdgeInsets.all(size * .15),
-//       child: Center(
-//         child: Container(
-//           width: 20.w,
-//           height: 20.h,
-//           decoration: BoxDecoration(
-//             color: Colors.pink
-//           ),
-//
-//         ),
-//       ),
-//     );
+// Future<void> launchUrll() async {
+//   log('message2 : $_url');
+//   if (!await launchUrl(_url,)) {
+//     log('message3 :$_url',);
+//     throw Exception('Could not launch $_url');
+//   }else{
+//     log('message A7a: $_url');
 //   }
 // }
 
-
-// void main(){
-//   double i=0;
-//   double x=0;
-//   do{
-//     for( i=i;i<=100;i+=20){
-//       x=i;
-//       break;
-//     }
-//     print('$i && $x');
-//   i+=20;
-//   }
-//   while(i<=100);
-//
-// }
+List maiN=['Spread Your Arms','Rest at The Toe','Adjust Foot Movement','Clapping Both Hands'];
+List subMaiN=[
+  'To make the gestures feel more relaxed,\nstretch your arms as you start this\nmovement. No bending of hands.',
+  'The basis of this movement is jumping.\nNow, what needs to be considered is that\nyou have to use the tips of your feet',
+  'Jumping Jack is not just an ordinary\njump. But, you also have to pay close\nattention to leg movements.',
+  'This cannot be taken lightly. You see,\nwithout realizing it, the clapping of your\nhands helps you to keep your rhythm\nwhile doing the Jumping Jack'];
