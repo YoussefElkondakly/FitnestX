@@ -31,51 +31,49 @@ class _LoginState extends State<Login> {
               ),
               Text(
                 "Hey There,",
-                style: TextStyles(
-                ).w40016Black,
+                style: TextStyles().w40016Black,
               ),
-
               SizedBox(
                 height: 5.h,
               ),
               Text(
                 "Welcome Back",
-                style: TextStyles(
-
-                ).boldBlack20,
+                style: TextStyles().boldBlack20,
               ),
               SizedBox(
                 height: 30.h,
               ),
-textfield[2],
-              passwordfield(ispass, IconButton(
-                  onPressed: () {
-                    setState(() {
-                      ispass = !ispass;
-                    });
-                  },
-                  icon: Icon(
-                    ispass
-                        ? IconlyLight.hide
-                        : IconlyLight.show,
-                    color: Color.fromRGBO(173, 164, 165, 1.0),
-                  )),),
-
+              textfield[2],
+              passwordfield(
+                ispass,
+                IconButton(
+                    onPressed: () {
+                      setState(() {
+                        ispass = !ispass;
+                      });
+                    },
+                    icon: Icon(
+                      ispass ? IconlyLight.hide : IconlyLight.show,
+                      color: Color.fromRGBO(173, 164, 165, 1.0),
+                    )),
+              ),
               SizedBox(
                 height: 15.h,
               ),
               Text(
                 "Forgot Your Password?",
-                style: TextStyles(
-                  ).w50012Grey,
+                style: TextStyles().w50012Grey,
               ),
               SizedBox(
                 height: 285.h,
               ),
-
-             button(MaterialPageRoute<void>(
-                 builder: (context) => WelcomeUser()), context, "Login", TextStyles().bold16White, 315.w, 60.h, Colours().gradientcolorBlue)
-              ,
+              MyButton(
+                  toWhere: WelcomeUser(),
+                  buttonName: "Login",
+                  styleT: TextStyles().bold16White,
+                  width: 315.w,
+                  height: 60.h,
+                  gradient: Colours().gradientcolorBlue),
               SizedBox(
                 height: 20.h,
               ),
@@ -85,9 +83,7 @@ textfield[2],
                 children: <Widget>[
                   Text(
                     "Don't have an account yet? ",
-                    style: TextStyles(
-
-                    ).w40014Black,
+                    style: TextStyles().w40014Black,
                   ),
                   GestureDetector(
                     onTap: () {
@@ -98,16 +94,17 @@ textfield[2],
                     },
                     child: Text(
                       'Register',
-                      style:GoogleFonts.poppins(textStyle: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14.sp,
-                        color: Color.fromRGBO(197, 139, 242, 1.0),
-                     fontFamily:'poppins' ), ),
+                      style: GoogleFonts.poppins(
+                        textStyle: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14.sp,
+                            color: Color.fromRGBO(197, 139, 242, 1.0),
+                            fontFamily: 'poppins'),
+                      ),
                     ),
                   ),
                 ],
               ),
-
             ],
           ),
         ),

@@ -115,8 +115,7 @@ _dashboard(context,pie){
                   style: TextStyles().w50012White,
                 ),
                 SizedBox(height:26.h),
-                button(MaterialPageRoute<void>(
-                    builder: (context) => Profile()), context, 'View More', TextStyles().w60010White, 95.w, 35.h,  Colours().gradientcolorPink),
+                MyButton(toWhere: Profile(), buttonName: 'View More', styleT: TextStyles().w60010White, width: 95.w, height:  35.h, gradient: Colours().gradientcolorPink),
                 //white w60010
               ],
             ),

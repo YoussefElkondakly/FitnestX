@@ -246,8 +246,7 @@ class _WorkoutTrackerState extends State<WorkoutTracker> {
 
                                 ).w50014Black,
                               ),
-                                button(MaterialPageRoute(builder: (context)=>Profile()), context, 'Check', TextStyles().w50012White, 68.w, 28.h, Colours().gradientcolorBlue)
-                            ],
+MyButton(toWhere: Profile(), buttonName: 'Check', styleT: TextStyles().w50012White, width: 68.w, height: 28.h, gradient: Colours().gradientcolorBlue,)                            ],
                           ),
                         ),
                         seemore('Upcoming Workout', 'see more', EdgeInsets.zero, context, MaterialPageRoute(builder: (context)=>WorkoutTracker())),

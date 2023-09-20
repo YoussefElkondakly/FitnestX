@@ -71,19 +71,9 @@ class _ProfileState extends State<Profile> {
                   ],
                 ),
                 Spacer(),
-                button(
-                  MaterialPageRoute<void>(
-                    builder: (context) => UserCongrats(),
-                  ),
-                  context,
-                  "Edit",
-                  TextStyles(
+               MyButton(toWhere: UserCongrats(), buttonName: "Edit", styleT:   TextStyles(
 
-                  ).w50012White,
-                  83.w,
-                  30.h,
-                  Colours().gradientcolorBlue,
-                ),
+               ).w50012White, width:  83.w, height:  30.h, gradient: Colours().gradientcolorBlue),
               ],
             ),
           ),

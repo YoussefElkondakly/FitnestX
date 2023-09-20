@@ -22,7 +22,7 @@ class _Onboard1State extends State<Onboard1> {
     );
   }
 }
-stackBoard(context,nextTo,String image,String main ,String subMain){
+stackBoard(context, nextTo,String image,String main ,String subMain){
   return Stack(
     children: <Widget>[
       Positioned(
@@ -109,8 +109,7 @@ stackBoard(context,nextTo,String image,String main ,String subMain){
                 ],
               ),
             ),
-            button( MaterialPageRoute<void>(
-                builder: (context) => nextTo), context, "Confirm", TextStyles().bold16White, 315.w, 60.h, Colours().gradientcolorBlue)
+            MyButton(toWhere: nextTo, buttonName:  "Confirm", styleT: TextStyles().bold16White, width: 315.w, height: 60.h, gradient: Colours().gradientcolorBlue),
           ],
         ),
       ),

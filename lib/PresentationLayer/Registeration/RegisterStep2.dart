@@ -5,6 +5,7 @@ import 'package:gym/PresentationLayer/Constants/Constants.dart';
 import 'package:gym/PresentationLayer/Constants/SharedWidgets.dart';
 import 'package:gym/PresentationLayer/Registeration/Onboard1.dart';
 import 'package:iconly/iconly.dart';
+
 class Register2 extends StatefulWidget {
   const Register2({super.key});
 
@@ -23,7 +24,9 @@ class _Register2State extends State<Register2> {
         key: _formkey,
         child: Column(
           children: <Widget>[
-            Container(height: 350.h,width: 375.w,
+            Container(
+              height: 350.h,
+              width: 375.w,
               child: Image.asset('assets/images/biecibs.png'),
             ),
             SizedBox(
@@ -31,10 +34,11 @@ class _Register2State extends State<Register2> {
             ),
             Text(
               "Let’s complete your profile",
-              style:GoogleFonts.poppins(textStyle: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20.sp,
-            fontFamily:'poppins'  ),
+              style: GoogleFonts.poppins(
+                textStyle: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.sp,
+                    fontFamily: 'poppins'),
               ),
             ),
             SizedBox(
@@ -42,11 +46,13 @@ class _Register2State extends State<Register2> {
             ),
             Text(
               "It will help us to know more about you!",
-              style: GoogleFonts.poppins(textStyle:TextStyle(
-                wordSpacing: .0000000001,
-                color: Colors.black,
-                fontWeight: FontWeight.w400,
-                fontSize: 16.sp,fontFamily:'poppins'),
+              style: GoogleFonts.poppins(
+                textStyle: TextStyle(
+                    wordSpacing: .0000000001,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 16.sp,
+                    fontFamily: 'poppins'),
               ),
             ),
             SizedBox(
@@ -63,8 +69,10 @@ class _Register2State extends State<Register2> {
                   color: Color.fromRGBO(247, 248, 248, 1.0)),
 
               child: TextFormField(
-                style: GoogleFonts.poppins(textStyle:TextStyle(
-                  color: Color.fromRGBO(123, 111, 114, 1.0),fontFamily:'poppins'),
+                style: GoogleFonts.poppins(
+                  textStyle: TextStyle(
+                      color: Color.fromRGBO(123, 111, 114, 1.0),
+                      fontFamily: 'poppins'),
                 ),
                 keyboardType: TextInputType.visiblePassword,
                 cursorColor: Color.fromRGBO(146, 163, 253, 1.0),
@@ -72,17 +80,23 @@ class _Register2State extends State<Register2> {
                   contentPadding: const EdgeInsets.symmetric(
                       vertical: 5.0, horizontal: 10.0),
                   labelText: "Choose Gender",
-                  labelStyle:GoogleFonts.poppins(textStyle: TextStyle(
-                    color: Color.fromRGBO(123, 111, 114, 1.0),
-                    fontSize: 12.sp,fontFamily:'poppins'),
+                  labelStyle: GoogleFonts.poppins(
+                    textStyle: TextStyle(
+                        color: Color.fromRGBO(123, 111, 114, 1.0),
+                        fontSize: 12.sp,
+                        fontFamily: 'poppins'),
                   ),
-                  suffixIcon: Icon(IconlyLight.arrow_down_2,color: Colors.grey,),
+                  suffixIcon: Icon(
+                    IconlyLight.arrow_down_2,
+                    color: Colors.grey,
+                  ),
                   prefixIcon: Icon(
                     IconlyLight.user,
                     color: Color.fromRGBO(123, 111, 114, 1.0),
                   ),
-                  hintStyle: GoogleFonts.poppins(textStyle:TextStyle(
-                    fontSize: 16.sp,fontFamily:'poppins'),
+                  hintStyle: GoogleFonts.poppins(
+                    textStyle:
+                        TextStyle(fontSize: 16.sp, fontFamily: 'poppins'),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(
@@ -120,26 +134,31 @@ class _Register2State extends State<Register2> {
                   color: Color.fromRGBO(247, 248, 248, 1.0)),
 
               child: TextFormField(
-                style: GoogleFonts.poppins(textStyle:TextStyle(
-                  color: Color.fromRGBO(123, 111, 114, 1.0),
-               fontFamily:'poppins' ),),
+                style: GoogleFonts.poppins(
+                  textStyle: TextStyle(
+                      color: Color.fromRGBO(123, 111, 114, 1.0),
+                      fontFamily: 'poppins'),
+                ),
                 keyboardType: TextInputType.visiblePassword,
                 cursorColor: Color.fromRGBO(146, 163, 253, 1.0),
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.symmetric(
                       vertical: 5.0, horizontal: 10.0),
                   labelText: "Date Of Birth",
-                  labelStyle: GoogleFonts.poppins(textStyle:TextStyle(
-                    color: Color.fromRGBO(123, 111, 114, 1.0),
-                    fontSize: 12.sp,
-                 fontFamily:'poppins' ), ),
+                  labelStyle: GoogleFonts.poppins(
+                    textStyle: TextStyle(
+                        color: Color.fromRGBO(123, 111, 114, 1.0),
+                        fontSize: 12.sp,
+                        fontFamily: 'poppins'),
+                  ),
                   prefixIcon: Icon(
                     IconlyLight.calendar,
                     color: Color.fromRGBO(123, 111, 114, 1.0),
                   ),
-                  hintStyle: GoogleFonts.poppins(textStyle:TextStyle(
-                    fontSize: 16.sp,
-                  fontFamily:'poppins'),),
+                  hintStyle: GoogleFonts.poppins(
+                    textStyle:
+                        TextStyle(fontSize: 16.sp, fontFamily: 'poppins'),
+                  ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(
                       Radius.circular(12),
@@ -166,7 +185,8 @@ class _Register2State extends State<Register2> {
               ),
             ),
 //Weight
-            Row(mainAxisAlignment: MainAxisAlignment.center,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
                   width: 252.w,
@@ -178,32 +198,38 @@ class _Register2State extends State<Register2> {
                       color: Color.fromRGBO(247, 248, 248, 1.0)),
 
                   child: TextFormField(
-                    style:GoogleFonts.poppins(textStyle: TextStyle(
-                      color: Color.fromRGBO(123, 111, 114, 1.0),
-                   fontFamily:'poppins' ),),
+                    style: GoogleFonts.poppins(
+                      textStyle: TextStyle(
+                          color: Color.fromRGBO(123, 111, 114, 1.0),
+                          fontFamily: 'poppins'),
+                    ),
                     keyboardType: TextInputType.visiblePassword,
                     cursorColor: Color.fromRGBO(146, 163, 253, 1.0),
                     decoration: InputDecoration(
                       contentPadding: const EdgeInsets.symmetric(
                           vertical: 5.0, horizontal: 10.0),
                       labelText: "Your Weight",
-                      labelStyle: GoogleFonts.poppins(textStyle:TextStyle(
-                        color: Color.fromRGBO(123, 111, 114, 1.0),
-                        fontSize: 12.sp,
-                     fontFamily:'poppins'), ),
+                      labelStyle: GoogleFonts.poppins(
+                        textStyle: TextStyle(
+                            color: Color.fromRGBO(123, 111, 114, 1.0),
+                            fontSize: 12.sp,
+                            fontFamily: 'poppins'),
+                      ),
                       prefixIcon: Icon(
                         Icons.monitor_weight_outlined,
                         color: Color.fromRGBO(123, 111, 114, 1.0),
                       ),
-                      hintStyle: GoogleFonts.poppins(textStyle:TextStyle(
-                        fontSize: 16.sp,
-                   fontFamily:'poppins'   ), ),
+                      hintStyle: GoogleFonts.poppins(
+                        textStyle:
+                            TextStyle(fontSize: 16.sp, fontFamily: 'poppins'),
+                      ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(12),
                         ),
                         borderSide: BorderSide(
-                            style: BorderStyle.solid, color: Colors.transparent),
+                            style: BorderStyle.solid,
+                            color: Colors.transparent),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(
@@ -223,7 +249,8 @@ class _Register2State extends State<Register2> {
                     ),
                   ),
                 ),
-                Container(padding: EdgeInsets.all(15),
+                Container(
+                  padding: EdgeInsets.all(15),
                   width: 48.w,
                   height: 48.h,
                   decoration: BoxDecoration(
@@ -238,11 +265,14 @@ class _Register2State extends State<Register2> {
                       borderRadius: BorderRadius.circular(14)),
                   child: Text(
                     " KG",
-                    style:GoogleFonts.poppins(textStyle: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.bold,fontFamily:'poppins'  ),),
-                 ),
+                    style: GoogleFonts.poppins(
+                      textStyle: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'poppins'),
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -263,32 +293,38 @@ class _Register2State extends State<Register2> {
                       color: Color.fromRGBO(247, 248, 248, 1.0)),
 
                   child: TextFormField(
-                    style:GoogleFonts.poppins(textStyle: TextStyle(
-                      color: Color.fromRGBO(123, 111, 114, 1.0),
-                   fontFamily:'poppins' ),),
+                    style: GoogleFonts.poppins(
+                      textStyle: TextStyle(
+                          color: Color.fromRGBO(123, 111, 114, 1.0),
+                          fontFamily: 'poppins'),
+                    ),
                     keyboardType: TextInputType.visiblePassword,
                     cursorColor: Color.fromRGBO(146, 163, 253, 1.0),
                     decoration: InputDecoration(
                       contentPadding: const EdgeInsets.symmetric(
                           vertical: 5.0, horizontal: 10.0),
                       labelText: "Height",
-                      labelStyle:GoogleFonts.poppins(textStyle: TextStyle(
-                        color: Color.fromRGBO(123, 111, 114, 1.0),
-                        fontSize: 12.sp,
-                    fontFamily:'poppins'  ), ),
+                      labelStyle: GoogleFonts.poppins(
+                        textStyle: TextStyle(
+                            color: Color.fromRGBO(123, 111, 114, 1.0),
+                            fontSize: 12.sp,
+                            fontFamily: 'poppins'),
+                      ),
                       prefixIcon: Icon(
                         IconlyLight.swap,
                         color: Color.fromRGBO(123, 111, 114, 1.0),
                       ),
-                      hintStyle:GoogleFonts.poppins(textStyle: TextStyle(
-                        fontSize: 16.sp,
-                   fontFamily:'poppins'   ),  ),
+                      hintStyle: GoogleFonts.poppins(
+                        textStyle:
+                            TextStyle(fontSize: 16.sp, fontFamily: 'poppins'),
+                      ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(12),
                         ),
                         borderSide: BorderSide(
-                            style: BorderStyle.solid, color: Colors.transparent),
+                            style: BorderStyle.solid,
+                            color: Colors.transparent),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(
@@ -324,22 +360,25 @@ class _Register2State extends State<Register2> {
                       borderRadius: BorderRadius.circular(14)),
                   child: Text(
                     "CM",
-                    style:GoogleFonts.poppins(textStyle: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.bold,fontFamily:'poppins'),
-                    ), ),
+                    style: GoogleFonts.poppins(
+                      textStyle: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'poppins'),
+                    ),
+                  ),
                 ),
               ],
             ),
             Spacer(),
-            button(MaterialPageRoute<void>(
-                builder: (context) => Onboard1()), context, "Next >", TextStyles().bold16White, 315.w, 60.h, Colours().gradientcolorBlue)
-            ,
-
-
-
-
+            MyButton(
+                toWhere: Onboard1(),
+                buttonName: "Next >",
+                styleT: TextStyles().bold16White,
+                width: 315.w,
+                height: 60.h,
+                gradient: Colours().gradientcolorBlue),
           ],
         ),
       ),

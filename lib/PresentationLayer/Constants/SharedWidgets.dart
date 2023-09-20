@@ -321,35 +321,59 @@ latestActivity(String main,String details,AssetImage img,Color cl,){
     ),
   );
 }
-button(MaterialPageRoute whereTo,ctx,String buttonName,TextStyle styleT,double width,double height,List<Color> gradient,){
-  return GestureDetector(
-    onTap: (){
-      Navigator.pushReplacement(
-          ctx as BuildContext,whereTo);
-    },
-    child: Container(
-      width: width,
-      height:height,
+class MyButton extends StatefulWidget {
+   MyButton({super.key,
+       required this.toWhere,
+    required this.buttonName,
+    required this.styleT,
+    required this.width,
+    required this.height,
+    required this.gradient,
 
-      decoration: ShapeDecoration(
-        gradient: LinearGradient(
-          begin: Alignment(-1.00, 0.08),
-          end: Alignment(1, -0.08),
-          colors: gradient,
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(50),
-        ),
-      ),
-      child: Center(
-        child: Text(
-          buttonName,
-          style: styleT,
-        ),
-      ),
-    ),
-  );
+  });
+   final  dynamic toWhere;
+   final  String buttonName;
+   final TextStyle styleT;
+   final double width;
+   final double height;
+   final List<Color> gradient;
+
+  @override
+  State<MyButton> createState() => _MyButtonState();
 }
+class _MyButtonState extends State<MyButton> {
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: (){
+        Navigator.pushReplacement(
+            context,MaterialPageRoute(builder: (context) =>widget.toWhere ));
+      },
+      child: Container(
+        width: widget.width,
+        height:widget.height,
+
+        decoration: ShapeDecoration(
+          gradient: LinearGradient(
+            begin: Alignment(-1.00, 0.08),
+            end: Alignment(1, -0.08),
+            colors: widget.gradient,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(50),
+          ),
+        ),
+        child: Center(
+          child: Text(
+            widget.buttonName,
+            style: widget.styleT,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 appBar(MaterialPageRoute backTo,ctx,String titleName,Color color){
   return AppBar(
     title: Text(titleName,
@@ -379,6 +403,7 @@ appBar(MaterialPageRoute backTo,ctx,String titleName,Color color){
               0xf46a, fontFamily: CupertinoIcons.iconFont, fontPackage: CupertinoIcons.iconFontPackage),),),
 
     ],
+
     // padding: EdgeInsets.all(010),
 
 

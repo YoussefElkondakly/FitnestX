@@ -6,7 +6,6 @@ import 'package:gym/PresentationLayer/Constants/SharedWidgets.dart';
 
 import 'Welcome2.dart';
 
-
 class Welcome1 extends StatefulWidget {
   const Welcome1({super.key});
 
@@ -29,7 +28,8 @@ class _Welcome1State extends State<Welcome1> {
             RichText(
               text: TextSpan(
                 text: 'Fitnest',
-                style: GoogleFonts.poppins(textStyle:TextStyle(
+                style: GoogleFonts.poppins(
+                    textStyle: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 35.sp,
@@ -37,11 +37,13 @@ class _Welcome1State extends State<Welcome1> {
                 children: <TextSpan>[
                   TextSpan(
                     text: 'X',
-                    style:GoogleFonts.poppins(textStyle: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 35.sp,
-                      color: Color.fromRGBO(204, 143, 237, 1.0),
-                    ),),
+                    style: GoogleFonts.poppins(
+                      textStyle: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 35.sp,
+                        color: Color.fromRGBO(204, 143, 237, 1.0),
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -49,11 +51,21 @@ class _Welcome1State extends State<Welcome1> {
             SizedBox(
               height: 10.h,
             ),
-            Text("Everybody Can Train",style: TextStyles(
-            ).w40018Grey,),
+            Text(
+              "Everybody Can Train",
+              style: TextStyles().w40018Grey,
+            ),
             Spacer(),
-            Padding(padding: EdgeInsets.only(bottom:40),child:button(MaterialPageRoute(builder: (context)=>Welcome2()), context, 'Get Started', TextStyles().bold16White, 315.w, 60.h, Colours().gradientcolorBlue),
-      ),
+            Padding(
+              padding: EdgeInsets.only(bottom: 40),
+              child: MyButton(
+                  toWhere: Welcome2(),
+                  buttonName: 'Get Started',
+                  styleT: TextStyles().bold16White,
+                  width: 315.w,
+                  height: 60.h,
+                  gradient: Colours().gradientcolorBlue),
+            ),
           ],
         ),
       ),

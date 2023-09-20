@@ -310,7 +310,9 @@ class FullbodyWorkout extends StatelessWidget {
                         ),
                         setsWorkout('Incline Push-Ups', '12x', img[06]),
                         setsWorkout('Push-Ups', '15x', img[07]),
-                        button(MaterialPageRoute(builder: (context)=>FullbodyWorkout()), context, 'Start Workout', TextStyles().bold16White, 315.h, 60.h, Colours().gradientcolorBlue),
+                        
+                     MyButton(toWhere: FullbodyWorkout(), buttonName: 'Start Workout', styleT: TextStyles().bold16White, width: 315.h, height:  60.h, gradient:  Colours().gradientcolorBlue),
+                       
                         setsWorkout('Cobra Stretch', '20x', img[08]),
                       ],
                     ),

@@ -4,6 +4,7 @@ import 'package:gym/PresentationLayer/Constants/Constants.dart';
 import 'package:gym/PresentationLayer/Constants/SharedWidgets.dart';
 
 import 'Dashboard.dart';
+
 class WelcomeUser extends StatefulWidget {
   const WelcomeUser({super.key});
 
@@ -15,15 +16,12 @@ class _WelcomeUserState extends State<WelcomeUser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Center(
         child: Column(
           children: [
             Container(
               height: 304.h,
-              margin: EdgeInsets.only(top: 102.h,
-                bottom: 40.h
-              ),
+              margin: EdgeInsets.only(top: 102.h, bottom: 40.h),
               child: Image.asset('assets/images/good.png'),
             ),
             Column(
@@ -31,21 +29,21 @@ class _WelcomeUserState extends State<WelcomeUser> {
               children: [
                 Text(
                   "Welcome, Joe",
-                  style:
-                  TextStyles().boldBlack20,
+                  style: TextStyles().boldBlack20,
                 ),
-                SizedBox(height: 7.h,),
-                Text("You are all set now, let’s reach your\ngoals together with us",style:
-                TextStyles().w40012Grey,textAlign: TextAlign.center,),
-
+                SizedBox(
+                  height: 7.h,
+                ),
+                Text(
+                  "You are all set now, let’s reach your\ngoals together with us",
+                  style: TextStyles().w40012Grey,
+                  textAlign: TextAlign.center,
+                ),
               ],
             ),
-           Spacer(),
-            button(MaterialPageRoute<void>(
-                builder: (context) => Dashboard()), context, "Go To Home", TextStyles().bold16White, 315.w, 60.h, Colours().gradientcolorBlue)
-
-          ],
-
+            Spacer(),
+            MyButton(toWhere: Dashboard(), buttonName: "Go To Home", styleT: TextStyles().bold16White, width: 315.w, height: 60.h, gradient:  Colours().gradientcolorBlue)
+         , ],
         ),
       ),
     );

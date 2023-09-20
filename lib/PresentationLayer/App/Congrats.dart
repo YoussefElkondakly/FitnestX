@@ -52,7 +52,8 @@ class _UserCongratsState extends State<UserCongrats> {
                 ),
               ),
               SizedBox(height: 150.h,),
-              button(MaterialPageRoute<void>(builder:(context) =>WorkoutTracker(),), context, 'Back To Home', TextStyles().w50012White, 315.w, 60.h, Colours().gradientcolorBlue,)
+              
+             MyButton(toWhere: WorkoutTracker(), buttonName:  'Back To Home', styleT: TextStyles().w50012White, width:  315.w, height:  60.h, gradient:  Colours().gradientcolorBlue),
 
             ],
 

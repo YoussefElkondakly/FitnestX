@@ -145,8 +145,7 @@ class _RegisterState extends State<Register> {
               SizedBox(
                 height: 147.h,
               ),
-              button(MaterialPageRoute<void>(
-                  builder: (context) => Register2()), context, 'Register', TextStyles().bold16White, 315.w, 60.h, Colours().gradientcolorBlue),
+              MyButton(toWhere: Register2(), buttonName:  'Register', styleT:  TextStyles().bold16White, width: 315.w, height: 60.h, gradient:  Colours().gradientcolorBlue),
               SizedBox(
                 height: 20.h,
               ),
