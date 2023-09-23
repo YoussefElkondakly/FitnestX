@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gym/PresentationLayer/App/Dashboard.dart';
 import 'package:gym/PresentationLayer/App/WorkoutTracker.dart';
+import 'package:gym/PresentationLayer/App/Workouts/FullBodyDetails.dart';
 import 'package:gym/PresentationLayer/make.dart';
 import 'package:iconly/iconly.dart';
 
@@ -245,7 +246,7 @@ class FullbodyWorkout extends StatelessWidget {
                           EdgeInsets.fromLTRB(30, 0, 30, 18),
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Dashboard(),
+                            builder: (context) => FullBodyDetails(),
                           ),
                         ),
                         Container(
